@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Caesar Wrap Charleston | Best Wrap on King Street – Sweet Palm</title>
+  <meta name="description" content="Sweet Palm's Chicken Caesar Wrap is Downtown Charleston's most popular wrap — grilled chicken, crisp romaine, parmesan, and house Caesar in a toasted tortilla. As featured in The Post and Courier. Order online or walk in at 471 King Street." />
+  <meta name="keywords" content="chicken caesar wrap charleston, chicken caesar wrap king street, best wrap downtown charleston, chicken wrap charleston sc, sweet palm chicken wrap, caesar wrap king street charleston, lunch wrap charleston" />
+  <link rel="canonical" href="https://eatsweetpalm.com/chicken-caesar-wrap-charleston" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --palm-cream:   #FAF6F0;
+      --palm-tan:     #EFE6D8;
+      --palm-brown:   #3B2B1F;
+      --palm-gold:    #C4943A;
+      --palm-gold-lt: #E2B96F;
+      --palm-gray:    #6B5B50;
+      --palm-green:   #2D4A2E;
+      --palm-green-lt:#3D5A3E;
+      --palm-olive:   #556B2F;
+    }
+
+    body { font-family: 'DM Sans', sans-serif; background-color: var(--palm-cream); color: var(--palm-brown); margin: 0; padding-bottom: 72px; }
+    h1, h2, h3, h4, h5 { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* ── NAVBAR ── */
+    .navbar-sweet { background-color: var(--palm-brown); border-bottom: 3px solid var(--palm-gold); }
+    .navbar-sweet .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--palm-gold) !important; }
+    .navbar-sweet .nav-link { color: #e8ddd0 !important; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .navbar-sweet .nav-link:hover, .navbar-sweet .nav-link.active { color: var(--palm-gold) !important; }
+    .navbar-sweet .btn-order { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 30px; padding: 0.45rem 1.3rem; transition: background 0.25s, transform 0.2s; text-decoration: none; }
+    .navbar-sweet .btn-order:hover { background-color: var(--palm-gold-lt); transform: translateY(-1px); }
+
+    /* ── INFO STRIP ── */
+    .info-strip { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 600; font-size: 0.88rem; }
+    .info-strip a { color: var(--palm-brown); text-decoration: none; font-weight: 700; }
+    .info-strip a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    .wrap-hero {
+      background: linear-gradient(150deg, #0f1f0f 0%, #1a2e1a 40%, #2a1a0a 100%);
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .wrap-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 68% 30%, rgba(61,90,62,0.35) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 75%, rgba(196,148,58,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 85%, rgba(85,107,47,0.15) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    /* Wrap ring visual */
+    .hero-wrap-ring {
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 38% 38%, rgba(61,90,62,0.4), rgba(26,46,26,0.7));
+      border: 2px solid rgba(61,90,62,0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9rem;
+      position: relative;
+      animation: wrap-pulse 5s ease-in-out infinite alternate;
+    }
+    .hero-wrap-ring::after {
+      content: '';
+      position: absolute; inset: 20px;
+      border-radius: 50%;
+      border: 1px dashed rgba(196,148,58,0.3);
+    }
+    @keyframes wrap-pulse {
+      from { box-shadow: 0 0 40px rgba(61,90,62,0.2); }
+      to   { box-shadow: 0 0 80px rgba(61,90,62,0.45); }
+    }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--palm-gold); }
+    .hero-title { font-size: clamp(2.6rem, 5.5vw, 4.8rem); line-height: 1.05; color: #FAF6F0; font-weight: 900; }
+    .hero-title em { color: #7ec87f; font-style: italic; }
+    .hero-title span { display: block; }
+    .hero-sub { color: #c9bfb5; font-size: 1.1rem; line-height: 1.8; max-width: 520px; }
+    .hero-cta-primary { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 700; border: none; border-radius: 40px; padding: 1rem 2.5rem; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.25s; text-decoration: none; display: inline-block; }
+    .hero-cta-primary:hover { background-color: var(--palm-gold-lt); color: var(--palm-brown); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(196,148,58,0.4); }
+    .hero-cta-green { background-color: var(--palm-green-lt); color: #FAF6F0; font-weight: 700; border: none; border-radius: 40px; padding: 1rem 2.5rem; font-size: 1.05rem; text-decoration: none; display: inline-block; transition: all 0.25s; }
+    .hero-cta-green:hover { background-color: var(--palm-green); color: #FAF6F0; transform: translateY(-2px); }
+    .hero-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); border-radius: 40px; padding: 0.35rem 1rem; color: #c9bfb5; font-size: 0.82rem; font-weight: 500; }
+    .hero-pill .bi { color: var(--palm-gold); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: #fff; border-bottom: 1px solid #e8ddd0; }
+    .trust-item { display: flex; align-items: center; gap: 0.65rem; padding: 1.1rem 0; font-size: 0.9rem; font-weight: 600; color: var(--palm-brown); }
+    .trust-item .bi { font-size: 1.3rem; color: var(--palm-gold); }
+    .trust-item a { color: var(--palm-brown); text-decoration: none; }
+    .trust-item a:hover { text-decoration: underline; }
+    .trust-divider { width: 1px; background: #e8ddd0; height: 40px; align-self: center; }
+
+    /* ── SECTION HELPERS ── */
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palm-gold); }
+    .section-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); color: var(--palm-brown); font-weight: 900; }
+    .divider-gold { width: 56px; height: 3px; background: var(--palm-gold); border-radius: 2px; }
+    .divider-green { width: 56px; height: 3px; background: var(--palm-green-lt); border-radius: 2px; }
+
+    /* ── INGREDIENT BREAKDOWN ── */
+    .ingredient-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #e8ddd0;
+      padding: 1.5rem;
+      height: 100%;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-align: center;
+    }
+    .ingredient-card:hover { box-shadow: 0 10px 32px rgba(59,43,31,0.1); transform: translateY(-3px); }
+    .ingredient-card .ing-icon { font-size: 2.8rem; margin-bottom: 0.65rem; display: block; }
+    .ingredient-card h4 { font-size: 1.05rem; color: var(--palm-brown); margin-bottom: 0.3rem; }
+    .ingredient-card p { font-size: 0.86rem; color: var(--palm-gray); margin: 0; line-height: 1.6; }
+
+    /* ── PRESS FEATURE BLOCK ── */
+    .press-section { background: var(--palm-brown); }
+    .press-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .press-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      color: rgba(196,148,58,0.2);
+      position: absolute;
+      top: -1rem;
+      left: 1.5rem;
+      line-height: 1;
+    }
+    .press-logo {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9bfb5;
+      margin-bottom: 1.2rem;
+    }
+    .press-logo .bi { color: var(--palm-gold); margin-right: 0.4rem; }
+    .press-quote { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; color: #FAF6F0; line-height: 1.7; margin-bottom: 1rem; }
+    .press-attr { font-size: 0.82rem; color: #9a8878; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+    .press-attr a { color: var(--palm-gold-lt); text-decoration: none; }
+    .press-attr a:hover { text-decoration: underline; }
+    .chef-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,148,58,0.2);
+      border-radius: 16px;
+      padding: 1.8rem;
+    }
+    .chef-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(196,148,58,0.15); border: 1px solid rgba(196,148,58,0.3); border-radius: 30px; padding: 0.3rem 0.9rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--palm-gold-lt); margin-bottom: 1rem; }
+    .chef-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #FAF6F0; margin-bottom: 0.3rem; }
+    .chef-sub { font-size: 0.88rem; color: #9a8878; margin-bottom: 1rem; line-height: 1.6; }
+    .chef-bio { font-size: 0.92rem; color: #c9bfb5; line-height: 1.8; }
+    .cred-pill { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 0.25rem 0.75rem; font-size: 0.75rem; color: #b0a090; margin: 0.2rem; }
+
+    /* ── WHY THIS WRAP ── */
+    .why-green-section { background: var(--palm-green); }
+    .why-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .why-item:last-child { border-bottom: none; }
+    .why-icon { width: 46px; height: 46px; background: rgba(196,148,58,0.18); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .why-icon .bi { font-size: 1.2rem; color: var(--palm-gold); }
+    .why-title { font-family: 'Playfair Display', serif; font-size: 1.02rem; color: #FAF6F0; margin-bottom: 0.2rem; }
+    .why-desc { font-size: 0.87rem; color: #8faa8f; line-height: 1.65; }
+
+    /* ── PAIR WITH SECTION ── */
+    .pair-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #e8ddd0;
+      padding: 1.4rem 1.5rem;
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: box-shadow 0.2s;
+    }
+    .pair-card:hover { box-shadow: 0 8px 28px rgba(59,43,31,0.1); }
+    .pair-card .pair-emoji { font-size: 2.3rem; flex-shrink: 0; }
+    .pair-card h5 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--palm-brown); margin-bottom: 0.2rem; }
+    .pair-card p { font-size: 0.84rem; color: var(--palm-gray); margin: 0; line-height: 1.6; }
+
+    /* ── INLINE CTA ── */
+    .inline-cta { background: linear-gradient(135deg, var(--palm-gold) 0%, #a87a2a 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; }
+    .inline-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--palm-brown); margin-bottom: 0.6rem; }
+    .inline-cta p { color: rgba(59,43,31,0.82); font-size: 1rem; max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .btn-cta-dk { background: var(--palm-brown); color: #FAF6F0; border: none; border-radius: 40px; padding: 0.85rem 2.2rem; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .btn-cta-dk:hover { background: #2a1e15; color: var(--palm-gold); transform: translateY(-2px); }
+    .btn-cta-ol { border: 2px solid var(--palm-brown); color: var(--palm-brown); border-radius: 40px; padding: 0.85rem 2.2rem; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .btn-cta-ol:hover { background: var(--palm-brown); color: var(--palm-gold); }
+
+    /* ── FAQ ── */
+    .accordion-button:not(.collapsed) { background: var(--palm-tan); color: var(--palm-brown); box-shadow: none; }
+    .accordion-button:focus { box-shadow: none; }
+    .accordion-item { border: 1px solid #e2d8cd; border-radius: 12px !important; margin-bottom: 0.75rem; overflow: hidden; }
+    .accordion-button { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--palm-brown); }
+
+    /* ── FINAL CTA ── */
+    .final-cta { background: var(--palm-gold); }
+
+    /* ── STICKY BAR ── */
+    .sticky-cta-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--palm-brown); border-top: 2px solid var(--palm-gold); padding: 0.85rem 1rem; z-index: 999; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .sticky-cta-bar p { color: #c9bfb5; font-size: 0.9rem; margin: 0; }
+    .sticky-cta-bar p strong { color: var(--palm-gold-lt); }
+    .btn-sticky { background: var(--palm-gold); color: var(--palm-brown); font-weight: 700; border: none; border-radius: 30px; padding: 0.5rem 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .btn-sticky:hover { background: var(--palm-gold-lt); }
+    .btn-sticky-outline { border: 1px solid rgba(255,255,255,0.2); color: #e8ddd0; border-radius: 30px; padding: 0.5rem 1.3rem; font-size: 0.9rem; text-decoration: none; white-space: nowrap; transition: all 0.2s; }
+    .btn-sticky-outline:hover { border-color: var(--palm-gold); color: var(--palm-gold); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: #201510; color: #c9bfb5; font-size: 0.88rem; }
+    .site-footer a { color: var(--palm-gold-lt); text-decoration: none; }
+    .site-footer a:hover { color: var(--palm-gold); text-decoration: underline; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--palm-gold); }
+    .footer-divider { border-color: rgba(255,255,255,0.08); }
+
+    /* ── NEIGHBORHOOD TAGS ── */
+    .nbhd-tag { display: inline-block; border: 1px solid rgba(59,43,31,0.22); color: var(--palm-brown); border-radius: 8px; padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; margin: 0.25rem; background: #fff; transition: all 0.2s; }
+    .nbhd-tag:hover { background: var(--palm-brown); color: var(--palm-gold); border-color: var(--palm-brown); }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg navbar-sweet sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">🌴 Sweet Palm Coffee &amp; Café</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1) sepia(1) saturate(3) hue-rotate(345deg);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto ms-4 gap-2">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#food-menu">Full Menu</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Chicken Caesar Wrap</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+        </ul>
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-order" target="_blank" rel="noopener">
+          Order Now
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════ INFO STRIP ════════════════════════════ -->
+  <div class="info-strip py-2">
+    <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
+      <span><i class="bi bi-geo-alt-fill me-1"></i> 471 King St, Downtown Charleston, SC</span>
+      <span><i class="bi bi-telephone-fill me-1"></i> <a href="tel:8439743594">(843) 974-3594</a></span>
+      <span><i class="bi bi-clock-fill me-1"></i> Open Daily · Lunch Served All Day</span>
+      <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">
+        <i class="bi bi-bag-fill me-1"></i> Order the Wrap Online
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ HERO ═════════════════════════════════ -->
+  <section class="wrap-hero py-5">
+    <div class="container py-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <p class="hero-eyebrow mb-3">
+            <i class="bi bi-award-fill me-1"></i> Downtown Charleston's Most Popular Wrap · 471 King Street
+          </p>
+          <h1 class="hero-title mb-4">
+            <span>Charleston's</span>
+            <em>Chicken Caesar</em>
+            <span>Wrap</span>
+          </h1>
+          <p class="hero-sub mb-5">
+            Grilled chicken. Crisp romaine. Shaved parmesan. House Caesar dressing. Toasted flour tortilla. Made fresh to order at Sweet Palm on King Street — the wrap Downtown Charleston can't stop talking about. As featured in <strong style="color:var(--palm-gold-lt);">The Post and Courier</strong>.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order the Wrap Now
+            </a>
+            <a href="#wrap-details" class="hero-cta-green">
+              See What's Inside <i class="bi bi-arrow-down ms-1"></i>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Made to Order</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Chef-Crafted Recipe</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> King Street's Best Wrap</span>
+            <span class="hero-pill"><i class="bi bi-newspaper"></i> As Seen in Post &amp; Courier</span>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+          <div class="hero-wrap-ring">🌯</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ TRUST BAR ════════════════════════════ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-3 py-1">
+        <div class="trust-item"><i class="bi bi-geo-alt-fill"></i><span>471 King St, Downtown Charleston</span></div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item"><i class="bi bi-fire"></i><span>King Street's #1 Wrap</span></div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item"><i class="bi bi-newspaper"></i><span>Featured in The Post &amp; Courier</span></div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item"><i class="bi bi-telephone-fill"></i><a href="tel:8439743594">(843) 974-3594</a></div>
+        <div class="trust-divider d-none d-lg-block"></div>
+        <div class="trust-item"><i class="bi bi-bag-fill"></i><a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">Order Online</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ INTRO ════════════════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:4rem;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 text-center">
+          <p class="section-label mb-2">The Wrap That Started a Conversation</p>
+          <h2 class="section-title mb-3">The Chicken Caesar Wrap That Downtown Charleston Keeps Coming Back For</h2>
+          <div class="divider-gold mx-auto mb-4"></div>
+          <p style="font-size:1.1rem; line-height:1.9; color:#4a3b30;" class="mb-3">
+            When Culinary Institute of America–trained chef <strong>Jonathan Roth</strong> opened Sweet Palm at <strong>471 King Street</strong>, his mission was to elevate what a café could serve — drinks and food that exceeded the standard, built from scratch, made to order. The <strong>Chicken Caesar Wrap</strong> is the item that best represents that vision: simple ingredients, done exactly right, every single time.
+          </p>
+          <p style="font-size:1.05rem; line-height:1.9; color:#6a5a50;">
+            It's become the most talked-about lunch on King Street. Whether you're a local heading back for your third time this week, a student from the College of Charleston grabbing lunch between classes, or a visitor who spotted it on TikTok — the Chicken Caesar Wrap at Sweet Palm is exactly what you came for. Order it online or walk in off King Street. It's ready when you are.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ INGREDIENT BREAKDOWN ═════════════════ -->
+  <section id="wrap-details" style="background:var(--palm-tan); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">What's Inside</p>
+        <h2 class="section-title mb-3">Built From the Best Ingredients</h2>
+        <div class="divider-green mx-auto mb-4"></div>
+        <p class="text-muted mx-auto" style="max-width:580px; font-size:1rem; line-height:1.75;">
+          Every element of the Chicken Caesar Wrap at Sweet Palm is chosen deliberately. Chef Roth's scratch-made approach means no pre-packaged shortcuts — just clean, fresh ingredients wrapped perfectly every time.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center mb-5">
+        <div class="col-sm-6 col-lg-3">
+          <div class="ingredient-card">
+            <span class="ing-icon">🍗</span>
+            <h4>Grilled Chicken</h4>
+            <p>Seasoned and grilled fresh — never pre-cooked, never reheated. Tender, juicy, and the protein backbone of the most popular wrap in Downtown Charleston.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="ingredient-card">
+            <span class="ing-icon">🥬</span>
+            <h4>Crisp Romaine</h4>
+            <p>Cold, crunchy romaine that gives every bite the texture contrast the wrap needs. Fresh every morning — because a great Caesar starts with great lettuce.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="ingredient-card">
+            <span class="ing-icon">🧀</span>
+            <h4>Shaved Parmesan</h4>
+            <p>Real parmesan, shaved to order. Bold, nutty, and salty in all the right ways — the flavor that ties the whole wrap together.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="ingredient-card">
+            <span class="ing-icon">🥣</span>
+            <h4>House Caesar Dressing</h4>
+            <p>Made in-house at Sweet Palm — creamy, garlicky, and balanced. Not the bottled stuff. The dressing that makes King Street regulars come back daily.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="ingredient-card">
+            <span class="ing-icon">🫓</span>
+            <h4>Toasted Flour Tortilla</h4>
+            <p>Warm, toasted to just the right point — soft enough to wrap cleanly, firm enough to hold every ingredient without falling apart halfway through.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wrap at a glance -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div style="background:#fff; border-radius:20px; border:1px solid #e2d8cd; padding:2rem 2.5rem;">
+            <div class="row g-4 align-items-center">
+              <div class="col-md-7">
+                <p class="section-label mb-2">The Wrap at a Glance</p>
+                <h3 style="font-size:1.5rem; margin-bottom:1rem;">Sweet Palm Chicken Caesar Wrap</h3>
+                <ul class="list-unstyled mb-0" style="font-size:0.95rem; line-height:2.2; color:var(--palm-gray);">
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>Grilled chicken, seasoned fresh to order</li>
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>Cold crisp romaine</li>
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>Shaved parmesan</li>
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>House-made Caesar dressing</li>
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>Toasted flour tortilla</li>
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>Made to order — zero pre-packaged shortcuts</li>
+                  <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-green-lt);"></i>Available for dine-in or online pickup at 471 King St</li>
+                </ul>
+              </div>
+              <div class="col-md-5 text-center">
+                <div style="font-size:7rem; line-height:1; margin-bottom:1rem;">🌯</div>
+                <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener" style="border-radius:12px; display:block;">
+                  <i class="bi bi-bag-fill me-2"></i>Order This Wrap
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ PRESS FEATURE ════════════════════════ -->
+  <section class="press-section py-6" id="press" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label mb-2" style="color:var(--palm-gold);">As Seen In</p>
+        <h2 class="mb-3" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:clamp(1.9rem,3.5vw,2.7rem); font-weight:900;">
+          Featured by The Post &amp; Courier
+        </h2>
+        <div style="width:56px;height:3px;background:var(--palm-gold);border-radius:2px;margin:0 auto;"></div>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+
+        <!-- Press Quote Card -->
+        <div class="col-lg-7">
+          <div class="press-card h-100">
+            <div class="press-logo">
+              <i class="bi bi-newspaper"></i> The Post &amp; Courier · Charleston, SC
+            </div>
+            <p class="press-quote">
+              "The goal was to elevate the café experience. Given his background, he focused on ensuring the drinks and the food exceeded those of most coffee shops. Social media, and TikTok users specifically, took notice."
+            </p>
+            <p class="press-quote" style="font-size:1.05rem;">
+              "It's Roth's scratch-made approach that has kept customers, many of whom attend the College of Charleston, coming back for more."
+            </p>
+            <div class="press-attr">
+              — Parker Milner, Food &amp; Dining Editor ·
+              <a href="https://www.postandcourier.com/food/now_open/sweet-palm-coffee-food-charleston/article_68939a08-55d7-429c-82c5-633b334fa310.html" target="_blank" rel="noopener">
+                Read the full feature
+              </a>
+              · Published February 9, 2026
+            </div>
+          </div>
+        </div>
+
+        <!-- Chef Bio Card -->
+        <div class="col-lg-5">
+          <div class="chef-card h-100">
+            <div class="chef-badge"><i class="bi bi-award-fill"></i> The Chef Behind the Wrap</div>
+            <div class="chef-name">Jonathan Roth</div>
+            <div class="chef-sub">Owner &amp; Chef, Sweet Palm Coffee &amp; Food</div>
+            <p class="chef-bio">
+              Born in Seattle, raised in New York, and trained at the <strong style="color:#FAF6F0;">Culinary Institute of America</strong> — Jonathan Roth spent years living and working in Switzerland, where he honed his craft in professional kitchens and opened multiple hospitality businesses before selling them and relocating to the U.S.
+            </p>
+            <p class="chef-bio mt-3">
+              After a brief stint in Miami, Roth and his wife Aylin chose Charleston. In October 2025, they opened Sweet Palm at 471 King Street with a singular focus: a café where both the food and drinks are made from scratch, with the same care and precision a trained chef brings to every plate.
+            </p>
+            <p class="chef-bio mt-3" style="color:#7ec87f;">
+              The Chicken Caesar Wrap — built on house-made dressing, fresh-grilled chicken, and real parmesan — is the dish that best shows what that philosophy tastes like.
+            </p>
+            <div class="mt-3">
+              <span class="cred-pill"><i class="bi bi-mortarboard-fill"></i> Culinary Institute of America</span>
+              <span class="cred-pill"><i class="bi bi-globe2"></i> Trained in Switzerland</span>
+              <span class="cred-pill"><i class="bi bi-shop"></i> Multiple Restaurant Owner</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mid-press CTA -->
+      <div class="mt-5">
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(196,148,58,0.2); border-radius:16px; padding:2rem; text-align:center;">
+          <p style="color:#c9bfb5; font-size:1rem; max-width:600px; margin:0 auto 1.5rem; line-height:1.75;">
+            The wrap that <em>The Post and Courier</em> covered is on the menu right now at 471 King Street. Walk in or order online — it's made fresh every time.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order the Chicken Caesar Wrap
+            </a>
+            <a href="https://www.postandcourier.com/food/now_open/sweet-palm-coffee-food-charleston/article_68939a08-55d7-429c-82c5-633b334fa310.html" target="_blank" rel="noopener" style="display:inline-block; padding:1rem 2.2rem; border-radius:40px; border:2px solid rgba(255,255,255,0.2); color:#e8ddd0; text-decoration:none; font-weight:600; transition:all 0.2s;">
+              <i class="bi bi-newspaper me-2"></i>Read the Post &amp; Courier Feature
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ WHY THIS WRAP ════════════════════════ -->
+  <section class="why-green-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-5">
+          <p class="section-label mb-2" style="color:var(--palm-gold);">Why It's #1 on King Street</p>
+          <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:clamp(1.9rem,3.5vw,2.7rem); font-weight:900;">
+            What Makes This the Best Chicken Caesar Wrap in Charleston
+          </h2>
+          <p style="color:#8faa8f; font-size:1rem; line-height:1.85;" class="mb-4">
+            There are plenty of places to get a Caesar wrap in Downtown Charleston. Here's why King Street regulars — and the food editor of the city's biggest newspaper — keep coming back to Sweet Palm's version.
+          </p>
+          <div class="mt-4">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Now
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="why-item">
+            <div class="why-icon"><i class="bi bi-fire"></i></div>
+            <div>
+              <div class="why-title">Grilled to Order — Every Single Time</div>
+              <div class="why-desc">The chicken isn't pre-cooked and sitting in a tray. It's grilled when you order it. That's the scratch-made standard Chef Roth built Sweet Palm on — and it's why the wrap tastes the way it does.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="bi bi-droplet-fill"></i></div>
+            <div>
+              <div class="why-title">House-Made Caesar Dressing</div>
+              <div class="why-desc">Made in-house at 471 King Street — creamy, garlicky, properly seasoned. Not the bottled dressing you find everywhere else in Downtown Charleston. This is the dressing that makes people choose Sweet Palm over every other lunch spot on King Street.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="bi bi-award-fill"></i></div>
+            <div>
+              <div class="why-title">Chef-Trained Precision, Café Convenience</div>
+              <div class="why-desc">Jonathan Roth trained at the Culinary Institute of America and cooked professionally in Switzerland. That's the background behind a chicken caesar wrap that tastes like it came from a proper restaurant — served at café speed in the middle of King Street.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <div class="why-title">The Best Location for Lunch in Downtown Charleston</div>
+              <div class="why-desc">471 King Street puts the wrap right where you need it — in the heart of the shopping and dining corridor, steps from the Historic District, French Quarter, and College of Charleston. The best chicken caesar wrap in Charleston is the one you can actually get to.</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="bi bi-newspaper"></i></div>
+            <div>
+              <div class="why-title">Press-Recognized, Locally Loved</div>
+              <div class="why-desc">The Post and Courier — Charleston's newspaper of record — covered Sweet Palm's opening and the scratch-made philosophy behind every item on the menu. When a city's food editor notices, it means something. This wrap is the proof.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ PAIR WITH ════════════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Complete Your Order</p>
+        <h2 class="section-title mb-3">Pair Your Chicken Caesar Wrap With</h2>
+        <div class="divider-gold mx-auto mb-4"></div>
+        <p class="text-muted mx-auto" style="max-width:560px; font-size:1rem; line-height:1.75;">
+          The wrap stands on its own — but these King Street pairings from the Sweet Palm menu make the whole meal.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="pair-card">
+            <span class="pair-emoji">🌴</span>
+            <div>
+              <h5>Sweet Palm Signature Latte</h5>
+              <p>The house-made syrup latte is the King Street pairing for the wrap. Smooth, slightly sweet, and made with beans from Foresight Coffee Roasters in Mount Pleasant.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="pair-card">
+            <span class="pair-emoji">🧊</span>
+            <div>
+              <h5>Cold Brew</h5>
+              <p>Slow-steeped and bold — the cold brew cuts through the richness of the Caesar dressing perfectly. The ideal Downtown Charleston lunch combo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="pair-card">
+            <span class="pair-emoji">🩷</span>
+            <div>
+              <h5>Pink Palm Energy Refresher</h5>
+              <p>Strawberry dragonfruit plant-based energy — bright, fruity, and refreshing alongside the savory wrap. A King Street lunch pairing worth trying.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="pair-card">
+            <span class="pair-emoji">🥗</span>
+            <div>
+              <h5>Caesar Salad</h5>
+              <p>Double down on Caesar. The salad version — same house dressing, crisp romaine, parmesan, croutons — alongside the wrap makes a proper Downtown Charleston lunch.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="pair-card">
+            <span class="pair-emoji">🥐</span>
+            <div>
+              <h5>Cinnamon Roll or Pastry</h5>
+              <p>Finish with something sweet. In-house baked cinnamon rolls, croissants, and seasonal pastries are the dessert course on King Street that people don't skip.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="pair-card">
+            <span class="pair-emoji">🍵</span>
+            <div>
+              <h5>Matcha Latte or Dirty Chai</h5>
+              <p>Premium Japanese matcha or spiced chai meets espresso — two of Sweet Palm's most-ordered drinks and perfect complements to the savory punch of the wrap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inline CTA -->
+      <div class="mt-5">
+        <div class="inline-cta">
+          <h3>Ready to Order the Wrap?</h3>
+          <p>Order online for pickup at 471 King Street or walk in off King Street any day. Your chicken caesar wrap is made fresh the moment you order it.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dk" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Online Now
+            </a>
+            <a href="tel:8439743594" class="btn-cta-ol">
+              <i class="bi bi-telephone me-2"></i>(843) 974-3594
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ NEIGHBORHOODS ════════════════════════ -->
+  <section style="background:var(--palm-tan); padding-top:4rem; padding-bottom:4rem;">
+    <div class="container text-center">
+      <p class="section-label mb-2">Walking Distance from All of Downtown</p>
+      <h2 class="mb-4" style="font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--palm-brown); font-weight:900;">
+        The Best Chicken Caesar Wrap Near You on King Street
+      </h2>
+      <p class="mb-4 mx-auto" style="max-width:600px; font-size:0.97rem; color:var(--palm-gray); line-height:1.8;">
+        471 King Street is centrally located in Downtown Charleston — a short walk from these neighborhoods and landmarks.
+      </p>
+      <div>
+        <span class="nbhd-tag">King Street</span>
+        <span class="nbhd-tag">Upper King Street</span>
+        <span class="nbhd-tag">Historic District</span>
+        <span class="nbhd-tag">French Quarter</span>
+        <span class="nbhd-tag">Cannonborough</span>
+        <span class="nbhd-tag">Radcliffeborough</span>
+        <span class="nbhd-tag">College of Charleston</span>
+        <span class="nbhd-tag">Marion Square</span>
+        <span class="nbhd-tag">Downtown Charleston</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FAQ ══════════════════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;" id="faq">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <p class="section-label">Common Questions</p>
+            <h2 class="section-title mb-3">About the Chicken Caesar Wrap</h2>
+            <div class="divider-gold mx-auto"></div>
+          </div>
+
+          <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Where can I get a chicken caesar wrap in Downtown Charleston?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Sweet Palm Coffee &amp; Café at <strong>471 King Street, Charleston, SC 29403</strong> serves the most popular chicken caesar wrap on King Street. Walk in any day or <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">order online for pickup</a>. We're open daily.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  What's in the Sweet Palm Chicken Caesar Wrap?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  The Sweet Palm Chicken Caesar Wrap contains <strong>grilled chicken, crisp romaine, shaved parmesan, and house-made Caesar dressing</strong> wrapped in a toasted flour tortilla. Everything is made to order — no pre-packaged ingredients. The Caesar dressing is made in-house at 471 King Street.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  Was Sweet Palm featured in The Post and Courier?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Yes — Sweet Palm was featured by Food &amp; Dining Editor Parker Milner in The Post and Courier in February 2026. The article covered Chef Jonathan Roth's background as a Culinary Institute of America graduate and his scratch-made approach to both food and drinks at 471 King Street. <a href="https://www.postandcourier.com/food/now_open/sweet-palm-coffee-food-charleston/article_68939a08-55d7-429c-82c5-633b334fa310.html" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">Read the full article here.</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Can I order the Chicken Caesar Wrap online?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Yes — online ordering is available at <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">order.toasttab.com/online/sweetpalmcoffee</a>. Order ahead and pick up your chicken caesar wrap fresh and ready at 471 King Street. No waiting in line required.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  Who is the chef behind the Chicken Caesar Wrap at Sweet Palm?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Sweet Palm is owned and operated by <strong>Jonathan Roth</strong>, a graduate of the Culinary Institute of America who spent years working as a chef and running hospitality businesses in Switzerland before relocating to Charleston. His scratch-made philosophy — every ingredient made in-house, every plate made to order — is what makes the chicken caesar wrap at 471 King Street stand out.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  What else should I order with the Chicken Caesar Wrap?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Popular pairings at Sweet Palm include the <strong>Sweet Palm Signature Latte</strong>, <strong>Cold Brew</strong>, <strong>Pink Palm Energy Refresher</strong>, and the <strong>Caesar Salad</strong>. For something sweet after your wrap, the in-house baked <strong>cinnamon roll</strong> and seasonal pastries are highly recommended. See the <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">full menu online</a>.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FINAL CTA ════════════════════════════ -->
+  <section class="final-cta py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container text-center">
+      <p class="section-label mb-2" style="color:rgba(59,43,31,0.6);">471 King Street · Downtown Charleston</p>
+      <h2 class="mb-3" style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); color:var(--palm-brown); font-weight:900;">
+        Charleston's Best Chicken Caesar Wrap<br />Is Waiting for You on King Street
+      </h2>
+      <p class="mb-5 mx-auto" style="font-size:1.05rem; max-width:540px; color:rgba(59,43,31,0.82); line-height:1.8;">
+        Grilled chicken. House Caesar dressing. Shaved parmesan. Crisp romaine. Toasted tortilla. Made fresh at 471 King Street by a CIA-trained chef. As featured in The Post and Courier. Walk in or order online.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dk" target="_blank" rel="noopener">
+          <i class="bi bi-bag-fill me-2"></i>Order the Chicken Caesar Wrap
+        </a>
+        <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-cta-ol" target="_blank" rel="noopener">
+          <i class="bi bi-map me-2"></i>Get Directions
+        </a>
+        <a href="tel:8439743594" class="btn-cta-ol">
+          <i class="bi bi-telephone me-2"></i>(843) 974-3594
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4 mb-4">
+        <div class="col-md-4">
+          <div class="footer-brand mb-2">🌴 Sweet Palm Coffee</div>
+          <p class="mb-2" style="line-height:1.7;">Home of Downtown Charleston's most popular Chicken Caesar Wrap at 471 King Street. As featured in The Post &amp; Courier.</p>
+          <a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">sweetpalmcoffee.com</a>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Visit Us</h6>
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-2" style="color:var(--palm-gold);"></i>471 King St, Charleston, SC 29403</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill me-2" style="color:var(--palm-gold);"></i><a href="tel:8439743594">(843) 974-3594</a></p>
+          <p class="mb-1"><i class="bi bi-envelope-fill me-2" style="color:var(--palm-gold);"></i><a href="mailto:sweetpalmcoffee@yahoo.com">sweetpalmcoffee@yahoo.com</a></p>
+          <p class="mb-0"><i class="bi bi-clock-fill me-2" style="color:var(--palm-gold);"></i>Open Daily · Lunch All Day</p>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Quick Links</h6>
+          <ul class="list-unstyled mb-0" style="line-height:2.1;">
+            <li><a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">Order the Chicken Caesar Wrap</a></li>
+            <li><a href="https://www.postandcourier.com/food/now_open/sweet-palm-coffee-food-charleston/article_68939a08-55d7-429c-82c5-633b334fa310.html" target="_blank" rel="noopener">Post &amp; Courier Feature</a></li>
+            <li><a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">Sweet Palm Coffee Main Site</a></li>
+            <li><a href="https://share.google/SdvCNVNck09SpxLZU" target="_blank" rel="noopener">Google Maps &amp; Directions</a></li>
+            <li><a href="/">Home &amp; Full Food Menu</a></li>
+            <li><a href="/about.html">About Sweet Palm</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3" style="font-size:0.8rem; color:#7a6a5e;">
+        <span>&copy; 2025 EatSweetPalm.com &mdash; Chicken Caesar Wrap on King Street, Downtown Charleston.</span>
+        <span>471 King St, Charleston, SC &nbsp;|&nbsp; (843) 974-3594</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════ STICKY CTA BAR ═══════════════════════ -->
+  <div class="sticky-cta-bar">
+    <p><strong>Sweet Palm</strong> · Chicken Caesar Wrap · 471 King St · As seen in The Post &amp; Courier</p>
+    <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-sticky" target="_blank" rel="noopener">
+      <i class="bi bi-bag-fill me-1"></i>Order the Wrap
+    </a>
+    <a href="tel:8439743594" class="btn-sticky-outline">
+      <i class="bi bi-telephone me-1"></i>(843) 974-3594
+    </a>
+    <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-sticky-outline" target="_blank" rel="noopener">
+      <i class="bi bi-map me-1"></i>Directions
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
