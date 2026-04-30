@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakfast Downtown Charleston | Breakfast on King Street – Sweet Palm</title>
+  <meta name="description" content="Looking for breakfast in Downtown Charleston? Sweet Palm at 471 King Street serves fresh breakfast daily — breakfast burritos, egg & cheese sandwiches, avocado toast, pastries & handcrafted coffee. Walk in or order online." />
+  <meta name="keywords" content="breakfast downtown charleston, breakfast king street, downtown charleston breakfast food, king street breakfast spot, best breakfast charleston sc, breakfast near king street charleston, sweet palm breakfast" />
+  <link rel="canonical" href="https://eatsweetpalm.com/breakfast-downtown-charleston" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --palm-cream:   #FAF6F0;
+      --palm-tan:     #EFE6D8;
+      --palm-brown:   #3B2B1F;
+      --palm-gold:    #C4943A;
+      --palm-gold-lt: #E2B96F;
+      --palm-amber:   #D97706;
+      --palm-gray:    #6B5B50;
+      --palm-green:   #3D5A3E;
+      --palm-sky:     #1a3a4a;
+    }
+
+    body { font-family: 'DM Sans', sans-serif; background-color: var(--palm-cream); color: var(--palm-brown); margin: 0; padding-bottom: 72px; }
+    h1, h2, h3, h4, h5 { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* ── NAVBAR ── */
+    .navbar-sweet { background-color: var(--palm-brown); border-bottom: 3px solid var(--palm-gold); }
+    .navbar-sweet .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--palm-gold) !important; }
+    .navbar-sweet .nav-link { color: #e8ddd0 !important; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .navbar-sweet .nav-link:hover, .navbar-sweet .nav-link.active { color: var(--palm-gold) !important; }
+    .navbar-sweet .btn-order { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 30px; padding: 0.45rem 1.3rem; transition: background 0.25s, transform 0.2s; text-decoration: none; }
+    .navbar-sweet .btn-order:hover { background-color: var(--palm-gold-lt); transform: translateY(-1px); }
+
+    /* ── INFO STRIP ── */
+    .info-strip { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 600; font-size: 0.88rem; }
+    .info-strip a { color: var(--palm-brown); text-decoration: none; font-weight: 700; }
+    .info-strip a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    .breakfast-hero {
+      background: linear-gradient(150deg, #1c1008 0%, #2e1d0e 40%, #1a2e1a 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .breakfast-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(217,119,6,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 75%, rgba(61,90,62,0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 85%, rgba(196,148,58,0.1) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    /* Morning sun ring */
+    .hero-sun-ring {
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 35%, rgba(217,119,6,0.25), rgba(59,43,31,0.5));
+      border: 2px solid rgba(217,119,6,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 8.5rem;
+      position: relative;
+      animation: morning-glow 4s ease-in-out infinite alternate;
+    }
+    .hero-sun-ring::after {
+      content: '';
+      position: absolute; inset: 22px;
+      border-radius: 50%;
+      border: 1px dashed rgba(196,148,58,0.3);
+    }
+    @keyframes morning-glow {
+      from { box-shadow: 0 0 40px rgba(217,119,6,0.15); }
+      to   { box-shadow: 0 0 80px rgba(217,119,6,0.35); }
+    }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--palm-gold); }
+    .hero-title { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; color: #FAF6F0; font-weight: 900; }
+    .hero-title em { color: var(--palm-gold); font-style: italic; }
+    .hero-title span { display: block; }
+    .hero-sub { color: #c9bfb5; font-size: 1.12rem; line-height: 1.8; max-width: 530px; }
+    .hero-cta-primary { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 700; border: none; border-radius: 40px; padding: 1rem 2.5rem; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.25s; text-decoration: none; display: inline-block; }
+    .hero-cta-primary:hover { background-color: var(--palm-gold-lt); color: var(--palm-brown); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(196,148,58,0.4); }
+    .hero-cta-outline { border: 2px solid rgba(255,255,255,0.28); color: #FAF6F0; border-radius: 40px; padding: 1rem 2.5rem; font-size: 1.05rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.25s; }
+    .hero-cta-outline:hover { border-color: var(--palm-gold); color: var(--palm-gold); }
+    .hero-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); border-radius: 40px; padding: 0.35rem 1rem; color: #c9bfb5; font-size: 0.82rem; font-weight: 500; }
+    .hero-pill .bi { color: var(--palm-gold); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: #fff; border-bottom: 1px solid #e8ddd0; }
+    .trust-item { display: flex; align-items: center; gap: 0.65rem; padding: 1.1rem 0; font-size: 0.9rem; font-weight: 600; color: var(--palm-brown); }
+    .trust-item .bi { font-size: 1.3rem; color: var(--palm-gold); }
+    .trust-item a { color: var(--palm-brown); text-decoration: none; }
+    .trust-item a:hover { text-decoration: underline; }
+    .trust-divider { width: 1px; background: #e8ddd0; height: 40px; align-self: center; }
+
+    /* ── SECTION HELPERS ── */
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palm-gold); }
+    .section-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); color: var(--palm-brown); font-weight: 900; }
+    .divider-gold { width: 56px; height: 3px; background: var(--palm-gold); border-radius: 2px; }
+
+    /* ── BREAKFAST MENU CARDS ── */
+    .bfast-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid #e8ddd0;
+      overflow: hidden;
+      height: 100%;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .bfast-card:hover { box-shadow: 0 16px 48px rgba(59,43,31,0.13); transform: translateY(-4px); }
+    .bfast-card-img {
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      position: relative;
+    }
+    .bfast-card-img.warm { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+    .bfast-card-img.green { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
+    .bfast-card-img.rose  { background: linear-gradient(135deg, #FFE4E6, #FECDD3); }
+    .bfast-card-img.blue  { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
+    .bfast-card-img.tan   { background: var(--palm-tan); }
+    .item-badge {
+      position: absolute; top: 12px; right: 12px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 0.22rem 0.65rem; border-radius: 20px;
+    }
+    .badge-hot   { background: #FFE4D6; color: #8B3A10; }
+    .badge-fave  { background: #FFF3CD; color: #7B5800; }
+    .badge-fresh { background: #D1FAE5; color: #065F46; }
+    .badge-sig   { background: #EDE9FE; color: #4C1D95; }
+    .badge-new   { background: #DBEAFE; color: #1E40AF; }
+    .bfast-card-body { padding: 1.4rem 1.5rem; }
+    .bfast-card-body h3 { font-size: 1.15rem; color: var(--palm-brown); margin-bottom: 0.4rem; }
+    .bfast-card-body p  { font-size: 0.88rem; color: var(--palm-gray); line-height: 1.65; margin: 0; }
+
+    /* ── DARK EXPERIENCE SECTION ── */
+    .experience-dark { background: var(--palm-sky); }
+    .exp-item { display: flex; align-items: flex-start; gap: 1.1rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-icon { width: 48px; height: 48px; background: rgba(196,148,58,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .exp-icon .bi { font-size: 1.3rem; color: var(--palm-gold); }
+    .exp-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #FAF6F0; margin-bottom: 0.2rem; }
+    .exp-desc  { font-size: 0.88rem; color: #8fa0a8; line-height: 1.65; }
+
+    /* ── WHY CARDS ── */
+    .why-card { background: #fff; border-radius: 16px; border: 1px solid #e8ddd0; padding: 1.8rem; height: 100%; transition: box-shadow 0.2s; }
+    .why-card:hover { box-shadow: 0 8px 32px rgba(59,43,31,0.1); }
+    .why-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--palm-gold); line-height: 1; margin-bottom: 0.5rem; }
+    .why-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .why-card p  { font-size: 0.9rem; color: var(--palm-gray); margin: 0; line-height: 1.7; }
+
+    /* ── MORNING TIMELINE ── */
+    .timeline-section { background: var(--palm-brown); }
+    .timeline-item { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); align-items: flex-start; }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-time { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--palm-gold); min-width: 80px; line-height: 1.1; }
+    .timeline-time small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9a8878; margin-top: 0.1rem; }
+    .timeline-content h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #FAF6F0; margin-bottom: 0.25rem; }
+    .timeline-content p  { font-size: 0.88rem; color: #a09080; line-height: 1.65; margin: 0; }
+
+    /* ── NEIGHBORHOOD SECTION ── */
+    .neighborhood-section { background: var(--palm-tan); }
+    .nbhd-tag { display: inline-block; border: 1px solid rgba(59,43,31,0.22); color: var(--palm-brown); border-radius: 8px; padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; margin: 0.25rem; background: #fff; transition: all 0.2s; }
+    .nbhd-tag:hover { background: var(--palm-brown); color: var(--palm-gold); border-color: var(--palm-brown); }
+
+    /* ── FAQ ── */
+    .accordion-button:not(.collapsed) { background: var(--palm-tan); color: var(--palm-brown); box-shadow: none; }
+    .accordion-button:focus { box-shadow: none; }
+    .accordion-item { border: 1px solid #e2d8cd; border-radius: 12px !important; margin-bottom: 0.75rem; overflow: hidden; }
+    .accordion-button { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--palm-brown); }
+
+    /* ── INLINE CTA GOLD BLOCK ── */
+    .inline-cta { background: linear-gradient(135deg, var(--palm-gold) 0%, #a87a2a 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; }
+    .inline-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--palm-brown); margin-bottom: 0.6rem; }
+    .inline-cta p  { color: rgba(59,43,31,0.8); font-size: 1rem; max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .btn-cta-dk { background: var(--palm-brown); color: #FAF6F0; border: none; border-radius: 40px; padding: 0.85rem 2.2rem; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .btn-cta-dk:hover { background: #2a1e15; color: var(--palm-gold); transform: translateY(-2px); }
+    .btn-cta-ol { border: 2px solid var(--palm-brown); color: var(--palm-brown); border-radius: 40px; padding: 0.85rem 2.2rem; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .btn-cta-ol:hover { background: var(--palm-brown); color: var(--palm-gold); }
+
+    /* ── FINAL CTA SECTION ── */
+    .final-cta { background: var(--palm-gold); }
+
+    /* ── STICKY CTA BAR ── */
+    .sticky-cta-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--palm-brown); border-top: 2px solid var(--palm-gold); padding: 0.85rem 1rem; z-index: 999; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .sticky-cta-bar p { color: #c9bfb5; font-size: 0.9rem; margin: 0; }
+    .sticky-cta-bar p strong { color: var(--palm-gold-lt); }
+    .btn-sticky { background: var(--palm-gold); color: var(--palm-brown); font-weight: 700; border: none; border-radius: 30px; padding: 0.5rem 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .btn-sticky:hover { background: var(--palm-gold-lt); }
+    .btn-sticky-outline { border: 1px solid rgba(255,255,255,0.2); color: #e8ddd0; border-radius: 30px; padding: 0.5rem 1.3rem; font-size: 0.9rem; text-decoration: none; white-space: nowrap; transition: all 0.2s; }
+    .btn-sticky-outline:hover { border-color: var(--palm-gold); color: var(--palm-gold); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: #201510; color: #c9bfb5; font-size: 0.88rem; }
+    .site-footer a { color: var(--palm-gold-lt); text-decoration: none; }
+    .site-footer a:hover { color: var(--palm-gold); text-decoration: underline; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--palm-gold); }
+    .footer-divider { border-color: rgba(255,255,255,0.08); }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg navbar-sweet sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">🌴 Sweet Palm Coffee &amp; Café</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1) sepia(1) saturate(3) hue-rotate(345deg);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto ms-4 gap-2">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#food-menu">Food Menu</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Breakfast</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+        </ul>
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-order" target="_blank" rel="noopener">
+          Order Breakfast Online
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════ INFO STRIP ════════════════════════════ -->
+  <div class="info-strip py-2">
+    <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
+      <span><i class="bi bi-geo-alt-fill me-1"></i> 471 King St, Downtown Charleston, SC</span>
+      <span><i class="bi bi-telephone-fill me-1"></i> <a href="tel:8439743594">(843) 974-3594</a></span>
+      <span><i class="bi bi-clock-fill me-1"></i> Breakfast Served Daily from 7AM</span>
+      <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">
+        <i class="bi bi-bag-fill me-1"></i> Order Breakfast for Pickup
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ HERO ═════════════════════════════════ -->
+  <section class="breakfast-hero py-5">
+    <div class="container py-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <p class="hero-eyebrow mb-3"><i class="bi bi-sunrise-fill me-1"></i> 471 King Street · Downtown Charleston</p>
+          <h1 class="hero-title mb-4">
+            <span>Downtown Charleston's</span>
+            <em>Favorite Breakfast</em>
+            <span>on King Street</span>
+          </h1>
+          <p class="hero-sub mb-5">
+            Sweet Palm is the King Street breakfast eatery Downtown Charleston wakes up for. Fresh breakfast burritos, egg sandwiches, avocado toast, warm pastries, and handcrafted morning drinks — made to order, every single day. No drive-through. Real food.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Breakfast Online
+            </a>
+            <a href="#breakfast-menu" class="hero-cta-outline">
+              See Breakfast Menu <i class="bi bi-arrow-down ms-1"></i>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Open from 7AM Daily</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Made to Order</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Walk-Ins Welcome</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> King Street Location</span>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+          <div class="hero-sun-ring">☀️</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ TRUST BAR ════════════════════════════ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-3 py-1">
+        <div class="trust-item"><i class="bi bi-geo-alt-fill"></i><span>471 King St, Downtown Charleston</span></div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item"><i class="bi bi-sunrise-fill"></i><span>Breakfast from 7AM Every Day</span></div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item"><i class="bi bi-egg-fried"></i><span>Every Plate Made Fresh</span></div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item"><i class="bi bi-telephone-fill"></i><a href="tel:8439743594">(843) 974-3594</a></div>
+        <div class="trust-divider d-none d-lg-block"></div>
+        <div class="trust-item"><i class="bi bi-bag-fill"></i><a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">Order Pickup Online</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ INTRO TEXT ════════════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:4rem;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 text-center">
+          <p class="section-label mb-2">King Street's Breakfast Eatery</p>
+          <h2 class="section-title mb-3">Breakfast in Downtown Charleston Worth Getting Up For</h2>
+          <div class="divider-gold mx-auto mb-4"></div>
+          <p style="font-size:1.1rem; line-height:1.9; color:#4a3b30;" class="mb-3">
+            Finding a great <strong>breakfast in Downtown Charleston</strong> shouldn't mean settling for a granola bar from a hotel lobby or waiting 45 minutes at a crowded restaurant. Sweet Palm at <strong>471 King Street</strong> is the answer — a real breakfast eatery where fresh food is made to order the moment you walk through the door, starting at 7AM every single day.
+          </p>
+          <p style="font-size:1.05rem; line-height:1.9; color:#6a5a50;">
+            Whether you're a local heading to the office, a student fueling up before class, or a visitor starting a Charleston morning on King Street — breakfast at Sweet Palm is the move. Warm, filling, handcrafted, and ready fast. This is how Downtown Charleston does breakfast.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ BREAKFAST MENU ═══════════════════════ -->
+  <section id="breakfast-menu" style="background:var(--palm-tan); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Served Fresh from 7AM</p>
+        <h2 class="section-title mb-3">Our Breakfast Menu on King Street</h2>
+        <div class="divider-gold mx-auto mb-4"></div>
+        <p class="text-muted mx-auto" style="max-width:600px; font-size:1rem; line-height:1.75;">
+          Every breakfast plate at Sweet Palm is made fresh when you order it. Real ingredients, real cooking — the kind of Downtown Charleston breakfast that actually carries you through the morning.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img warm">🌯<span class="item-badge badge-hot">Best Seller</span></div>
+            <div class="bfast-card-body">
+              <h3>Breakfast Burrito</h3>
+              <p>Scrambled eggs, melted cheddar, seasoned potatoes, and your choice of bacon or sausage wrapped in a warm flour tortilla. The <strong>King Street breakfast</strong> that regulars swear by — hearty, hot, and made to fuel your whole morning in Downtown Charleston.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img warm">🥚<span class="item-badge badge-fave">Morning Must</span></div>
+            <div class="bfast-card-body">
+              <h3>Egg &amp; Cheese Sandwich</h3>
+              <p>A fluffy egg with melted cheese on a buttered croissant or English muffin. The classic Downtown Charleston breakfast — warm, satisfying, and fast. The perfect handheld for a busy King Street morning.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img green">🥑<span class="item-badge badge-fresh">Vegetarian</span></div>
+            <div class="bfast-card-body">
+              <h3>Avocado Toast</h3>
+              <p>Smashed avocado on toasted sourdough with everything seasoning, lemon zest, and a drizzle of olive oil. A King Street breakfast staple for those who want something fresh, light, and satisfying first thing in the morning.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img warm">🥐<span class="item-badge badge-new">Baked Fresh</span></div>
+            <div class="bfast-card-body">
+              <h3>Cinnamon Roll</h3>
+              <p>Warm, fresh-baked cinnamon rolls with a rich, sticky glaze. The Downtown Charleston breakfast pastry that has people stopping in before anything else on their morning agenda. Pairs perfectly with a latte or cold brew.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img warm">🧁<span class="item-badge badge-new">Daily Fresh</span></div>
+            <div class="bfast-card-body">
+              <h3>Pastries &amp; Baked Goods</h3>
+              <p>Buttery croissants, seasonal muffins, and coffee cake baked fresh in-house every morning. The kind of King Street breakfast pastry selection that makes you glad you stopped in instead of skipping the most important meal of the day.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img green">🌿<span class="item-badge badge-fresh">Light &amp; Clean</span></div>
+            <div class="bfast-card-body">
+              <h3>Granola Parfait</h3>
+              <p>House granola layered with Greek yogurt and fresh seasonal fruit. A lighter Downtown Charleston breakfast option for when you want something clean, wholesome, and quick before exploring King Street.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img blue">☕<span class="item-badge badge-sig">Signature</span></div>
+            <div class="bfast-card-body">
+              <h3>Sweet Palm Signature Latte</h3>
+              <p>Every great King Street breakfast starts with the right drink. Our house-made syrup latte is smooth, slightly sweet, and the reason half of Downtown Charleston starts their morning at 471 King Street.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img blue">🧊<span class="item-badge badge-fave">Cold &amp; Bold</span></div>
+            <div class="bfast-card-body">
+              <h3>Cold Brew &amp; Iced Coffee</h3>
+              <p>Slow-steeped cold brew, iced lattes, and iced matcha — the Downtown Charleston breakfast drinks that hit different on a warm Carolina morning. Because King Street breakfast always needs the right cup.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="bfast-card">
+            <div class="bfast-card-img rose">🩷<span class="item-badge badge-new">Non-Coffee</span></div>
+            <div class="bfast-card-body">
+              <h3>Morning Refreshers</h3>
+              <p>The Pink Palm Strawberry Dragonfruit Energy, matcha latte, and dirty chai — for the Downtown Charleston breakfast crowd that wants something bold and bright without a straight espresso shot.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mid-page CTA -->
+      <div class="mt-5">
+        <div class="inline-cta">
+          <h3>Ready to Order Your Breakfast?</h3>
+          <p>Order online for fast pickup at 471 King Street — or walk in from 7AM any day and your breakfast will be ready in minutes.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dk" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Breakfast Online
+            </a>
+            <a href="tel:8439743594" class="btn-cta-ol">
+              <i class="bi bi-telephone me-2"></i>Call (843) 974-3594
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ MORNING TIMELINE ═════════════════════ -->
+  <section class="timeline-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-5">
+          <p class="section-label mb-2" style="color:var(--palm-gold);">Your Morning on King Street</p>
+          <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:clamp(1.9rem,3.5vw,2.7rem); font-weight:900;">
+            The King Street Breakfast Routine
+          </h2>
+          <p style="color:#c9bfb5; font-size:1.05rem; line-height:1.85;" class="mb-4">
+            Sweet Palm isn't just a place to grab food — it's the start of a good day in Downtown Charleston. The kind of breakfast eatery that fits naturally into your morning, whether you're a local, a student, or a visitor seeing King Street for the first time.
+          </p>
+          <p style="color:#a09080; font-size:0.97rem; line-height:1.85;">
+            Walk in, order fresh, and fuel up. Everything else on King Street can wait until after your breakfast burrito.
+          </p>
+          <div class="mt-4">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Ahead for Pickup
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="timeline-item">
+            <div class="timeline-time">7AM<small>Open</small></div>
+            <div class="timeline-content">
+              <h4>Doors Open on King Street</h4>
+              <p>Sweet Palm opens at 7AM every weekday. First in line gets the freshest pastries and the quietest corner. The Downtown Charleston breakfast rush is real — get here early.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">7–9<small>Morning</small></div>
+            <div class="timeline-content">
+              <h4>The Breakfast Rush — Burritos &amp; Egg Sandwiches</h4>
+              <p>This is when the breakfast burritos and egg sandwiches fly. Order online before you leave home so your King Street breakfast is waiting the moment you walk in.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">9–11<small>Mid-Morning</small></div>
+            <div class="timeline-content">
+              <h4>Avocado Toast &amp; Pastry Hour</h4>
+              <p>The mid-morning crowd — students, remote workers, and King Street explorers — comes in for avocado toast, cinnamon rolls, and a signature latte. The perfect Downtown Charleston late breakfast.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">11–1<small>Late Morning</small></div>
+            <div class="timeline-content">
+              <h4>Breakfast Meets Lunch on King Street</h4>
+              <p>As late breakfast rolls into early lunch, the chicken caesar wraps and BLTs join the lineup. Sweet Palm serves both crowds — breakfast in Downtown Charleston that runs until the lunch rush takes over.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ WHY SWEET PALM ═══════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Why Sweet Palm</p>
+        <h2 class="section-title mb-3">The Downtown Charleston Breakfast Spot King Street Relies On</h2>
+        <div class="divider-gold mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <h4>Real Breakfast, Made Fresh</h4>
+            <p>Every breakfast item at Sweet Palm is made to order. No pre-cooked eggs sitting in a warmer. No reheated burritos. Fresh food, every plate, every morning on King Street.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <h4>Open from 7AM Every Day</h4>
+            <p>Downtown Charleston breakfast starts early at Sweet Palm. Whether it's a Monday morning commute or a Saturday adventure on King Street, we're open and ready before most places serve their first cup.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <h4>Walk In or Order Online</h4>
+            <p>No reservation, no waiting in a long line. Walk in off King Street or order ahead at toasttab for fast pickup. Breakfast in Downtown Charleston shouldn't be complicated.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <h4>The Best Location in Charleston</h4>
+            <p>471 King Street puts your breakfast in the center of Downtown Charleston — close to the Historic District, French Quarter, College of Charleston, and everything worth seeing in the Holy City.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ EXPERIENCE ════════════════════════════ -->
+  <section class="experience-dark py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-5">
+          <p class="section-label mb-2" style="color:var(--palm-gold);">More Than a Coffee Stop</p>
+          <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:clamp(1.9rem,3.5vw,2.7rem); font-weight:900;">
+            A Breakfast Eatery Built for Downtown Charleston
+          </h2>
+          <p style="color:#8fa0a8; font-size:1rem; line-height:1.85;" class="mb-3">
+            Sweet Palm is not a drive-through. It's not a hotel buffet. It's a real breakfast eatery on King Street where Downtown Charleston comes to start the day — with real food, real coffee, and real Lowcountry hospitality.
+          </p>
+          <p style="color:#6a8090; font-size:0.95rem; line-height:1.85;">
+            The menu reads like a proper breakfast restaurant. The vibe feels like your neighborhood's best-kept secret. And the location — right on King Street — makes it the easiest decision of your morning.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-egg-fried"></i></div>
+            <div>
+              <div class="exp-title">Breakfast Made to Order, Every Time</div>
+              <div class="exp-desc">Your breakfast burrito, egg sandwich, or avocado toast is made when you ask for it — not sitting under a lamp since opening. Fresh food is the Sweet Palm standard on King Street.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-cup-hot-fill"></i></div>
+            <div>
+              <div class="exp-title">Morning Drinks Worth the Trip Alone</div>
+              <div class="exp-desc">Espresso lattes, cold brew, matcha, dirty chai, and the Sweet Palm Signature Latte — the Downtown Charleston breakfast drink lineup that turns your morning commute into something to look forward to.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-door-open-fill"></i></div>
+            <div>
+              <div class="exp-title">Walk In Off King Street Anytime</div>
+              <div class="exp-desc">No reservation, no host stand, no waiting for a table. Come as you are — we're a breakfast eatery, not a formal restaurant. Downtown Charleston casual done right.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-bag-check-fill"></i></div>
+            <div>
+              <div class="exp-title">Order Online for Fast King Street Pickup</div>
+              <div class="exp-desc">Order your breakfast ahead at toasttab and pick it up hot and fresh at 471 King Street. Ideal for busy mornings when every minute before work counts.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-people-fill"></i></div>
+            <div>
+              <div class="exp-title">Breakfast for Every Kind of Morning</div>
+              <div class="exp-desc">Whether it's a solo weekday fuel-up or a weekend group breakfast on King Street, Sweet Palm has the space, the menu, and the energy to make any morning in Downtown Charleston better.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ NEIGHBORHOODS ════════════════════════ -->
+  <section class="neighborhood-section py-5">
+    <div class="container text-center">
+      <p class="section-label mb-2">Walking Distance from All of Downtown</p>
+      <h2 class="mb-4" style="font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--palm-brown); font-weight:900;">
+        Breakfast on King Street — Close to Everywhere You're Starting Your Day
+      </h2>
+      <p class="mb-4 mx-auto" style="max-width:600px; font-size:0.97rem; color:var(--palm-gray); line-height:1.8;">
+        471 King Street is one of the most walkable breakfast locations in Downtown Charleston. Coming from a hotel, campus, or Airbnb — you're probably already close.
+      </p>
+      <div>
+        <span class="nbhd-tag">King Street</span>
+        <span class="nbhd-tag">Upper King Street</span>
+        <span class="nbhd-tag">Historic District</span>
+        <span class="nbhd-tag">French Quarter</span>
+        <span class="nbhd-tag">Cannonborough</span>
+        <span class="nbhd-tag">Radcliffeborough</span>
+        <span class="nbhd-tag">Church Street</span>
+        <span class="nbhd-tag">College of Charleston</span>
+        <span class="nbhd-tag">Marion Square</span>
+        <span class="nbhd-tag">Downtown Charleston</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FAQ ══════════════════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;" id="faq">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <p class="section-label">Common Questions</p>
+            <h2 class="section-title mb-3">Breakfast at Sweet Palm — FAQs</h2>
+            <div class="divider-gold mx-auto"></div>
+          </div>
+
+          <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Where can I get breakfast on King Street in Downtown Charleston?
+                </button>
+              </h2>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Sweet Palm Coffee &amp; Café at <strong>471 King Street, Charleston, SC 29403</strong> serves breakfast daily from 7AM. We're right in the center of the King Street corridor — walking distance from the Historic District, French Quarter, College of Charleston, and Marion Square. No car needed.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  What time does Sweet Palm serve breakfast?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Sweet Palm opens at <strong>7:00 AM Monday through Friday</strong> and <strong>8:00 AM on weekends</strong>. Breakfast is served throughout the morning until we transition into lunch service. Call us at <a href="tel:8439743594" style="color:var(--palm-gold); font-weight:600;">(843) 974-3594</a> to confirm current hours.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What breakfast food does Sweet Palm serve on King Street?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Our King Street breakfast menu includes <strong>breakfast burritos, egg &amp; cheese sandwiches, avocado toast, cinnamon rolls, croissants, seasonal muffins, coffee cake, and granola parfaits</strong>. On the drinks side we serve espresso lattes, cold brew, matcha, dirty chai, and our signature Sweet Palm Latte. Everything is made to order.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Can I order breakfast from Sweet Palm online?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Yes — online breakfast ordering is available at <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">order.toasttab.com/online/sweetpalmcoffee</a>. Order ahead and pick up your breakfast fresh and hot at 471 King Street. No waiting in line.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  Do I need a reservation for breakfast at Sweet Palm?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  No reservation needed at all. Sweet Palm is a walk-in breakfast eatery — just come in off King Street any morning starting at 7AM and order fresh. For the quickest experience, <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">order online for pickup</a> so your breakfast is waiting the second you arrive.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  Is Sweet Palm a good breakfast spot for groups visiting Downtown Charleston?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Absolutely. Sweet Palm on King Street works great for couples, small groups, families, and solo travelers looking for breakfast in Downtown Charleston. The menu has variety for different tastes, and online ordering makes group pickup easy. Call us at <a href="tel:8439743594" style="color:var(--palm-gold); font-weight:600;">(843) 974-3594</a> if you have a larger group or any questions.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FINAL CTA ════════════════════════════ -->
+  <section class="final-cta py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container text-center">
+      <p class="section-label mb-2" style="color:rgba(59,43,31,0.6);">471 King Street · Open from 7AM</p>
+      <h2 class="mb-3" style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); color:var(--palm-brown); font-weight:900;">
+        Your Breakfast on King Street<br />Starts at 7AM
+      </h2>
+      <p class="mb-5 mx-auto" style="font-size:1.05rem; max-width:520px; color:rgba(59,43,31,0.8); line-height:1.8;">
+        Walk in or order online. Breakfast burritos, egg sandwiches, avocado toast, cinnamon rolls, and the best morning drinks in Downtown Charleston — made fresh, every single day.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dk" target="_blank" rel="noopener">
+          <i class="bi bi-bag-fill me-2"></i>Order Breakfast Online
+        </a>
+        <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-cta-ol" target="_blank" rel="noopener">
+          <i class="bi bi-map me-2"></i>Get Directions
+        </a>
+        <a href="tel:8439743594" class="btn-cta-ol">
+          <i class="bi bi-telephone me-2"></i>(843) 974-3594
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4 mb-4">
+        <div class="col-md-4">
+          <div class="footer-brand mb-2">🌴 Sweet Palm Coffee</div>
+          <p class="mb-2" style="line-height:1.7;">Downtown Charleston's breakfast eatery on King Street — open from 7AM daily.</p>
+          <a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">sweetpalmcoffee.com</a>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Breakfast &amp; Visit</h6>
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-2" style="color:var(--palm-gold);"></i>471 King St, Charleston, SC 29403</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill me-2" style="color:var(--palm-gold);"></i><a href="tel:8439743594">(843) 974-3594</a></p>
+          <p class="mb-1"><i class="bi bi-envelope-fill me-2" style="color:var(--palm-gold);"></i><a href="mailto:sweetpalmcoffee@yahoo.com">sweetpalmcoffee@yahoo.com</a></p>
+          <p class="mb-0"><i class="bi bi-clock-fill me-2" style="color:var(--palm-gold);"></i>Breakfast from 7AM Daily</p>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Quick Links</h6>
+          <ul class="list-unstyled mb-0" style="line-height:2.1;">
+            <li><a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">Order Breakfast Online</a></li>
+            <li><a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">Sweet Palm Coffee Main Site</a></li>
+            <li><a href="https://share.google/SdvCNVNck09SpxLZU" target="_blank" rel="noopener">Google Maps &amp; Directions</a></li>
+            <li><a href="/">Home &amp; Full Food Menu</a></li>
+            <li><a href="/about.html">About Sweet Palm</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3" style="font-size:0.8rem; color:#7a6a5e;">
+        <span>&copy; 2025 EatSweetPalm.com &mdash; Breakfast on King Street, Downtown Charleston.</span>
+        <span>471 King St, Charleston, SC &nbsp;|&nbsp; (843) 974-3594</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════ STICKY CTA BAR ═══════════════════════ -->
+  <div class="sticky-cta-bar">
+    <p><strong>Sweet Palm</strong> · Breakfast on King Street · 471 King St · Open 7AM</p>
+    <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-sticky" target="_blank" rel="noopener">
+      <i class="bi bi-bag-fill me-1"></i>Order Breakfast
+    </a>
+    <a href="tel:8439743594" class="btn-sticky-outline">
+      <i class="bi bi-telephone me-1"></i>(843) 974-3594
+    </a>
+    <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-sticky-outline" target="_blank" rel="noopener">
+      <i class="bi bi-map me-1"></i>Directions
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
