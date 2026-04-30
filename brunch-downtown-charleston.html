@@ -1,328 +1,661 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Downtown Charleston Brunch Spot | Downtown Charleston Brunch Food</title>
-  <meta name="description" content="Discover why Sweet Palm Coffee stands out as a downtown Charleston brunch spot for coffee, breakfast, brunch food, fresh pastries, wraps, and casual cafe dining in the city center.">
-  <link rel="canonical" href="#" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brunch Downtown Charleston | Brunch on King Street – Sweet Palm</title>
+  <meta name="description" content="Looking for brunch in Downtown Charleston? Sweet Palm at 471 King Street serves fresh brunch food — chicken caesar wraps, breakfast burritos, avocado toast, pastries & handcrafted drinks. Walk in or order online." />
+  <meta name="keywords" content="brunch downtown charleston, brunch king street, downtown charleston brunch food, king street brunch spot, best brunch charleston sc, breakfast brunch king street charleston, sweet palm brunch" />
+  <link rel="canonical" href="https://eatsweetpalm.com/brunch-downtown-charleston" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      color: #222;
-      background: #faf7f2;
+    :root {
+      --palm-cream:   #FAF6F0;
+      --palm-tan:     #EFE6D8;
+      --palm-brown:   #3B2B1F;
+      --palm-gold:    #C4943A;
+      --palm-gold-lt: #E2B96F;
+      --palm-green:   #3D5A3E;
+      --palm-gray:    #6B5B50;
+      --palm-rust:    #A0522D;
     }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)),
-        url('./coffe1.png') center/cover no-repeat;
-      color: #fff;
-      padding: 120px 0 100px;
+
+    body { font-family: 'DM Sans', sans-serif; background-color: var(--palm-cream); color: var(--palm-brown); margin: 0; }
+    h1, h2, h3, h4, h5 { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* ── NAVBAR ── */
+    .navbar-sweet { background-color: var(--palm-brown); border-bottom: 3px solid var(--palm-gold); }
+    .navbar-sweet .navbar-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--palm-gold) !important; letter-spacing: 0.03em; }
+    .navbar-sweet .nav-link { color: #e8ddd0 !important; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.2s; }
+    .navbar-sweet .nav-link:hover { color: var(--palm-gold) !important; }
+    .navbar-sweet .btn-order { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; border: none; border-radius: 30px; padding: 0.45rem 1.3rem; transition: background 0.25s, transform 0.2s; text-decoration: none; }
+    .navbar-sweet .btn-order:hover { background-color: var(--palm-gold-lt); transform: translateY(-1px); }
+
+    /* ── INFO STRIP ── */
+    .info-strip { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 600; font-size: 0.88rem; }
+    .info-strip a { color: var(--palm-brown); text-decoration: none; font-weight: 700; }
+    .info-strip a:hover { text-decoration: underline; }
+
+    /* ── HERO ── */
+    .brunch-hero {
+      background: linear-gradient(160deg, #2a1a10 0%, #3B2B1F 45%, #1e3320 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
     }
-    .section-pad {
-      padding: 80px 0;
+    .brunch-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 65% 35%, rgba(196,148,58,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 85%, rgba(61,90,62,0.28) 0%, transparent 50%);
+      pointer-events: none;
     }
-    .card-soft {
-      border: 0;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    /* Decorative plate circle */
+    .hero-plate {
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, rgba(196,148,58,0.18), rgba(59,43,31,0.6));
+      border: 2px solid rgba(196,148,58,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9rem;
+      position: relative;
+    }
+    .hero-plate::after {
+      content: '';
+      position: absolute; inset: 18px;
+      border-radius: 50%;
+      border: 1px dashed rgba(196,148,58,0.3);
+    }
+    .hero-eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--palm-gold); }
+    .hero-title { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.05; color: #FAF6F0; font-weight: 900; }
+    .hero-title em { color: var(--palm-gold); font-style: italic; }
+    .hero-title span { display: block; }
+    .hero-sub { color: #c9bfb5; font-size: 1.12rem; line-height: 1.8; max-width: 530px; }
+    .hero-cta-primary { background-color: var(--palm-gold); color: var(--palm-brown); font-weight: 700; border: none; border-radius: 40px; padding: 1rem 2.5rem; font-size: 1.05rem; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.25s; text-decoration: none; display: inline-block; }
+    .hero-cta-primary:hover { background-color: var(--palm-gold-lt); color: var(--palm-brown); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(196,148,58,0.4); }
+    .hero-cta-outline { border: 2px solid rgba(255,255,255,0.28); color: #FAF6F0; border-radius: 40px; padding: 1rem 2.5rem; font-size: 1.05rem; font-weight: 600; text-decoration: none; display: inline-block; transition: all 0.25s; }
+    .hero-cta-outline:hover { border-color: var(--palm-gold); color: var(--palm-gold); }
+    .hero-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13); border-radius: 40px; padding: 0.35rem 1rem; color: #c9bfb5; font-size: 0.82rem; font-weight: 500; }
+    .hero-pill .bi { color: var(--palm-gold); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: #fff; border-bottom: 1px solid #e8ddd0; }
+    .trust-item { display: flex; align-items: center; gap: 0.65rem; padding: 1.1rem 0; font-size: 0.9rem; font-weight: 600; color: var(--palm-brown); }
+    .trust-item .bi { font-size: 1.3rem; color: var(--palm-gold); }
+    .trust-divider { width: 1px; background: #e8ddd0; height: 40px; align-self: center; }
+
+    /* ── SECTION HELPERS ── */
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--palm-gold); }
+    .section-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); color: var(--palm-brown); font-weight: 900; }
+    .divider-gold { width: 56px; height: 3px; background: var(--palm-gold); border-radius: 2px; }
+
+    /* ── BRUNCH MENU CARDS ── */
+    .brunch-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 1px solid #e8ddd0;
+      overflow: hidden;
       height: 100%;
+      transition: box-shadow 0.25s, transform 0.25s;
     }
-    .bg-tan {
-      background: #f2e7d8;
+    .brunch-card:hover { box-shadow: 0 16px 48px rgba(59,43,31,0.13); transform: translateY(-4px); }
+    .brunch-card-img {
+      background: var(--palm-tan);
+      height: 140px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem;
+      position: relative;
     }
-    .bg-brown {
-      background: #4e342e;
-      color: #fff;
+    .brunch-card-img .item-badge {
+      position: absolute; top: 12px; right: 12px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 0.22rem 0.65rem; border-radius: 20px;
     }
-    .title-line {
-      width: 80px;
-      height: 3px;
-      background: #b08968;
-      margin: 16px 0 24px;
+    .badge-hot { background: #FFE4D6; color: #8B3A10; }
+    .badge-fave { background: #FFF3CD; color: #7B5800; }
+    .badge-fresh { background: #D1FAE5; color: #065F46; }
+    .badge-sig { background: #EDE9FE; color: #4C1D95; }
+    .brunch-card-body { padding: 1.4rem 1.5rem; }
+    .brunch-card-body h3 { font-size: 1.15rem; color: var(--palm-brown); margin-bottom: 0.4rem; }
+    .brunch-card-body p { font-size: 0.88rem; color: var(--palm-gray); line-height: 1.65; margin: 0; }
+
+    /* ── EXPERIENCE SECTION ── */
+    .experience-section { background: var(--palm-brown); }
+    .exp-item { display: flex; align-items: flex-start; gap: 1.1rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-icon { width: 48px; height: 48px; background: rgba(196,148,58,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .exp-icon .bi { font-size: 1.3rem; color: var(--palm-gold); }
+    .exp-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #FAF6F0; margin-bottom: 0.2rem; }
+    .exp-desc { font-size: 0.88rem; color: #a09080; line-height: 1.6; }
+
+    /* ── WHY US ROW ── */
+    .why-card { background: #fff; border-radius: 16px; border: 1px solid #e8ddd0; padding: 1.8rem; height: 100%; transition: box-shadow 0.2s; }
+    .why-card:hover { box-shadow: 0 8px 32px rgba(59,43,31,0.1); }
+    .why-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--palm-gold); line-height: 1; margin-bottom: 0.5rem; }
+    .why-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .why-card p { font-size: 0.9rem; color: var(--palm-gray); margin: 0; line-height: 1.7; }
+
+    /* ── NEIGHBORHOOD SECTION ── */
+    .neighborhood-section { background: var(--palm-tan); }
+    .nbhd-tag { display: inline-block; border: 1px solid rgba(59,43,31,0.25); color: var(--palm-brown); border-radius: 8px; padding: 0.4rem 1rem; font-size: 0.84rem; font-weight: 600; margin: 0.25rem; letter-spacing: 0.02em; background: #fff; transition: all 0.2s; }
+    .nbhd-tag:hover { background: var(--palm-brown); color: var(--palm-gold); border-color: var(--palm-brown); }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--palm-cream); }
+    .accordion-button:not(.collapsed) { background: var(--palm-tan); color: var(--palm-brown); box-shadow: none; }
+    .accordion-button:focus { box-shadow: none; }
+    .accordion-item { border: 1px solid #e2d8cd; border-radius: 12px !important; margin-bottom: 0.75rem; overflow: hidden; }
+    .accordion-button { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--palm-brown); }
+
+    /* ── STICKY CTA BAR ── */
+    .sticky-cta-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: var(--palm-brown);
+      border-top: 2px solid var(--palm-gold);
+      padding: 0.85rem 1rem;
+      z-index: 999;
+      display: flex; align-items: center; justify-content: center; gap: 1rem;
+      flex-wrap: wrap;
     }
-    .img-cover {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 18px;
-      min-height: 320px;
+    .sticky-cta-bar p { color: #c9bfb5; font-size: 0.9rem; margin: 0; }
+    .sticky-cta-bar p strong { color: var(--palm-gold-lt); }
+    .sticky-cta-bar .btn-sticky { background: var(--palm-gold); color: var(--palm-brown); font-weight: 700; border: none; border-radius: 30px; padding: 0.5rem 1.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s; white-space: nowrap; }
+    .sticky-cta-bar .btn-sticky:hover { background: var(--palm-gold-lt); }
+    .sticky-cta-bar .btn-sticky-outline { border: 1px solid rgba(255,255,255,0.2); color: #e8ddd0; border-radius: 30px; padding: 0.5rem 1.3rem; font-size: 0.9rem; text-decoration: none; white-space: nowrap; transition: all 0.2s; }
+    .sticky-cta-bar .btn-sticky-outline:hover { border-color: var(--palm-gold); color: var(--palm-gold); }
+
+    /* Body pad for sticky bar */
+    body { padding-bottom: 72px; }
+
+    /* ── INLINE CTA BLOCK ── */
+    .inline-cta {
+      background: linear-gradient(135deg, var(--palm-gold) 0%, #a87a2a 100%);
+      border-radius: 20px; padding: 2.5rem 2rem;
+      text-align: center;
     }
-    .btn-brand {
-      background: #6f4e37;
-      border: none;
-    }
-    .btn-brand:hover {
-      background: #5b3f2d;
-    }
-    footer a {
-      color: #f7d7b5;
-      text-decoration: none;
-    }
+    .inline-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--palm-brown); margin-bottom: 0.6rem; }
+    .inline-cta p { color: rgba(59,43,31,0.8); font-size: 1rem; max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .btn-cta-dk { background: var(--palm-brown); color: #FAF6F0; border: none; border-radius: 40px; padding: 0.85rem 2.2rem; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .btn-cta-dk:hover { background: #2a1e15; color: var(--palm-gold); transform: translateY(-2px); }
+    .btn-cta-ol { border: 2px solid var(--palm-brown); color: var(--palm-brown); border-radius: 40px; padding: 0.85rem 2.2rem; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-block; transition: all 0.2s; letter-spacing: 0.04em; text-transform: uppercase; }
+    .btn-cta-ol:hover { background: var(--palm-brown); color: var(--palm-gold); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: #201510; color: #c9bfb5; font-size: 0.88rem; }
+    .site-footer a { color: var(--palm-gold-lt); text-decoration: none; }
+    .site-footer a:hover { color: var(--palm-gold); text-decoration: underline; }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--palm-gold); }
+    .footer-divider { border-color: rgba(255,255,255,0.08); }
   </style>
 </head>
-<body>  
+<body>
 
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg navbar-sweet sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Sweet Palm Coffee</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
+      <a class="navbar-brand" href="/">🌴 Sweet Palm Coffee &amp; Café</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1) sepia(1) saturate(3) hue-rotate(345deg);"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#brunch">Brunch Food</a></li>
-          <li class="nav-item"><a class="nav-link" href="#city">Downtown Charleston</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <ul class="navbar-nav me-auto ms-4 gap-2">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#food-menu">Food Menu</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Brunch</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
         </ul>
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-order" target="_blank" rel="noopener">
+          Order Brunch Online
+        </a>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <p class="text-uppercase fw-semibold mb-2">Coffee, breakfast, and city cafe culture</p>
-          <h1 class="display-4 fw-bold mb-3">A Downtown Charleston Brunch Spot With Fresh Food, Good Coffee, and an Easy Local Feel</h1>
-          <p class="lead mb-4">
-            Sweet Palm Coffee brings together the things people actually want from a downtown Charleston brunch spot:
-            quality coffee, fresh brunch food, casual seating, and a location that fits naturally into a day in the city.
-            For locals, students, visitors, and weekend walkers, it is the kind of stop that feels easy, warm, and worth repeating.
-          </p>
-          <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" class="btn btn-brand btn-lg px-4 me-2 text-white">Order Online</a>
-          <a href="https://www.sweetpalmcoffee.com/" class="btn btn-outline-light btn-lg px-4">See the Main Site</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="section-pad">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <h2 class="fw-bold">Why Sweet Palm Coffee Works as a Downtown Charleston Brunch Food Destination</h2>
-          <div class="title-line"></div>
-          <p>
-            When people search for downtown Charleston brunch food, they are usually not just looking for a big plate and a long wait.
-            Many want a place that feels approachable, central, and easy to enjoy before shopping, meeting friends, walking King Street,
-            or spending time near the College of Charleston. Sweet Palm Coffee fits that need by blending coffeehouse energy with a menu
-            that feels satisfying in the late morning and early afternoon.
-          </p>
-          <p>
-            The appeal of brunch in Charleston is often about balance. Guests want strong coffee, good baked items, flavorful breakfast
-            choices, and lunch-friendly options that still feel light enough for a daytime outing. Sweet Palm Coffee supports that brunch
-            identity with cafe food that makes sense in a downtown setting: pastries, breakfast-style bites, wraps, sandwiches, and drinks
-            that match the pace of the city. It is not only a coffee stop. It also works as a place to sit down for brunch food in downtown Charleston.
-          </p>
-          <p>
-            The page can help build relevance around both the food entity and the city entity because it connects real brunch-style menu language
-            with recognizable Charleston context. That means the content naturally supports searches tied to coffee, brunch, breakfast, cafe dining,
-            downtown Charleston, and nearby city activity without feeling forced.
-          </p>
-        </div>
-        <div class="col-lg-6">
-          <img src="sweetpalmcoffee.jpg" alt="Brunch food and coffee in a downtown cafe" class="img-cover">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad bg-white border-bottom">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Three Local Favorites at This Downtown Charleston Brunch Spot</h2>
-      <p class="col-lg-8 mx-auto">
-        When people talk about brunch food in downtown Charleston, a few menu items quickly become favorites.
-        At Sweet Palm Coffee, guests often come in for coffee but stay for the food. These three items are
-        consistently talked about by locals looking for an easy brunch stop in the city.
-      </p>
-    </div>
-
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="card card-soft h-100 p-4">
-          <h3 class="h5 fw-bold">Chicken Caesar Wrap</h3>
-          <p>
-            One of the most talked about items at Sweet Palm Coffee is the chicken caesar wrap. 
-            It has become a local favorite for people exploring downtown Charleston who want
-            brunch food that feels both fresh and filling. The wrap combines grilled chicken,
-            crisp romaine, parmesan, and classic caesar flavor in a way that works perfectly
-            for a late morning or early afternoon brunch stop near King Street.
-          </p>
-          <p class="mb-0">
-            For many visitors and locals, it has become a go-to downtown Charleston brunch food
-            option when they want something savory alongside coffee.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card card-soft h-100 p-4">
-          <h3 class="h5 fw-bold">Avocado Toast</h3>
-          <p>
-            Avocado toast has become a staple at brunch spots across the country, and it fits
-            naturally into the Charleston café scene. At Sweet Palm Coffee, avocado toast is a
-            simple but satisfying brunch choice that pairs perfectly with lattes, iced coffee,
-            or espresso drinks.
-          </p>
-          <p class="mb-0">
-            For guests walking through downtown Charleston or meeting friends for a relaxed
-            brunch moment, it is one of the most popular lighter options on the menu.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card card-soft h-100 p-4">
-          <h3 class="h5 fw-bold">Cinnamon Roll</h3>
-          <p>
-            No downtown Charleston brunch spot feels complete without a great bakery item,
-            and the cinnamon roll at Sweet Palm Coffee has become a standout. Fresh,
-            warm, and rich with classic cinnamon flavor, it is the kind of pastry people
-            remember after visiting the café.
-          </p>
-          <p class="mb-0">
-            Many guests stop by specifically for coffee and a cinnamon roll before starting
-            their day in downtown Charleston, making it one of the signature brunch items
-            tied to the shop.
-          </p>
-        </div>
-      </div>
-
+  <!-- ════════════════════════════════ INFO STRIP ════════════════════════════ -->
+  <div class="info-strip py-2">
+    <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
+      <span><i class="bi bi-geo-alt-fill me-1"></i> 471 King St, Downtown Charleston, SC</span>
+      <span><i class="bi bi-telephone-fill me-1"></i> <a href="tel:8439743594">(843) 974-3594</a></span>
+      <span><i class="bi bi-clock-fill me-1"></i> Brunch Served Daily</span>
+      <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">
+        <i class="bi bi-bag-fill me-1"></i> Order Brunch for Pickup
+      </a>
     </div>
   </div>
-</section>
 
-  <section id="brunch" class="section-pad bg-tan">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">Brunch Food That Matches the Way People Eat in Downtown Charleston</h2>
-        <p class="mb-0 col-lg-9 mx-auto">
-          A strong downtown Charleston brunch spot should feel casual enough for everyday visits but good enough to become part of a regular city routine.
-        </p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card card-soft p-4">
-            <h3 class="h4 fw-bold">Coffee and Espresso Drinks</h3>
-            <p class="mb-0">
-              A downtown brunch visit often starts with coffee, and Sweet Palm Coffee makes that part of the experience easy.
-              Lattes, drip coffee, iced coffee, espresso drinks, and specialty cafe beverages all support the kind of brunch stop
-              people want in Charleston when they are easing into the day or meeting up before exploring downtown.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-soft p-4">
-            <h3 class="h4 fw-bold">Pastries, Rolls, and Light Breakfast Foods</h3>
-            <p class="mb-0">
-              Pastries and bakery-style items help define the brunch food side of a cafe. Cinnamon rolls, baked goods, breakfast pastries,
-              and similar grab-and-go items give the page a stronger food identity while appealing to customers who want something sweet,
-              simple, and easy to pair with coffee in the middle of downtown Charleston.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-soft p-4">
-            <h3 class="h4 fw-bold">Savory Brunch and Lunch Options</h3>
-            <p class="mb-0">
-              Downtown Charleston brunch food should also include savory choices for guests who want more than a pastry.
-              Wraps, breakfast sandwiches, cafe sandwiches, and fresh lunch-style food help Sweet Palm Coffee fit the brunch spot category
-              while still feeling true to a modern coffee shop in the city.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-pad">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-5">
-          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1200&q=80" alt="Charleston brunch table with coffee and food" class="img-cover">
-        </div>
+  <!-- ════════════════════════════════ HERO ═════════════════════════════════ -->
+  <section class="brunch-hero py-5">
+    <div class="container py-5">
+      <div class="row align-items-center gy-5">
         <div class="col-lg-7">
-          <h2 class="fw-bold">Brunch in Charleston Is Also About Setting, Pace, and Walkability</h2>
-          <div class="title-line"></div>
-          <p>
-            One reason the phrase downtown Charleston brunch spot matters is because the city itself shapes how people choose where to eat.
-            In a downtown area known for foot traffic, shopping, historic streets, tourism, and neighborhood energy, people often look for a place
-            that can fit into the rhythm of the day. Sweet Palm Coffee works well in that kind of environment because it suits both quick visits and relaxed sit-down brunches.
+          <p class="hero-eyebrow mb-3"><i class="bi bi-geo-alt-fill me-1"></i> 471 King Street · Downtown Charleston</p>
+          <h1 class="hero-title mb-4">
+            <span>The Best</span>
+            <em>Brunch on</em>
+            <span>King Street</span>
+          </h1>
+          <p class="hero-sub mb-5">
+            Sweet Palm is Downtown Charleston's go-to brunch eatery on King Street. Fresh brunch plates, handcrafted drinks, and Lowcountry hospitality — served daily at the heart of the Holy City. No reservations needed. Just great food.
           </p>
-          <p>
-            Visitors looking for brunch food downtown often want something central and easy before heading toward King Street, Marion Square, nearby shops,
-            or campus areas around the College of Charleston. Locals may want a familiar coffee and food stop that feels less formal than a full restaurant
-            but still offers enough menu depth to count as brunch. That combination helps define why this kind of page can support city-based search intent.
-          </p>
-          <p>
-            In other words, the value is not only in the menu. It is also in how the menu connects to Charleston itself. Brunch food, coffee culture,
-            and a downtown city experience all work together here.
-          </p>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="hero-cta-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Brunch Online
+            </a>
+            <a href="#brunch-menu" class="hero-cta-outline">
+              See Brunch Menu <i class="bi bi-arrow-down ms-1"></i>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Fresh Brunch Daily</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Walk-Ins Welcome</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> Online Pickup Available</span>
+            <span class="hero-pill"><i class="bi bi-check-circle-fill"></i> King Street Location</span>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+          <div class="hero-plate">🍳</div>
         </div>
       </div>
     </div>
   </section>
 
-  
-  <section class="section-pad">
+  <!-- ════════════════════════════════ TRUST BAR ════════════════════════════ -->
+  <div class="trust-bar">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">Why People Look for This Type of Brunch Spot</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-soft p-4 text-center">
-            <h3 class="h5 fw-bold">Easy Coffee Meetups</h3>
-            <p class="mb-0">A central cafe is ideal for morning meetups, casual business conversations, and weekend check-ins with friends.</p>
-          </div>
+      <div class="d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center gap-3 py-1">
+        <div class="trust-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>471 King St, Downtown Charleston</span>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-soft p-4 text-center">
-            <h3 class="h5 fw-bold">Food Without the Formality</h3>
-            <p class="mb-0">Many people want satisfying brunch food in Charleston without needing a large sit-down restaurant experience.</p>
-          </div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item">
+          <i class="bi bi-sun-fill"></i>
+          <span>Brunch Served Every Day</span>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-soft p-4 text-center">
-            <h3 class="h5 fw-bold">Walkable City Stop</h3>
-            <p class="mb-0">Downtown brunch searches often come from people already spending time in the city and wanting a convenient place to eat.</p>
-          </div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item">
+          <i class="bi bi-egg-fried"></i>
+          <span>Made to Order — Every Plate</span>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="card card-soft p-4 text-center">
-            <h3 class="h5 fw-bold">Coffee + Brunch Combo</h3>
-            <p class="mb-0">A shop that offers both quality drinks and real food stands out more than a basic coffee-only stop.</p>
-          </div>
+        <div class="trust-divider d-none d-md-block"></div>
+        <div class="trust-item">
+          <i class="bi bi-telephone-fill"></i>
+          <a href="tel:8439743594" style="color:var(--palm-brown); text-decoration:none;">(843) 974-3594</a>
+        </div>
+        <div class="trust-divider d-none d-lg-block"></div>
+        <div class="trust-item">
+          <i class="bi bi-bag-fill"></i>
+          <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-brown); text-decoration:none;">Order Pickup Online</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="faq" class="section-pad bg-tan">
+  <!-- ════════════════════════════════ INTRO TEXT ════════════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:4rem;">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <h2 class="fw-bold text-center mb-4">Frequently Asked Questions</h2>
+        <div class="col-lg-9 text-center">
+          <p class="section-label mb-2">Downtown Charleston's Brunch Eatery</p>
+          <h2 class="section-title mb-3">Brunch on King Street, Done Right</h2>
+          <div class="divider-gold mx-auto mb-4"></div>
+          <p style="font-size:1.1rem; line-height:1.9; color:#4a3b30;" class="mb-3">
+            When you're hungry for <strong>brunch in Downtown Charleston</strong>, you want more than a coffee shop with a muffin on the counter. You want a real eatery — somewhere with a genuine brunch menu, fresh plates made to order, and the kind of atmosphere that makes a weekend morning feel special. That's exactly what Sweet Palm delivers at <strong>471 King Street</strong>.
+          </p>
+          <p style="font-size:1.05rem; line-height:1.9; color:#6a5a50;">
+            Whether you're a local starting your Saturday, a visitor exploring the King Street corridor, or a group of friends looking for an easy brunch spot in the heart of Charleston — Sweet Palm is your table. Walk in any day of the week, order online for pickup, or call ahead. Brunch is always ready.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ BRUNCH MENU ══════════════════════════ -->
+  <section id="brunch-menu" style="background:var(--palm-tan); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Served Fresh Every Day</p>
+        <h2 class="section-title mb-3">Our Brunch Menu on King Street</h2>
+        <div class="divider-gold mx-auto mb-4"></div>
+        <p class="text-muted mx-auto" style="max-width:600px; font-size:1rem; line-height:1.75;">
+          Every brunch plate at Sweet Palm is made fresh when you order it. No heat lamps, no pre-packaged shortcuts — just real food that tastes like someone actually cooked it for you. Because they did.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🌯<span class="item-badge badge-fave">King Street Staple</span></div>
+            <div class="brunch-card-body">
+              <h3>Chicken Caesar Wrap</h3>
+              <p>Grilled chicken, crisp romaine, shaved parmesan, and house Caesar dressing in a toasted tortilla. The brunch wrap that Downtown Charleston keeps coming back for — savory, fresh, and filling.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🌅<span class="item-badge badge-hot">Best Seller</span></div>
+            <div class="brunch-card-body">
+              <h3>Breakfast Burrito</h3>
+              <p>Scrambled eggs, melted cheddar, seasoned potatoes, and your choice of bacon or sausage wrapped and ready. The go-to King Street brunch plate when you want something serious.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🥓<span class="item-badge badge-fave">Fan Fave</span></div>
+            <div class="brunch-card-body">
+              <h3>BLT Wrap</h3>
+              <p>Smoky bacon, fresh tomato, crispy lettuce, and creamy mayo tucked into a warm wrap. A downtown Charleston brunch classic — simple, bold, and satisfying every time.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🥑<span class="item-badge badge-fresh">Vegetarian</span></div>
+            <div class="brunch-card-body">
+              <h3>Avocado Toast</h3>
+              <p>Smashed avocado on toasted sourdough with everything seasoning and lemon zest. A King Street brunch essential that pairs perfectly with our lattes or cold brew.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🍞<span class="item-badge badge-hot">Morning Must</span></div>
+            <div class="brunch-card-body">
+              <h3>Egg &amp; Cheese Sandwich</h3>
+              <p>A fluffy egg with melted cheese on a buttered croissant or English muffin. Warm, satisfying, and the perfect handheld brunch bite before a morning on King Street.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🥐<span class="item-badge badge-fresh">Baked Fresh</span></div>
+            <div class="brunch-card-body">
+              <h3>Cinnamon Roll &amp; Pastries</h3>
+              <p>House-baked cinnamon rolls, croissants, seasonal muffins, and coffee cake — the kind of brunch pastry selection that turns a coffee stop into a real morning out.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🥗<span class="item-badge badge-fresh">Light &amp; Fresh</span></div>
+            <div class="brunch-card-body">
+              <h3>Brunch Salads</h3>
+              <p>Classic Caesar or seasonal greens — add grilled chicken for a full brunch plate. Fresh, light, and ideal for a downtown Charleston afternoon on the patio or at the counter.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🌴<span class="item-badge badge-sig">Signature</span></div>
+            <div class="brunch-card-body">
+              <h3>Sweet Palm Signature Latte</h3>
+              <p>Every great brunch needs the right drink. Our house-made syrup latte is the King Street brunch pairing — smooth, slightly sweet, and unmistakably Sweet Palm.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <div class="brunch-card">
+            <div class="brunch-card-img">🩷<span class="item-badge badge-fresh">No Alcohol</span></div>
+            <div class="brunch-card-body">
+              <h3>Pink Palm Energy &amp; Refreshers</h3>
+              <p>Strawberry dragonfruit energy, the Thunderbird blue raspberry refresher, or the Lowcountry Mojito mocktail — brunch drinks that are fresh, vibrant, and built for Charleston.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mid-page CTA -->
+      <div class="mt-5">
+        <div class="inline-cta">
+          <h3>Ready to Order Your Brunch?</h3>
+          <p>Order online for fast pickup at 471 King Street — or walk in any day and we'll have your brunch plate ready in minutes.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dk" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Brunch Online
+            </a>
+            <a href="tel:8439743594" class="btn-cta-ol">
+              <i class="bi bi-telephone me-2"></i>Call (843) 974-3594
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ THE EXPERIENCE ═══════════════════════ -->
+  <section class="experience-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="row gy-5 align-items-center">
+        <div class="col-lg-6">
+          <p class="section-label mb-2" style="color:var(--palm-gold);">More Than a Coffee Stop</p>
+          <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:clamp(1.9rem,3.5vw,2.7rem); font-weight:900;">
+            A Real Brunch Eatery in the Middle of Downtown Charleston
+          </h2>
+          <p style="color:#c9bfb5; font-size:1.05rem; line-height:1.85;" class="mb-4">
+            Sweet Palm isn't a drive-through or a quick-stop counter. It's a sit-down brunch eatery where Downtown Charleston comes to eat, unwind, and start the day right. We have the menu of a restaurant, the vibe of your favorite neighborhood spot, and the location King Street visitors and locals rely on.
+          </p>
+          <p style="color:#a09080; font-size:0.97rem; line-height:1.85;">
+            From the first sip of your latte to the last bite of your cinnamon roll, brunch at Sweet Palm on King Street is an experience worth making part of your Charleston routine.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-egg-fried"></i></div>
+            <div>
+              <div class="exp-title">Made-to-Order Brunch Plates</div>
+              <div class="exp-desc">Every dish — from breakfast burritos to wraps to avocado toast — is made fresh when you order. No shortcuts, no heat lamps. Just real brunch food.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-cup-hot-fill"></i></div>
+            <div>
+              <div class="exp-title">Brunch Drinks Worth Ordering</div>
+              <div class="exp-desc">Espresso lattes, cold brew, matcha, dirty chai, and our Pink Palm refreshers — the drink menu that turns brunch into a full experience on King Street.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-door-open-fill"></i></div>
+            <div>
+              <div class="exp-title">Walk-Ins Always Welcome</div>
+              <div class="exp-desc">No reservation required. Walk in off King Street, order at the counter, and have your brunch ready in minutes. Easy, casual, and always open.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-bag-check-fill"></i></div>
+            <div>
+              <div class="exp-title">Online Ordering for Pickup</div>
+              <div class="exp-desc">Order your brunch ahead at order.toasttab.com/online/sweetpalmcoffee and pick it up hot and fresh at 471 King Street. Perfect for busy Charleston mornings.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <div class="exp-title">Right in the Heart of King Street</div>
+              <div class="exp-desc">Centrally located on one of Charleston's most iconic streets — walkable from the French Quarter, Historic District, College of Charleston, and Upper King.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ WHY SWEET PALM ═══════════════════════ -->
+  <section style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Why Choose Sweet Palm</p>
+        <h2 class="section-title mb-3">The King Street Brunch Spot Downtown Charleston Trusts</h2>
+        <div class="divider-gold mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <h4>Fresh Food, Every Plate</h4>
+            <p>We make every brunch item to order. If it's on our menu, it's made fresh when you ask for it — not sitting in a warmer since 7am.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <h4>Central King Street Location</h4>
+            <p>471 King Street puts you in the best possible spot for a Downtown Charleston brunch — steps from shops, galleries, parks, and the Historic District.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <h4>Real Brunch Menu</h4>
+            <p>Wraps, burritos, avocado toast, salads, pastries, and a full drinks list. This isn't just coffee and a muffin — it's an actual brunch eatery menu.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <h4>Lowcountry Hospitality</h4>
+            <p>Charleston is known for making people feel welcome. That's the standard we hold ourselves to at every brunch service on King Street, every single day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ NEIGHBORHOODS ════════════════════════ -->
+  <section class="neighborhood-section py-5">
+    <div class="container text-center">
+      <p class="section-label mb-2">Walking Distance from All of Downtown</p>
+      <h2 class="mb-4" style="font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--palm-brown); font-weight:900;">
+        Brunch on King Street — Close to Everywhere You Want to Be
+      </h2>
+      <p class="mb-4 mx-auto" style="max-width:600px; font-size:0.97rem; color:var(--palm-gray); line-height:1.8;">
+        Our King Street address makes Sweet Palm one of the most conveniently located brunch spots in Downtown Charleston. Whether you're coming from the hotel, campus, or just exploring the peninsula — you're close.
+      </p>
+      <div>
+        <span class="nbhd-tag">King Street</span>
+        <span class="nbhd-tag">Upper King Street</span>
+        <span class="nbhd-tag">Historic District</span>
+        <span class="nbhd-tag">French Quarter</span>
+        <span class="nbhd-tag">Cannonborough</span>
+        <span class="nbhd-tag">Radcliffeborough</span>
+        <span class="nbhd-tag">Church Street</span>
+        <span class="nbhd-tag">College of Charleston</span>
+        <span class="nbhd-tag">Marion Square</span>
+        <span class="nbhd-tag">Downtown Charleston</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FAQ ══════════════════════════════════ -->
+  <section class="faq-section py-6" id="faq" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <p class="section-label">Common Questions</p>
+            <h2 class="section-title mb-3">Brunch at Sweet Palm — FAQs</h2>
+            <div class="divider-gold mx-auto"></div>
+          </div>
+
           <div class="accordion" id="faqAccordion">
 
             <div class="accordion-item">
               <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                  What makes Sweet Palm Coffee a downtown Charleston brunch spot?
+                  Where is Sweet Palm located for brunch in Downtown Charleston?
                 </button>
               </h2>
               <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Sweet Palm Coffee fits the downtown Charleston brunch spot idea because it combines coffee, brunch-friendly food,
-                  baked items, and a casual cafe setting that works naturally within the city.
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Sweet Palm is located at <strong>471 King Street, Charleston, SC 29403</strong> — right in the middle of the King Street corridor in Downtown Charleston. We're walking distance from the Historic District, French Quarter, College of Charleston, and Marion Square. No car needed.
                 </div>
               </div>
             </div>
 
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                  Do I need a reservation for brunch at Sweet Palm?
+                </button>
+              </h2>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  No reservation needed. Sweet Palm is a walk-in brunch eatery — just come in off King Street and order at the counter. For the fastest experience, you can also <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">order online for pickup</a> so your food is ready the moment you arrive.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                  What brunch food does Sweet Palm serve on King Street?
+                </button>
+              </h2>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Our brunch menu includes <strong>chicken caesar wraps, breakfast burritos, BLT wraps, avocado toast, egg &amp; cheese sandwiches, cinnamon rolls, fresh pastries, and brunch salads</strong>. On the drinks side we serve espresso lattes, cold brew, matcha, dirty chai, cold brew, and our signature Sweet Palm refreshers. Everything is made to order.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                  Can I order brunch from Sweet Palm online?
+                </button>
+              </h2>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Yes — online brunch ordering is available at <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener" style="color:var(--palm-gold); font-weight:600;">order.toasttab.com/online/sweetpalmcoffee</a>. Order ahead and pick up your brunch fresh and ready at 471 King Street.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                  What are the brunch hours at Sweet Palm on King Street?
+                </button>
+              </h2>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Sweet Palm serves brunch daily. Monday through Friday we open at 7:00 AM, and Saturday &amp; Sunday we open at 8:00 AM. Call us at <a href="tel:8439743594" style="color:var(--palm-gold); font-weight:600;">(843) 974-3594</a> for the most current hours.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                  Is Sweet Palm a good brunch spot for groups in Downtown Charleston?
+                </button>
+              </h2>
+              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body" style="color:var(--palm-gray); font-size:0.97rem; line-height:1.75;">
+                  Absolutely. Sweet Palm on King Street is a great casual brunch option for small groups, couples, families, and anyone exploring Downtown Charleston. The menu has enough variety for different tastes, and online ordering makes it easy to coordinate a group pickup without waiting.
+                </div>
               </div>
             </div>
 
@@ -332,38 +665,93 @@
     </div>
   </section>
 
-  <section class="section-pad">
+  <!-- ════════════════════════════════ FINAL CTA ════════════════════════════ -->
+  <section style="background:var(--palm-gold); padding-top:5rem; padding-bottom:5rem;">
     <div class="container text-center">
-      <h2 class="fw-bold mb-3">Sweet Palm Coffee and the Downtown Charleston Brunch Food Conversation</h2>
-      <p class="col-lg-9 mx-auto mb-4">
-        For people looking for coffee, baked items, breakfast-style food, and an easy place to enjoy brunch in the city,
-        Sweet Palm Coffee belongs in the downtown Charleston conversation. It is a natural match for casual brunch food,
-        coffee culture, and the everyday pace of Charleston.
+      <p class="section-label mb-2" style="color:rgba(59,43,31,0.6);">471 King Street, Downtown Charleston</p>
+      <h2 class="mb-3" style="font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); color:var(--palm-brown); font-weight:900;">
+        Your Brunch Table on King Street<br />Is Waiting
+      </h2>
+      <p class="mb-5 mx-auto" style="font-size:1.05rem; max-width:520px; color:rgba(59,43,31,0.8); line-height:1.8;">
+        Walk in or order online. Chicken caesar wraps, breakfast burritos, BLTs, avocado toast, cinnamon rolls, and the best brunch drinks in Downtown Charleston — made fresh, every day.
       </p>
-      <a href="#" class="btn btn-brand btn-lg text-white px-5">Learn More</a>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dk" target="_blank" rel="noopener">
+          <i class="bi bi-bag-fill me-2"></i>Order Brunch Online
+        </a>
+        <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-cta-ol" target="_blank" rel="noopener">
+          <i class="bi bi-map me-2"></i>Get Directions
+        </a>
+        <a href="tel:8439743594" class="btn-cta-ol">
+          <i class="bi bi-telephone me-2"></i>(843) 974-3594
+        </a>
+      </div>
     </div>
   </section>
 
-  <footer class="py-5 bg-dark text-white">
+  <!-- ════════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer pt-5 pb-4">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <h3 class="h5 fw-bold">Sweet Palm Coffee</h3>
-          <p class="mb-0">
-            A branded support page built around downtown Charleston brunch spot and downtown Charleston brunch food,
-            with strong food entity and city entity language in a clean Bootstrap layout.
-          </p>
+      <div class="row gy-4 mb-4">
+        <div class="col-md-4">
+          <div class="footer-brand mb-2">🌴 Sweet Palm Coffee</div>
+          <p class="mb-2" style="line-height:1.7;">Downtown Charleston's brunch eatery and café at 471 King Street.</p>
+          <a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">sweetpalmcoffee.com</a>
         </div>
-        <div class="col-lg-6">
-          <h3 class="h5 fw-bold">Charleston Area Mentions</h3>
-          <p class="mb-0">
-            Downtown Charleston, King Street, Marion Square, College of Charleston, Charleston Historic District, and nearby city-center dining areas.
-          </p>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Brunch &amp; Visit</h6>
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-2" style="color:var(--palm-gold);"></i>471 King St, Charleston, SC 29403</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill me-2" style="color:var(--palm-gold);"></i><a href="tel:8439743594">(843) 974-3594</a></p>
+          <p class="mb-1"><i class="bi bi-envelope-fill me-2" style="color:var(--palm-gold);"></i><a href="mailto:sweetpalmcoffee@yahoo.com">sweetpalmcoffee@yahoo.com</a></p>
+          <p class="mb-0"><i class="bi bi-clock-fill me-2" style="color:var(--palm-gold);"></i>Brunch Served Daily</p>
         </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Quick Links</h6>
+          <ul class="list-unstyled mb-0" style="line-height:2.1;">
+            <li><a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">Order Brunch Online</a></li>
+            <li><a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">Sweet Palm Coffee Main Site</a></li>
+            <li><a href="https://share.google/SdvCNVNck09SpxLZU" target="_blank" rel="noopener">Google Maps &amp; Directions</a></li>
+            <li><a href="/">Home &amp; Full Food Menu</a></li>
+            <li><a href="/about.html">About Sweet Palm</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3" style="font-size:0.8rem; color:#7a6a5e;">
+        <span>&copy; 2025 EatSweetPalm.com &mdash; Brunch on King Street, Downtown Charleston.</span>
+        <span>471 King St, Charleston, SC &nbsp;|&nbsp; (843) 974-3594</span>
       </div>
     </div>
   </footer>
 
+  <!-- ════════════════════════════════ STICKY CTA BAR ═══════════════════════ -->
+  <div class="sticky-cta-bar">
+    <p><strong>Sweet Palm</strong> · Brunch on King Street · 471 King St, Downtown Charleston</p>
+    <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-sticky" target="_blank" rel="noopener">
+      <i class="bi bi-bag-fill me-1"></i>Order Brunch
+    </a>
+    <a href="tel:8439743594" class="btn-sticky-outline">
+      <i class="bi bi-telephone me-1"></i>(843) 974-3594
+    </a>
+    <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-sticky-outline" target="_blank" rel="noopener">
+      <i class="bi bi-map me-1"></i>Directions
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
