@@ -1,240 +1,903 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downtown Charleston Coffee Shops | Eat Sweet Palm</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles for a warm, cafe feel */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F5F2; /* Light creamy background */
-        }
-        .text-palm-dark { color: #3A322F; } /* Deep brown/coffee color */
-        .bg-palm-light { background-color: #EFEBE9; } /* Light beige for sections */
-        .border-palm-accent { border-color: #B28445; } /* Gold/caramel accent */
-        .btn-primary {
-            background-color: #B28445;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #A0763C;
-            box-shadow: 0 4px 12px rgba(178, 132, 69, 0.4);
-        }
-    </style>
-    <!-- Food Topic Entity: Mentioning coffee as an artisanal creation -->
-    <meta name="keywords" content="artisanal coffee, cafe, Charleston food, specialty lattes, plant-based energy drinks">
-    <meta property="og:description" content="Looking for a coffee shop in Charleston, SC? Look no further than us Learn more about our Charleston coffee shop today!" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sweet Palm Breakfast Brunch & Lunch Food | Downtown Charleston Food on King Street</title>
+  <meta name="description" content="Sweet Palm Coffee & Café serves fresh food, handcrafted coffee, breakfast burritos, chicken caesar wraps, BLT wraps, and artisan lattes at 471 King Street in Downtown Charleston, SC." />
+  <meta name="keywords" content="downtown charleston food, king street cafe, charleston coffee shop, chicken caesar wrap charleston, breakfast burrito downtown charleston, BLT wrap king street, sweet palm coffee menu, charleston cafe food, lunch downtown charleston SC" />
+  <meta property="og:title" content="Sweet Palm Coffee & Café | Downtown Charleston Food on King Street" />
+  <meta property="og:description" content="Fresh wraps, breakfast, baked goods & handcrafted coffee at 471 King St, Downtown Charleston SC. Order online or visit us today." />
+  <meta property="og:type" content="restaurant" />
 
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --palm-cream:   #FAF6F0;
+      --palm-tan:     #EFE6D8;
+      --palm-brown:   #3B2B1F;
+      --palm-gold:    #C4943A;
+      --palm-gold-lt: #E2B96F;
+      --palm-green:   #3D5A3E;
+      --palm-pink:    #E8A0A0;
+      --palm-gray:    #6B5B50;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--palm-cream);
+      color: var(--palm-brown);
+    }
+
+    h1, h2, h3, .display-font {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar-sweet {
+      background-color: var(--palm-brown);
+      border-bottom: 3px solid var(--palm-gold);
+    }
+    .navbar-sweet .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--palm-gold) !important;
+      letter-spacing: 0.03em;
+    }
+    .navbar-sweet .nav-link {
+      color: #e8ddd0 !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .navbar-sweet .nav-link:hover { color: var(--palm-gold) !important; }
+    .navbar-sweet .btn-order {
+      background-color: var(--palm-gold);
+      color: var(--palm-brown);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 30px;
+      padding: 0.45rem 1.3rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .navbar-sweet .btn-order:hover {
+      background-color: var(--palm-gold-lt);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .hero-section {
+      background-color: var(--palm-brown);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(196,148,58,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse at 20% 80%, rgba(61,90,62,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--palm-gold);
+    }
+    .hero-title {
+      font-size: clamp(2.6rem, 6vw, 4.6rem);
+      line-height: 1.1;
+      color: #FAF6F0;
+      font-style: italic;
+      font-weight: 900;
+    }
+    .hero-title span {
+      color: var(--palm-gold);
+      font-style: normal;
+    }
+    .hero-sub {
+      color: #c9bfb5;
+      font-size: 1.1rem;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+    .btn-hero-primary {
+      background-color: var(--palm-gold);
+      color: var(--palm-brown);
+      font-weight: 700;
+      border: none;
+      border-radius: 40px;
+      padding: 0.85rem 2.2rem;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-hero-primary:hover {
+      background-color: var(--palm-gold-lt);
+      color: var(--palm-brown);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196,148,58,0.35);
+    }
+    .btn-hero-outline {
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #FAF6F0;
+      border-radius: 40px;
+      padding: 0.85rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.25s;
+    }
+    .btn-hero-outline:hover {
+      border-color: var(--palm-gold);
+      color: var(--palm-gold);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 40px;
+      padding: 0.35rem 1rem;
+      color: #d4c9be;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+    .hero-badge .bi { color: var(--palm-gold); }
+    .hero-graphic {
+      font-size: 13rem;
+      line-height: 1;
+      text-align: center;
+      filter: drop-shadow(0 0 60px rgba(196,148,58,0.3));
+      animation: float 5s ease-in-out infinite;
+      user-select: none;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-18px); }
+    }
+
+    /* ── INFO STRIP ── */
+    .info-strip {
+      background-color: var(--palm-gold);
+      color: var(--palm-brown);
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+    }
+    .info-strip a {
+      color: var(--palm-brown);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .info-strip a:hover { text-decoration: underline; }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--palm-gold);
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      color: var(--palm-brown);
+      font-weight: 900;
+    }
+    .divider-gold {
+      width: 56px;
+      height: 3px;
+      background: var(--palm-gold);
+      border-radius: 2px;
+    }
+
+    /* ── FOOD MENU CARDS ── */
+    .menu-category {
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid #e8ddd0;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .menu-category:hover {
+      box-shadow: 0 12px 40px rgba(59,43,31,0.12);
+      transform: translateY(-3px);
+    }
+    .menu-category-header {
+      background: var(--palm-brown);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .menu-category-header .cat-icon {
+      font-size: 1.6rem;
+    }
+    .menu-category-header h3 {
+      font-size: 1.15rem;
+      color: var(--palm-gold);
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #f0e8df;
+      gap: 1rem;
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-name {
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: var(--palm-brown);
+      margin-bottom: 0.15rem;
+    }
+    .menu-item-desc {
+      font-size: 0.82rem;
+      color: var(--palm-gray);
+      line-height: 1.5;
+    }
+    .menu-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .badge-popular { background: #FFF3CD; color: #7B5800; }
+    .badge-new     { background: #D1FAE5; color: #065F46; }
+    .badge-veg     { background: #DCFCE7; color: #166534; }
+
+    /* ── COFFEE SECTION ── */
+    .coffee-section { background-color: var(--palm-tan); }
+    .coffee-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.4rem 1.5rem;
+      border: 1px solid #e2d8cd;
+      height: 100%;
+      transition: box-shadow 0.2s;
+    }
+    .coffee-card:hover { box-shadow: 0 8px 28px rgba(59,43,31,0.1); }
+    .coffee-card .drink-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .coffee-card h5 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--palm-brown);
+      margin-bottom: 0.25rem;
+    }
+    .coffee-card p {
+      font-size: 0.84rem;
+      color: var(--palm-gray);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-section { background: var(--palm-cream); }
+    .about-highlight {
+      border-left: 4px solid var(--palm-gold);
+      padding: 1rem 1.5rem;
+      background: rgba(196,148,58,0.07);
+      border-radius: 0 10px 10px 0;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--palm-brown);
+      line-height: 1.7;
+    }
+    .info-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--palm-brown);
+      color: #e8ddd0;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0.25rem;
+    }
+    .info-pill .bi { color: var(--palm-gold); }
+
+    /* ── NEIGHBORHOOD SECTION ── */
+    .neighborhood-section { background: var(--palm-brown); }
+    .neighborhood-tag {
+      display: inline-block;
+      border: 1px solid rgba(196,148,58,0.45);
+      color: var(--palm-gold-lt);
+      border-radius: 6px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin: 0.2rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section { background: var(--palm-gold); }
+    .cta-section h2 { color: var(--palm-brown); }
+    .cta-section p  { color: rgba(59,43,31,0.8); }
+    .btn-cta-dark {
+      background: var(--palm-brown);
+      color: #FAF6F0;
+      border: none;
+      border-radius: 40px;
+      padding: 0.85rem 2.2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .btn-cta-dark:hover {
+      background: #2a1e15;
+      color: var(--palm-gold);
+      transform: translateY(-2px);
+    }
+    .btn-cta-outline-dark {
+      border: 2px solid var(--palm-brown);
+      color: var(--palm-brown);
+      border-radius: 40px;
+      padding: 0.85rem 2.2rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .btn-cta-outline-dark:hover {
+      background: var(--palm-brown);
+      color: var(--palm-gold);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #201510;
+      color: #c9bfb5;
+      font-size: 0.88rem;
+    }
+    .site-footer a { color: var(--palm-gold-lt); text-decoration: none; }
+    .site-footer a:hover { color: var(--palm-gold); text-decoration: underline; }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--palm-gold);
+    }
+    .footer-divider { border-color: rgba(255,255,255,0.08); }
+  </style>
 </head>
-<body class="text-palm-dark">
+<body>
 
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-lg sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-extrabold text-palm-dark tracking-tight">
-                <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-primary text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:scale-105 transition duration-300">
-                Charleston Downtown Coffee Shops
-            </a>
-            </h1>
-            <a href="https://www.sweetpalmcoffee.com/" class="btn-primary text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:scale-105 transition duration-300">
-                Sweet Palm Coffee
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="text-center py-16 px-4 bg-palm-light">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl md:text-1xl font-black mb-4 tracking-tighter text-palm-dark">
-                 Whats on the Menu
-            </h2>
-
-            <img src="coffe1.png" />
-            
-            <p class="text-lg md:text-xl text-gray-700 mb-6">
-                Welcome to the food and beverage highlights for our vibrant Downtown Charleston Coffee Shop. Dive into our handcrafted beverages and delicious eats.
-            </p>
-            <p class="text-lg md:text-xl text-gray-700 mb-6">
-                While other coffee shops offer a quick caffeine fix, Sweet Palm Coffee offers an escape. Located on King Street, we are the only cafe bringing the breezy, coastal energy of the Lowcountry indoors. Don't just grab a coffee; experience the 'Pink Palm' lifestyle."
-            </p>
-            <p class="text-sm mb-6 text-gray-500">
-                This site provides an overview; for online ordering or the complete menu, please visit our main website. We service King street, Upper King street, Radcliffeborough, Cannonborough and thos coming from Church st., french quarter or the Historic District.
-            </p>
-            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-primary text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:scale-105 transition duration-300">
-                Our Menu
-            </a>
-             <a style="margin-left: 25px;" href="https://share.google/SdvCNVNck09SpxLZU" class="btn-primary text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:scale-105 transition duration-300">
-                Our Maps
-            </a>
-        </div>
-    </section>   
-
-    <!-- Main Menu Content -->
-    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-
-        <!-- Food Topic Entity Text -->
-        <div class="mb-10 text-center">
-            <h3 class="text-4xl font-bold mb-4 border-b-2 border-palm-accent inline-block pb-1">
-                Artisanal Coffee Creations
-            </h3>
-            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                Discover the heart of the coffee scene with our artisanal coffee and fresh, locally inspired dishes. From expertly pulled espresso to our vibrant plant-based refreshers, every item is crafted for a perfect moment.
-            </p>
-        </div>
-        
-        <!-- Menu Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-
-            <!-- Column 1: Café Classics & Drip -->
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h4 class="text-2xl font-bold mb-4 text-palm-dark border-b pb-2 border-palm-accent">Café Classics & Brews</h4>
-                <ul class="space-y-4">
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Espresso</span>
-                        <span class="text-sm text-gray-600">A bold, concentrated shot</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Cappuccino</span>
-                        <span class="text-sm text-gray-600">Espresso, steamed milk, frothy foam</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Latte</span>
-                        <span class="text-sm text-gray-600">Espresso with steamed milk, lightly layered</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Cold Brew</span>
-                        <span class="text-sm text-gray-600">Smooth, slow-steeped coffee</span>
-                    </li>
-                    <li class="flex justify-between items-center">
-                        <span class="font-semibold">Hot Chocolate</span>
-                        <span class="text-sm text-gray-600">Smooth chocolate topped with whipped cream</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Column 2: Signature Lattes & Tea -->
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h4 class="text-2xl font-bold mb-4 text-palm-dark border-b pb-2 border-palm-accent">Signature Lattes & Teas</h4>
-                <ul class="space-y-4">
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Sweet Palm Latte</span>
-                        <span class="text-sm text-gray-600">Our signature house-made syrup</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Salted Caramel Latte</span>
-                        <span class="text-sm text-gray-600">Sweet caramel with a hint of sea salt</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Banana Pudding Latte</span>
-                        <span class="text-sm text-gray-600">A dessert-inspired flavor favorite</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Matcha Latte</span>
-                        <span class="text-sm text-gray-600">Premium Japanese matcha with cold foam</span>
-                    </li>
-                    <li class="flex justify-between items-center">
-                        <span class="font-semibold">Dirty Chai</span>
-                        <span class="text-sm text-gray-600">Spiced chai and smooth espresso blend</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Column 3: Refreshers & Eats -->
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <h4 class="text-2xl font-bold mb-4 text-palm-dark border-b pb-2 border-palm-accent">Energy & Bites</h4>
-                <ul class="space-y-4">
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Pink Palm Energy</span>
-                        <span class="text-sm text-gray-600">Strawberry + Dragonfruit plant-based energy</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Thunderbird Refresher</span>
-                        <span class="text-sm text-gray-600">Blue raspberry & Lime over Green Tea</span>
-                    </li>
-                    <li class="flex justify-between items-center border-b pb-2">
-                        <span class="font-semibold">Lowcountry Mojito</span>
-                        <span class="text-sm text-gray-600">Pineapple, Lime, Mint, and Soda (non-alc.)</span>
-                    </li>
-                    <li class="pt-4 border-t border-gray-300">
-                        <span class="text-xl font-bold block mb-1">On-the-Go Eats</span>
-                        <p class="text-sm text-gray-700">
-                            We offer a selection of freshly baked goods, breakfast items, and light lunch fare to complement your drink. Find detailed sandwich and pastry options on the main menu!
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <section class="bg-stone-50 py-16 px-4 sm:px-6 lg:px-8 font-sans text-gray-700">
-  <div class="max-w-7xl mx-auto">
-    
-    <div class="mb-10 text-center md:text-left">
-      <h3 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">
-        Your Go-To <span ">Downtown Charleston Coffee Shop</span>
-      </h3>
-      <div class="h-1 w-24 bg-amber-700 rounded mx-auto md:mx-0"></div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg leading-relaxed">
-      
-      <div class="space-y-6">
-        <p>
-          Welcome to Sweet Palm Coffee, a sanctuary of flavor and Southern hospitality nestled in the heart of the Holy City. When locals and visitors alike search for the quintessential <strong>downtown Charleston coffee shop</strong>, they are looking for more than just a caffeine fix; they are seeking an experience that mirrors the charm of our historic streets. At Sweet Palm, we embody the spirit of the Lowcountry, serving up artisanal roasts in a space that feels as warm and welcoming as a Charleston sunset.
-        </p>
-        <p>
-          Located just steps away from the hustle of downtown and the timeless beauty of the Historic District, Sweet Palm is the perfect starting point for your day. Whether you are a student at the College of Charleston needing a quiet study corner, a professional looking for a mid-morning meeting spot, or a traveler exploring the French Quarter, our doors are open. We understand that the coffee culture in this city is competitive, which is why we meticulously source our beans and partner with local dairies to ensure every latte, cortado, and cold brew meets the high standards of our community.
-        </p>
-       
+  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
+  <nav class="navbar navbar-expand-lg navbar-sweet sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">🌴 Sweet Palm Coffee &amp; Café</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1) sepia(1) saturate(3) hue-rotate(345deg);"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto ms-4 gap-2">
+          <li class="nav-item"><a class="nav-link" href="#food-menu">Food Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#coffee">Coffee &amp; Drinks</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://share.google/SdvCNVNck09SpxLZU" target="_blank" rel="noopener">Find Us</a></li>
+        </ul>
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn btn-order" target="_blank" rel="noopener">
+          Order Online
+        </a>
       </div>
-
-      <div class="space-y-6">
-        
-        <p>
-          What truly sets Sweet Palm apart as a top-tier <em>downtown Charleston coffee shop</em> is our commitment to the craft. Our baristas are trained artists, passionate about the science of extraction and the art of milk texture. But beyond the technical skill, it is the genuine "hello" you receive when you walk in. In a city known globally for its politeness and history, we strive to uphold that legacy through exceptional service. We invite you to escape the cobblestones for a moment and relax in our modern, coastal-inspired space.
-        </p>
-        <p>
-          Whether you are grabbing a quick espresso to go before shopping on the main strip, or settling in for an afternoon with a book and a pastry, Sweet Palm Coffee is your local destination. Discover why we are quickly becoming the most talked-about spot on the peninsula. Come taste the difference that passion, locality, and a touch of palm-tree-breezy vibes make in your daily cup.
-        </p>
-        
-        <div class="mt-8 p-6 bg-white rounded-lg shadow-sm border border-stone-200">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Visit Sweet Palm Coffee</h3>
-          <p class="mb-4">Experience the best brew in the Historic District of Charleston SC.</p>
-          <a href="/location" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-amber-700 hover:bg-amber-800 transition-colors duration-200">
-            Get Directions
-          </a>
-        </div>
-      </div>
-
     </div>
-    
-    <div class="mt-16 pt-8 border-t border-stone-200 text-sm text-gray-500 text-center md:text-left">
-      <p>Serving the Charleston Peninsula, French Quarter, Cannonborough, and surrounding Lowcountry areas.</p>
+  </nav>
+
+  <!-- ════════════════════════════════ INFO STRIP ════════════════════════════ -->
+  <div class="info-strip py-2">
+    <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
+      <span><i class="bi bi-geo-alt-fill me-1"></i> 471 King St, Downtown Charleston, SC</span>
+      <span><i class="bi bi-telephone-fill me-1"></i> <a href="tel:8439743594">(843) 974-3594</a></span>
+      <span><i class="bi bi-clock-fill me-1"></i> Open Daily · Breakfast &amp; Lunch</span>
+      <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">
+        <i class="bi bi-bag-fill me-1"></i> Order Pickup Online
+      </a>
     </div>
-    
   </div>
-</section>
 
-    </main>
-
-    <!-- Footer & Main Site Link Call to Action -->
-    <footer class="bg-palm-dark py-12 px-4 mt-12">
-        <div class="max-w-4xl mx-auto text-center">
-            <h4 class="text-3xl font-extrabold text-dark mb-4">Ready for the Full Experience?</h4>
-            <p class="text-gray-300 mb-6">
-                See our complete list of food items, seasonal specials, and place an online order for pickup at our Charleston SC location.
-            </p>
-            <a href="https://www.sweetpalmcoffee.com/" class="btn-primary text-white font-bold text-lg py-3 px-8 rounded-xl inline-block shadow-xl hover:scale-105 transition duration-300">
-                Sweet Palm Coffee
+  <!-- ════════════════════════════════ HERO ═════════════════════════════════ -->
+  <section class="hero-section py-5">
+    <div class="container py-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7">
+          <div class="hero-eyebrow mb-3">
+            <i class="bi bi-geo-alt-fill me-1"></i> 471 King Street · Downtown Charleston, SC
+          </div>
+          <h1 class="hero-title mb-4">
+            Fresh Food &amp;<br /><span>Handcrafted Coffee</span><br />on King Street
+          </h1>
+          <p class="hero-sub mb-4">
+            Sweet Palm is Downtown Charleston's go-to café for fresh wraps, hearty breakfast burritos, BLTs, and artisan coffee. Real ingredients. Lowcountry hospitality. Right here on King Street.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary" target="_blank" rel="noopener">
+              <i class="bi bi-bag-fill me-2"></i>Order Food Online
             </a>
-            <p class="text-sm text-gray-500 mt-6">
-                &copy; 2024 EatSweetPalm.com. Part of the Sweet Palm Coffee Family.
-            </p>
-            <p>Sweet Palm Coffee 471 King St, Charleston SC 8439743594 </p>
+            <a href="#food-menu" class="btn-hero-outline">
+              View Menu <i class="bi bi-arrow-down ms-1"></i>
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> Fresh Wraps &amp; Burritos</span>
+            <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> Artisan Coffee</span>
+            <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> Baked Fresh Daily</span>
+          </div>
         </div>
-    </footer>
+        <div class="col-lg-5 text-center d-none d-lg-block">
+          <div class="hero-graphic">🌴</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOD MENU ════════════════════════════ -->
+  <section id="food-menu" class="py-6 py-md-7" style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">King Street Food in Downtown Charleston</p>
+        <h2 class="section-title mb-3">Our Food Menu</h2>
+        <div class="divider-gold mx-auto mb-4"></div>
+        <p class="text-muted mx-auto" style="max-width:620px; font-size:1rem; line-height:1.75;">
+          From satisfying breakfast options to fresh lunch wraps, every item at Sweet Palm is made with care. Pair anything with one of our handcrafted drinks for the ultimate downtown Charleston café experience.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Wraps -->
+        <div class="col-lg-6">
+          <div class="menu-category h-100">
+            <div class="menu-category-header">
+              <span class="cat-icon">🌯</span>
+              <h3>Wraps &amp; Handhelds</h3>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Chicken Caesar Wrap</div>
+                  <div class="menu-item-desc">Grilled chicken, crisp romaine, shaved parmesan, and house Caesar dressing wrapped in a toasted flour tortilla — a King Street lunch staple.</div>
+                </div>
+                <span class="menu-badge badge-popular">Popular</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">BLT Wrap</div>
+                  <div class="menu-item-desc">Smoky bacon, fresh tomato, crispy lettuce, and creamy mayo tucked into a warm wrap. A Downtown Charleston classic done right.</div>
+                </div>
+                <span class="menu-badge badge-popular">Fan Fave</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Veggie Wrap</div>
+                  <div class="menu-item-desc">Seasonal roasted vegetables, hummus, greens, and feta in a whole-wheat tortilla. Fresh, filling, and 100% plant-based.</div>
+                </div>
+                <span class="menu-badge badge-veg">Vegetarian</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Turkey Club Wrap</div>
+                  <div class="menu-item-desc">Sliced turkey, avocado, bacon, Swiss cheese, and whole grain mustard — hearty enough for lunch on King Street.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakfast -->
+        <div class="col-lg-6">
+          <div class="menu-category h-100">
+            <div class="menu-category-header">
+              <span class="cat-icon">🌅</span>
+              <h3>Breakfast Items</h3>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Breakfast Burrito</div>
+                  <div class="menu-item-desc">Scrambled eggs, cheddar cheese, seasoned potatoes, and your choice of bacon or sausage in a flour tortilla. The perfect downtown Charleston morning fuel.</div>
+                </div>
+                <span class="menu-badge badge-popular">Best Seller</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Avocado Toast</div>
+                  <div class="menu-item-desc">Smashed avocado on toasted sourdough with everything seasoning, lemon zest, and a drizzle of olive oil. Simple, fresh, and satisfying.</div>
+                </div>
+                <span class="menu-badge badge-veg">Vegetarian</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Egg &amp; Cheese Sandwich</div>
+                  <div class="menu-item-desc">A fluffy egg with melted cheese on a buttered croissant or English muffin. A King Street breakfast must.</div>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Granola Parfait</div>
+                  <div class="menu-item-desc">House-made granola layered with Greek yogurt and fresh seasonal fruit. Light, healthy, and delicious.</div>
+                </div>
+                <span class="menu-badge badge-veg">Healthy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baked Goods & Pastries -->
+        <div class="col-lg-6">
+          <div class="menu-category h-100">
+            <div class="menu-category-header">
+              <span class="cat-icon">🥐</span>
+              <h3>Baked Goods &amp; Pastries</h3>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Croissants</div>
+                  <div class="menu-item-desc">Buttery, flaky croissants sourced fresh each morning. Available plain or with chocolate.</div>
+                </div>
+                <span class="menu-badge badge-new">Fresh Daily</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Seasonal Muffins</div>
+                  <div class="menu-item-desc">From blueberry to banana walnut, our rotating muffin selection highlights the best ingredients of the season.</div>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Cookies</div>
+                  <div class="menu-item-desc">Chocolate chip, snickerdoodle, and rotating specialty flavors baked fresh in-house.</div>
+                </div>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Coffee Cake</div>
+                  <div class="menu-item-desc">Warm, cinnamon-swirled coffee cake with a buttery crumble topping. The perfect pairing for your morning latte.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Light Bites -->
+        <div class="col-lg-6">
+          <div class="menu-category h-100">
+            <div class="menu-category-header">
+              <span class="cat-icon">🥗</span>
+              <h3>Salads &amp; Light Bites</h3>
+            </div>
+            <div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Classic Caesar Salad</div>
+                  <div class="menu-item-desc">Crisp romaine, house-made Caesar dressing, shaved parmesan, and housemade croutons. Add grilled chicken for a complete meal.</div>
+                </div>
+                <span class="menu-badge badge-popular">Add Chicken</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Seasonal Green Salad</div>
+                  <div class="menu-item-desc">Mixed greens, cherry tomatoes, cucumber, shaved carrot, and your choice of dressing. Fresh and local when possible.</div>
+                </div>
+                <span class="menu-badge badge-veg">Vegetarian</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Fruit Cup</div>
+                  <div class="menu-item-desc">Fresh seasonal fruit — a light and refreshing side or snack any time of day.</div>
+                </div>
+                <span class="menu-badge badge-veg">GF Friendly</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <div class="menu-item-name">Snack Box</div>
+                  <div class="menu-item-desc">Cheese, crackers, grapes, and nuts for a satisfying on-the-go bite between sights on King Street.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+
+      <div class="text-center mt-5">
+        <p class="text-muted mb-3" style="font-size:0.9rem;">Full menu with pricing and seasonal specials available online</p>
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary" target="_blank" rel="noopener">
+          <i class="bi bi-bag-fill me-2"></i>See Full Menu &amp; Order
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ COFFEE ════════════════════════════════ -->
+  <section id="coffee" class="coffee-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Handcrafted Beverages</p>
+        <h2 class="section-title mb-3">Coffee &amp; Drinks</h2>
+        <div class="divider-gold mx-auto mb-4"></div>
+        <p class="text-muted mx-auto" style="max-width:580px; font-size:1rem; line-height:1.75;">
+          From expertly pulled espresso to plant-based energy refreshers, every drink at Sweet Palm is made to complement your food and fuel your day on King Street.
+        </p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">☕</div>
+            <h5>Espresso &amp; Cappuccino</h5>
+            <p>Bold, concentrated shots and velvety cappuccinos pulled fresh to order. The foundation of everything we do.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🥛</div>
+            <h5>Lattes &amp; Flat Whites</h5>
+            <p>Smooth espresso layered with steamed milk. Available hot or iced, with dairy or plant-based alternatives.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🌴</div>
+            <h5>Sweet Palm Signature Latte</h5>
+            <p>Our famous house-made syrup latte — the drink that started it all. Sweet, smooth, and unmistakably Sweet Palm.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🍌</div>
+            <h5>Banana Pudding Latte</h5>
+            <p>A dessert-inspired fan favorite. Espresso meets creamy banana pudding flavor for a uniquely indulgent sip.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🍵</div>
+            <h5>Matcha &amp; Chai</h5>
+            <p>Premium Japanese matcha latte with cold foam, and our spiced dirty chai blending chai and espresso.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🧊</div>
+            <h5>Cold Brew</h5>
+            <p>Slow-steeped 18 hours for a bold, smooth flavor. Perfect for warm Charleston afternoons on King Street.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🩷</div>
+            <h5>Pink Palm Energy Refresher</h5>
+            <p>Strawberry &amp; dragonfruit plant-based energy drink. Vibrant, fruity, and naturally energizing.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">💙</div>
+            <h5>Thunderbird Refresher</h5>
+            <p>Blue raspberry &amp; lime over green tea. A bold, icy refresher for the King Street explorer.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🍹</div>
+            <h5>Lowcountry Mojito (Non-Alc.)</h5>
+            <p>Pineapple, lime, mint, and soda — a refreshing, alcohol-free nod to Lowcountry flavor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary" target="_blank" rel="noopener">
+          Order a Drink
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ ABOUT ════════════════════════════════ -->
+  <section id="about" class="about-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container">
+      <div class="row gy-5 align-items-start">
+
+        <div class="col-lg-6">
+          <p class="section-label">A Downtown Charleston Food Destination</p>
+          <h2 class="section-title mb-4">Your King Street Café</h2>
+          <div class="divider-gold mb-4"></div>
+
+          <p style="font-size:1.05rem; line-height:1.8; color:#4a3b30;" class="mb-4">
+            Sweet Palm Coffee &amp; Café is Downtown Charleston's favorite spot for <strong>fresh café food and handcrafted coffee on King Street</strong>. Whether you're a College of Charleston student powering through a study session, a professional hunting for the perfect working lunch, or a visitor exploring the French Quarter and Historic District, Sweet Palm is your local food and coffee anchor.
+          </p>
+          <p style="font-size:1.05rem; line-height:1.8; color:#4a3b30;" class="mb-4">
+            We believe a great café meal starts with real ingredients. Our <strong>chicken caesar wraps</strong>, <strong>breakfast burritos</strong>, and <strong>BLT wraps</strong> are made fresh to order — no shortcuts, no shortcuts, no heat lamps. Just good food that tastes like it was made with care, because it was. Every dish is designed to be satisfying whether you're eating in or grabbing it on the go up King Street.
+          </p>
+
+          <div class="about-highlight mb-4">
+            "We're not just a coffee shop — we're the café where Downtown Charleston comes to eat, work, and connect. Every wrap, burrito, and latte is made with Lowcountry pride."
+          </div>
+
+          <p style="font-size:1.05rem; line-height:1.8; color:#4a3b30;">
+            Located at <strong>471 King Street</strong>, we serve the heart of the Charleston peninsula — from Cannonborough and Radcliffeborough to the French Quarter and Historic District. Walk in from Upper King or Church Street and you'll feel it immediately: a warm, coastal-inspired space that's equal parts productive and relaxing.
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="ps-lg-4">
+            <h4 class="mb-3" style="font-family:'Playfair Display',serif; color:var(--palm-brown);">Visit Us</h4>
+            <div class="mb-4">
+              <span class="info-pill"><i class="bi bi-geo-alt-fill"></i> 471 King St, Charleston SC 29403</span>
+              <span class="info-pill"><i class="bi bi-telephone-fill"></i> <a href="tel:8439743594" style="color:#e8ddd0; text-decoration:none;">(843) 974-3594</a></span>
+              <span class="info-pill"><i class="bi bi-clock-fill"></i> Open Daily</span>
+            </div>
+
+            <div class="d-flex flex-column gap-3">
+              <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary text-center" target="_blank" rel="noopener" style="border-radius:12px;">
+                <i class="bi bi-bag-fill me-2"></i>Order Food Online
+              </a>
+              <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-hero-outline text-center" target="_blank" rel="noopener" style="border-radius:12px; border-color:var(--palm-gold); color:var(--palm-brown);">
+                <i class="bi bi-map-fill me-2"></i>Get Directions on Google Maps
+              </a>
+              <a href="https://www.sweetpalmcoffee.com/" class="btn-hero-outline text-center" target="_blank" rel="noopener" style="border-radius:12px; border-color:var(--palm-brown); color:var(--palm-brown);">
+                <i class="bi bi-globe2 me-2"></i>Visit Sweet Palm Coffee Website
+              </a>
+            </div>
+
+            <hr class="my-4" style="border-color:#e0d4c8;" />
+
+            <h5 class="mb-3" style="font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--palm-brown);">
+              Why Locals Love Sweet Palm
+            </h5>
+            <ul class="list-unstyled" style="font-size:0.95rem; line-height:2; color:var(--palm-gray);">
+              <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Fresh food made to order — not pre-packaged</li>
+              <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Artisan espresso &amp; specialty drinks</li>
+              <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Welcoming space for work, study &amp; hangouts</li>
+              <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Online ordering for fast King Street pickup</li>
+              <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Right in the heart of Downtown Charleston</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ NEIGHBORHOODS ════════════════════════ -->
+  <section class="neighborhood-section py-5">
+    <div class="container text-center">
+      <p class="section-label mb-2" style="color:var(--palm-gold);">We Serve the Whole Peninsula</p>
+      <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:1.9rem;">
+        Downtown Charleston Neighborhoods We Love
+      </h2>
+      <p class="mb-4" style="color:#c9bfb5; font-size:0.95rem; max-width:600px; margin:auto; line-height:1.75;">
+        Whether you're strolling King Street, coming from the French Quarter, or heading over from the College of Charleston, Sweet Palm is your café. We're walking distance from Charleston's most iconic neighborhoods.
+      </p>
+      <div class="mt-3">
+        <span class="neighborhood-tag">King Street</span>
+        <span class="neighborhood-tag">Upper King Street</span>
+        <span class="neighborhood-tag">Historic District</span>
+        <span class="neighborhood-tag">French Quarter</span>
+        <span class="neighborhood-tag">Cannonborough</span>
+        <span class="neighborhood-tag">Radcliffeborough</span>
+        <span class="neighborhood-tag">Church Street</span>
+        <span class="neighborhood-tag">College of Charleston</span>
+        <span class="neighborhood-tag">Harleston Village</span>
+        <span class="neighborhood-tag">Downtown Charleston</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ CTA ══════════════════════════════════ -->
+  <section class="cta-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
+    <div class="container text-center">
+      <p class="section-label mb-2" style="color:rgba(59,43,31,0.65);">Ready to Eat?</p>
+      <h2 class="mb-3" style="font-size:clamp(2rem,4vw,3rem);">
+        Fresh Food Waiting for You<br />on King Street
+      </h2>
+      <p class="mb-5" style="font-size:1.05rem; max-width:500px; margin:auto;">
+        Order your chicken caesar wrap, breakfast burrito, BLT, or any of our café favorites for pickup at 471 King St, Downtown Charleston.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dark" target="_blank" rel="noopener">
+          <i class="bi bi-bag-fill me-2"></i>Order Food Online
+        </a>
+        <a href="https://share.google/SdvCNVNck09SpxLZU" class="btn-cta-outline-dark" target="_blank" rel="noopener">
+          <i class="bi bi-map me-2"></i>Get Directions
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4 mb-4">
+        <div class="col-md-4">
+          <div class="footer-brand mb-2">🌴 Sweet Palm Coffee</div>
+          <p class="mb-2" style="line-height:1.7;">Downtown Charleston's café for fresh food and handcrafted coffee on King Street.</p>
+          <a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">sweetpalmcoffee.com</a>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Visit Us</h6>
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-2" style="color:var(--palm-gold);"></i>471 King St, Charleston, SC 29403</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill me-2" style="color:var(--palm-gold);"></i><a href="tel:8439743594">(843) 974-3594</a></p>
+          <p class="mb-0"><i class="bi bi-clock-fill me-2" style="color:var(--palm-gold);"></i>Open Daily · Breakfast &amp; Lunch</p>
+        </div>
+        <div class="col-md-4">
+          <h6 style="color:var(--palm-gold); font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem;">Quick Links</h6>
+          <ul class="list-unstyled mb-0" style="line-height:2.1;">
+            <li><a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">Order Food Online</a></li>
+            <li><a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">Sweet Palm Coffee Main Site</a></li>
+            <li><a href="https://share.google/SdvCNVNck09SpxLZU" target="_blank" rel="noopener">Google Maps &amp; Directions</a></li>
+            <li><a href="#food-menu">Food Menu</a></li>
+            <li><a href="#coffee">Coffee &amp; Drinks</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3" style="font-size:0.8rem; color:#7a6a5e;">
+        <span>&copy; 2025 EatSweetPalm.com &mdash; Part of the Sweet Palm Coffee Family.</span>
+        <span>471 King St, Downtown Charleston, SC &nbsp;|&nbsp; (843) 974-3594</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Smooth scroll offset for sticky nav -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
