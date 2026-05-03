@@ -238,9 +238,12 @@
     }
     .menu-img-wrap img {
       width: 100%;
-      height: 320px;
-      object-fit: cover;
+      height: auto;
+      max-height: 700px;
+      object-fit: contain;
+      object-position: top;
       display: block;
+      background: #1a0f08;
       transition: opacity 0.3s;
     }
     .menu-img-wrap:hover img { opacity: 0.85; }
@@ -582,41 +585,51 @@
         </p>
       </div>
 
-      <!-- MENU PHOTO GALLERY ROW -->
-      <div class="row g-3 pb-5">
-        <div class="col-md-4">
-          <div class="menu-img-wrap" onclick="openLightbox(this)">
-            <img src="Copy_of_Copy_of_Restaurant_Menu_Template__17_.png"
-                 alt="Sweet Palm Coffee & Café drinks menu — café classics, tea, palm energy, and refreshers"
-                 loading="lazy" />
-            <div class="menu-img-overlay">
-              <span>Drinks Menu</span>
-              <small>Café Classics · Tea · Palm Energy · Refreshers</small>
+      <!-- MENU PHOTO GALLERY — ONE PER ROW -->
+      <div class="pb-5">
+
+        <div class="row g-0 mb-4">
+          <div class="col-12">
+            <div class="menu-img-wrap" onclick="openLightbox(this)">
+              <img src="RestaurantMenuTemplate.png"
+                   alt="Sweet Palm Coffee & Café drinks menu — café classics, tea, palm energy, and refreshers"
+                   loading="lazy" />
+              <div class="menu-img-overlay">
+                <span>Drinks Menu</span>
+                <small>Café Classics · Tea · Palm Energy · Refreshers</small>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="menu-img-wrap" onclick="openLightbox(this)">
-            <img src="Brown_Simple_Menu_List_Food_Menu__7_.png"
-                 alt="Sweet Palm Coffee food menu — breakfast burritos, sandwiches, caesar wraps, toasties, pastries"
-                 loading="lazy" />
-            <div class="menu-img-overlay">
-              <span>All-Day Eats</span>
-              <small>Burritos · Sandwiches · Caesar Wraps · Toasties</small>
+
+        <div class="row g-0 mb-4">
+          <div class="col-12">
+            <div class="menu-img-wrap" onclick="openLightbox(this)">
+              <img src="RestaurantMenuTemplate2.png"
+                   alt="Sweet Palm Coffee food menu — breakfast burritos, sandwiches, caesar wraps, toasties, pastries"
+                   loading="lazy" />
+              <div class="menu-img-overlay">
+                <span>All-Day Eats</span>
+                <small>Burritos · Sandwiches · Caesar Wraps · Toasties</small>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="menu-img-wrap" onclick="openLightbox(this)">
-            <img src="Copy_of_Restaurant_Menu_Template__29_.png"
-                 alt="Sweet Palm Coffee seasonal specials and Sweet Palm favorites — signature lattes and seasonal drinks"
-                 loading="lazy" />
-            <div class="menu-img-overlay">
-              <span>Seasonal Specials &amp; Favorites</span>
-              <small>Signature Lattes · Seasonal Specials</small>
+
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="menu-img-wrap" onclick="openLightbox(this)">
+              <img src="ResturantMenuTemplate3.png"
+                   alt="Sweet Palm Coffee seasonal specials and Sweet Palm favorites — signature lattes and seasonal drinks"
+                   loading="lazy" />
+              <div class="menu-img-overlay">
+                <span>Seasonal Specials &amp; Favorites</span>
+                <small>Signature Lattes · Seasonal Specials</small>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
