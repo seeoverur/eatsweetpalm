@@ -10,11 +10,8 @@
   <meta property="og:description" content="Fresh wraps, breakfast, baked goods & handcrafted coffee at 471 King St, Downtown Charleston SC. Order online or visit us today." />
   <meta property="og:type" content="restaurant" />
 
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -108,10 +105,7 @@
       font-style: italic;
       font-weight: 900;
     }
-    .hero-title span {
-      color: var(--palm-gold);
-      font-style: normal;
-    }
+    .hero-title span { color: var(--palm-gold); font-style: normal; }
     .hero-sub {
       color: #c9bfb5;
       font-size: 1.1rem;
@@ -187,11 +181,7 @@
       font-size: 0.88rem;
       letter-spacing: 0.03em;
     }
-    .info-strip a {
-      color: var(--palm-brown);
-      text-decoration: none;
-      font-weight: 700;
-    }
+    .info-strip a { color: var(--palm-brown); text-decoration: none; font-weight: 700; }
     .info-strip a:hover { text-decoration: underline; }
 
     /* ── SECTION HEADERS ── */
@@ -214,13 +204,110 @@
       border-radius: 2px;
     }
 
+    /* ── MENU PHOTO GALLERY ── */
+    .menu-photo-gallery {
+      background: var(--palm-brown);
+      padding: 3rem 0 0;
+    }
+    .menu-photo-gallery .gallery-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--palm-gold);
+    }
+    .menu-photo-gallery h2 {
+      color: #FAF6F0;
+    }
+    .menu-photo-gallery .divider-gold {
+      background: var(--palm-gold);
+    }
+    .menu-img-wrap {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(196,148,58,0.3);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #1a0f08;
+    }
+    .menu-img-wrap:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+      border-color: var(--palm-gold);
+    }
+    .menu-img-wrap img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+    .menu-img-wrap:hover img { opacity: 0.85; }
+    .menu-img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(59,43,31,0.92) 0%, transparent 60%);
+      padding: 1.2rem 1rem 0.9rem;
+    }
+    .menu-img-overlay span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--palm-gold);
+      letter-spacing: 0.04em;
+    }
+    .menu-img-overlay small {
+      display: block;
+      color: #d4c9be;
+      font-size: 0.75rem;
+      margin-top: 0.1rem;
+    }
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox-overlay.active { display: flex; }
+    .lightbox-img {
+      max-width: 95vw;
+      max-height: 92vh;
+      border-radius: 12px;
+      box-shadow: 0 0 80px rgba(196,148,58,0.25);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: var(--palm-gold);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
     /* ── FOOD MENU CARDS ── */
+    .menu-section-bg {
+      background: var(--palm-cream);
+      padding-top: 4rem;
+      padding-bottom: 5rem;
+    }
     .menu-category {
       background: #fff;
       border-radius: 18px;
       border: 1px solid #e8ddd0;
       overflow: hidden;
       transition: box-shadow 0.25s, transform 0.25s;
+      height: 100%;
     }
     .menu-category:hover {
       box-shadow: 0 12px 40px rgba(59,43,31,0.12);
@@ -233,9 +320,7 @@
       align-items: center;
       gap: 0.75rem;
     }
-    .menu-category-header .cat-icon {
-      font-size: 1.6rem;
-    }
+    .menu-category-header .cat-icon { font-size: 1.6rem; }
     .menu-category-header h3 {
       font-size: 1.15rem;
       color: var(--palm-gold);
@@ -262,18 +347,33 @@
       color: var(--palm-gray);
       line-height: 1.5;
     }
+    .menu-item-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
+      flex-shrink: 0;
+    }
+    .menu-price {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: var(--palm-green);
+      white-space: nowrap;
+    }
     .menu-badge {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 0.2rem 0.55rem;
+      padding: 0.18rem 0.5rem;
       border-radius: 20px;
       white-space: nowrap;
     }
     .badge-popular { background: #FFF3CD; color: #7B5800; }
     .badge-new     { background: #D1FAE5; color: #065F46; }
     .badge-veg     { background: #DCFCE7; color: #166534; }
+    .badge-spicy   { background: #FFE4E1; color: #9B1C1C; }
+    .badge-seasonal { background: #EDE9FE; color: #5B21B6; }
 
     /* ── COFFEE SECTION ── */
     .coffee-section { background-color: var(--palm-tan); }
@@ -286,15 +386,18 @@
       transition: box-shadow 0.2s;
     }
     .coffee-card:hover { box-shadow: 0 8px 28px rgba(59,43,31,0.1); }
-    .coffee-card .drink-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
+    .coffee-card .drink-icon { font-size: 2rem; margin-bottom: 0.5rem; }
     .coffee-card h5 {
       font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
       color: var(--palm-brown);
       margin-bottom: 0.25rem;
+    }
+    .coffee-card .drink-price {
+      font-weight: 700;
+      color: var(--palm-green);
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
     }
     .coffee-card p {
       font-size: 0.84rem;
@@ -361,11 +464,7 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .btn-cta-dark:hover {
-      background: #2a1e15;
-      color: var(--palm-gold);
-      transform: translateY(-2px);
-    }
+    .btn-cta-dark:hover { background: #2a1e15; color: var(--palm-gold); transform: translateY(-2px); }
     .btn-cta-outline-dark {
       border: 2px solid var(--palm-brown);
       color: var(--palm-brown);
@@ -379,30 +478,35 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-    .btn-cta-outline-dark:hover {
-      background: var(--palm-brown);
-      color: var(--palm-gold);
-    }
+    .btn-cta-outline-dark:hover { background: var(--palm-brown); color: var(--palm-gold); }
 
     /* ── FOOTER ── */
-    .site-footer {
-      background: #201510;
-      color: #c9bfb5;
-      font-size: 0.88rem;
-    }
+    .site-footer { background: #201510; color: #c9bfb5; font-size: 0.88rem; }
     .site-footer a { color: var(--palm-gold-lt); text-decoration: none; }
     .site-footer a:hover { color: var(--palm-gold); text-decoration: underline; }
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: var(--palm-gold);
-    }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--palm-gold); }
     .footer-divider { border-color: rgba(255,255,255,0.08); }
+
+    /* ── ORDER RIBBON BETWEEN SECTIONS ── */
+    .order-ribbon {
+      background: var(--palm-green);
+      padding: 0.85rem 0;
+      text-align: center;
+    }
+    .order-ribbon a {
+      color: #FAF6F0;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .order-ribbon a:hover { color: var(--palm-gold-lt); }
   </style>
 </head>
 <body>
 
-  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-sweet sticky-top">
     <div class="container">
       <a class="navbar-brand" href="/">🌴 Sweet Palm Coffee &amp; Café</a>
@@ -416,14 +520,12 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="https://share.google/SdvCNVNck09SpxLZU" target="_blank" rel="noopener">Find Us</a></li>
         </ul>
-        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn btn-order" target="_blank" rel="noopener">
-          Order Online
-        </a>
+        <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn btn-order" target="_blank" rel="noopener">Order Online</a>
       </div>
     </div>
   </nav>
 
-  <!-- ════════════════════════════════ INFO STRIP ════════════════════════════ -->
+  <!-- INFO STRIP -->
   <div class="info-strip py-2">
     <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-center gap-2">
       <span><i class="bi bi-geo-alt-fill me-1"></i> 471 King St, Downtown Charleston, SC</span>
@@ -435,7 +537,7 @@
     </div>
   </div>
 
-  <!-- ════════════════════════════════ HERO ═════════════════════════════════ -->
+  <!-- HERO -->
   <section class="hero-section py-5">
     <div class="container py-5">
       <div class="row align-items-center gy-5">
@@ -446,7 +548,6 @@
           <h1 class="hero-title mb-4">
             Fresh Food &amp;<br /><span>Handcrafted Coffee</span><br />on King Street
           </h1>
-          <img src="chicken-caesar-wrap.jpg" class="img-fluid" alt="chicken caesar wrap">
           <p class="hero-sub mb-4">
             Sweet Palm is Downtown Charleston's go-to café for fresh wraps, hearty breakfast burritos, BLTs, and artisan coffee. Real ingredients. Lowcountry hospitality. Right here on King Street.
           </p>
@@ -454,9 +555,7 @@
             <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary" target="_blank" rel="noopener">
               <i class="bi bi-bag-fill me-2"></i>Order Food Online
             </a>
-            <a href="#food-menu" class="btn-hero-outline">
-              View Menu <i class="bi bi-arrow-down ms-1"></i>
-            </a>
+            <a href="#food-menu" class="btn-hero-outline">View Menu <i class="bi bi-arrow-down ms-1"></i></a>
           </div>
           <div class="d-flex flex-wrap gap-2">
             <span class="hero-badge"><i class="bi bi-check-circle-fill"></i> Fresh Wraps &amp; Burritos</span>
@@ -472,169 +571,343 @@
   </section>
 
   <!-- ════════════════════════════════ FOOD MENU ════════════════════════════ -->
-  <section id="food-menu" class="py-6 py-md-7" style="background:var(--palm-cream); padding-top:5rem; padding-bottom:5rem;">
+  <section id="food-menu" class="menu-photo-gallery">
+    <div class="container">
+      <div class="text-center mb-4 pt-2">
+        <p class="gallery-label mb-2">Real Menu · Sweet Palm Coffee &amp; Café</p>
+        <h2 class="section-title mb-3" style="color:#FAF6F0;">Our Full Menu</h2>
+        <div class="divider-gold mx-auto mb-3"></div>
+        <p style="color:#c9bfb5; font-size:0.95rem; max-width:560px; margin:auto; line-height:1.7;">
+          Click any menu image to view full size. All prices shown are current. Order online or visit us at 471 King Street.
+        </p>
+      </div>
+
+      <!-- MENU PHOTO GALLERY ROW -->
+      <div class="row g-3 pb-5">
+        <div class="col-md-4">
+          <div class="menu-img-wrap" onclick="openLightbox(this)">
+            <img src="Copy_of_Copy_of_Restaurant_Menu_Template__17_.png"
+                 alt="Sweet Palm Coffee & Café drinks menu — café classics, tea, palm energy, and refreshers"
+                 loading="lazy" />
+            <div class="menu-img-overlay">
+              <span>Drinks Menu</span>
+              <small>Café Classics · Tea · Palm Energy · Refreshers</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-img-wrap" onclick="openLightbox(this)">
+            <img src="Brown_Simple_Menu_List_Food_Menu__7_.png"
+                 alt="Sweet Palm Coffee food menu — breakfast burritos, sandwiches, caesar wraps, toasties, pastries"
+                 loading="lazy" />
+            <div class="menu-img-overlay">
+              <span>All-Day Eats</span>
+              <small>Burritos · Sandwiches · Caesar Wraps · Toasties</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-img-wrap" onclick="openLightbox(this)">
+            <img src="Copy_of_Restaurant_Menu_Template__29_.png"
+                 alt="Sweet Palm Coffee seasonal specials and Sweet Palm favorites — signature lattes and seasonal drinks"
+                 loading="lazy" />
+            <div class="menu-img-overlay">
+              <span>Seasonal Specials &amp; Favorites</span>
+              <small>Signature Lattes · Seasonal Specials</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER RIBBON -->
+  <div class="order-ribbon">
+    <a href="https://order.toasttab.com/online/sweetpalmcoffee" target="_blank" rel="noopener">
+      <i class="bi bi-bag-fill me-2"></i>Order Online for Pickup at 471 King Street →
+    </a>
+  </div>
+
+  <!-- FOOD MENU ITEM CARDS -->
+  <section class="menu-section-bg">
     <div class="container">
       <div class="text-center mb-5">
         <p class="section-label">King Street Food in Downtown Charleston</p>
-        <h2 class="section-title mb-3">Our Food Menu</h2>
+        <h2 class="section-title mb-3">What We're Serving</h2>
         <div class="divider-gold mx-auto mb-4"></div>
         <p class="text-muted mx-auto" style="max-width:620px; font-size:1rem; line-height:1.75;">
-          From satisfying breakfast options to fresh lunch wraps, every item at Sweet Palm is made with care. Pair anything with one of our handcrafted drinks for the ultimate downtown Charleston café experience.
+          From hearty breakfast burritos to fresh caesar wraps and pressed toasties — every item at Sweet Palm is made with care. Kitchen closes 30 minutes before store closing.
         </p>
       </div>
 
       <div class="row g-4">
 
-        <!-- Wraps -->
+        <!-- Breakfast Burritos -->
         <div class="col-lg-6">
-          <div class="menu-category h-100">
+          <div class="menu-category">
             <div class="menu-category-header">
               <span class="cat-icon">🌯</span>
-              <h3>Wraps &amp; Handhelds</h3>
+              <h3>Breakfast Burritos</h3>
             </div>
-            <div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Chicken Caesar Wrap</div>
-                  <div class="menu-item-desc">Grilled chicken, crisp romaine, shaved parmesan, and house Caesar dressing wrapped in a toasted flour tortilla — a King Street lunch staple.</div>
-                </div>
-                <span class="menu-badge badge-popular">Popular</span>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Classic Burrito</div>
+                <div class="menu-item-desc">Eggs, crispy potatoes, cheddar, choice of bacon, turkey bacon, or turkey sausage. Served with AM sauce. No meat — $9.49</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">BLT Wrap</div>
-                  <div class="menu-item-desc">Smoky bacon, fresh tomato, crispy lettuce, and creamy mayo tucked into a warm wrap. A Downtown Charleston classic done right.</div>
-                </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$11.49</span>
+                <span class="menu-badge badge-popular">Best Seller</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Spicy Classic Burrito</div>
+                <div class="menu-item-desc">Same as Classic + honey chipotle inside. Egg &amp; Cheese (no meat) — $9.99</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$11.99</span>
+                <span class="menu-badge badge-spicy">Spicy</span>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Cali Burrito</div>
+                <div class="menu-item-desc">Eggs, crispy potatoes, cheddar, avocado, pico salsa, choice of bacon, turkey bacon, or turkey sausage. Served with green sauce. Egg &amp; Cheese (no meat) — $10.49</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$12.49</span>
                 <span class="menu-badge badge-popular">Fan Fave</span>
-              </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Veggie Wrap</div>
-                  <div class="menu-item-desc">Seasonal roasted vegetables, hummus, greens, and feta in a whole-wheat tortilla. Fresh, filling, and 100% plant-based.</div>
-                </div>
-                <span class="menu-badge badge-veg">Vegetarian</span>
-              </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Turkey Club Wrap</div>
-                  <div class="menu-item-desc">Sliced turkey, avocado, bacon, Swiss cheese, and whole grain mustard — hearty enough for lunch on King Street.</div>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Breakfast -->
+        <!-- Breakfast Sandwiches -->
         <div class="col-lg-6">
-          <div class="menu-category h-100">
+          <div class="menu-category">
             <div class="menu-category-header">
-              <span class="cat-icon">🌅</span>
-              <h3>Breakfast Items</h3>
+              <span class="cat-icon">🥚</span>
+              <h3>Breakfast Sandwiches</h3>
             </div>
-            <div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Breakfast Burrito</div>
-                  <div class="menu-item-desc">Scrambled eggs, cheddar cheese, seasoned potatoes, and your choice of bacon or sausage in a flour tortilla. The perfect downtown Charleston morning fuel.</div>
-                </div>
-                <span class="menu-badge badge-popular">Best Seller</span>
+            <div class="menu-item" style="background:#faf6f0; padding-top:0.65rem; padding-bottom:0.65rem;">
+              <div><div class="menu-item-desc" style="color:var(--palm-brown); font-weight:500;">Served on a brioche bun with eggs, cheddar, and a side of AM sauce.</div></div>
+            </div>
+            <div class="menu-item">
+              <div><div class="menu-item-name">Egg &amp; Cheese</div></div>
+              <div class="menu-item-right"><span class="menu-price">$8.49</span></div>
+            </div>
+            <div class="menu-item">
+              <div><div class="menu-item-name">Bacon, Egg &amp; Cheese</div></div>
+              <div class="menu-item-right"><span class="menu-price">$10.49</span></div>
+            </div>
+            <div class="menu-item">
+              <div><div class="menu-item-name">Turkey Bacon, Egg &amp; Cheese</div></div>
+              <div class="menu-item-right"><span class="menu-price">$10.49</span></div>
+            </div>
+            <div class="menu-item">
+              <div><div class="menu-item-name">Turkey Sausage, Egg &amp; Cheese</div></div>
+              <div class="menu-item-right"><span class="menu-price">$10.49</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Caesar Wraps -->
+        <div class="col-lg-6">
+          <div class="menu-category">
+            <div class="menu-category-header">
+              <span class="cat-icon">🥗</span>
+              <h3>Caesar Wraps</h3>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Boca Chicken Caesar</div>
+                <div class="menu-item-desc">Crispy chicken, romaine, parmesan, house-made croutons, and house-made Caesar dressing.</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Avocado Toast</div>
-                  <div class="menu-item-desc">Smashed avocado on toasted sourdough with everything seasoning, lemon zest, and a drizzle of olive oil. Simple, fresh, and satisfying.</div>
-                </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$12.99</span>
+                <span class="menu-badge badge-popular">Popular</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Spicy Chicken Caesar</div>
+                <div class="menu-item-desc">Crispy chicken tossed in mild buffalo sauce, romaine, parmesan, house-made croutons, and Caesar dressing.</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$13.49</span>
+                <span class="menu-badge badge-spicy">Spicy</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">BLT Chicken Caesar</div>
+                <div class="menu-item-desc">Crispy chicken, bacon, avocado, tomato, romaine, parmesan, house-made croutons, and Caesar dressing.</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$14.49</span>
+                <span class="menu-badge badge-popular">Fan Fave</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toasties & Light Bites -->
+        <div class="col-lg-6">
+          <div class="menu-category">
+            <div class="menu-category-header">
+              <span class="cat-icon">🥪</span>
+              <h3>Toasties &amp; Light Bites</h3>
+            </div>
+            <div class="menu-item" style="background:#faf6f0; padding-top:0.65rem; padding-bottom:0.65rem;">
+              <div><div class="menu-item-desc" style="color:var(--palm-brown); font-weight:500; font-style:italic;">Toasties served on pressed sourdough</div></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Classic Grilled Cheese</div>
+                <div class="menu-item-desc">American cheddar cheese blend on buttered, pressed sourdough.</div>
+              </div>
+              <div class="menu-item-right"><span class="menu-price">$7.99</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Turkey &amp; Swiss Melt</div>
+                <div class="menu-item-desc">Smoked turkey and Swiss cheese blend on buttered pressed sourdough.</div>
+              </div>
+              <div class="menu-item-right"><span class="menu-price">$10.99</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">OG Avocado Toast</div>
+                <div class="menu-item-desc">Smashed avocado, sea salt, olive oil, and light everything bagel seasoning. Add hard-boiled eggs +$1.99</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$9.99</span>
                 <span class="menu-badge badge-veg">Vegetarian</span>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Egg &amp; Cheese Sandwich</div>
-                  <div class="menu-item-desc">A fluffy egg with melted cheese on a buttered croissant or English muffin. A King Street breakfast must.</div>
-                </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Turkey Bacon &amp; Cheddar Egg Bites</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Granola Parfait</div>
-                  <div class="menu-item-desc">House-made granola layered with Greek yogurt and fresh seasonal fruit. Light, healthy, and delicious.</div>
-                </div>
+              <div class="menu-item-right"><span class="menu-price">$6.49</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Granola Parfait</div>
+                <div class="menu-item-desc">Greek yogurt, crunchy granola, strawberry purée.</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$6.49</span>
                 <span class="menu-badge badge-veg">Healthy</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Baked Goods & Pastries -->
+        <!-- House Baked Pastries -->
         <div class="col-lg-6">
-          <div class="menu-category h-100">
+          <div class="menu-category">
             <div class="menu-category-header">
               <span class="cat-icon">🥐</span>
-              <h3>Baked Goods &amp; Pastries</h3>
+              <h3>House Baked Pastries</h3>
             </div>
-            <div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Croissants</div>
-                  <div class="menu-item-desc">Buttery, flaky croissants sourced fresh each morning. Available plain or with chocolate.</div>
-                </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Fresh Baked Butter Croissant</div>
+                <div class="menu-item-desc">Buttery, flaky croissant baked fresh in-house each morning.</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$3.50</span>
                 <span class="menu-badge badge-new">Fresh Daily</span>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Seasonal Muffins</div>
-                  <div class="menu-item-desc">From blueberry to banana walnut, our rotating muffin selection highlights the best ingredients of the season.</div>
-                </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Chocolate Croissant</div>
+                <div class="menu-item-desc">House-baked croissant filled with rich dark chocolate.</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Cookies</div>
-                  <div class="menu-item-desc">Chocolate chip, snickerdoodle, and rotating specialty flavors baked fresh in-house.</div>
-                </div>
+              <div class="menu-item-right"><span class="menu-price">$3.50</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Signature Cinnamon Roll</div>
+                <div class="menu-item-desc">Vegetarian. Our famous house-made cinnamon roll.</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Coffee Cake</div>
-                  <div class="menu-item-desc">Warm, cinnamon-swirled coffee cake with a buttery crumble topping. The perfect pairing for your morning latte.</div>
-                </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$6.00</span>
+                <span class="menu-badge badge-popular">Fan Fave</span>
               </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Texas Jumbo Blueberry Muffin</div>
+                <div class="menu-item-desc">Big, bakery-style blueberry muffin — baked fresh.</div>
+              </div>
+              <div class="menu-item-right"><span class="menu-price">$6.00</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Light Bites -->
+        <!-- Sweet Palm Favorites (Signature Drinks) -->
         <div class="col-lg-6">
-          <div class="menu-category h-100">
+          <div class="menu-category">
             <div class="menu-category-header">
-              <span class="cat-icon">🥗</span>
-              <h3>Salads &amp; Light Bites</h3>
+              <span class="cat-icon">⭐</span>
+              <h3>Sweet Palm Favorites</h3>
             </div>
-            <div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Classic Caesar Salad</div>
-                  <div class="menu-item-desc">Crisp romaine, house-made Caesar dressing, shaved parmesan, and housemade croutons. Add grilled chicken for a complete meal.</div>
-                </div>
-                <span class="menu-badge badge-popular">Add Chicken</span>
+            <div class="menu-item" style="background:#faf6f0; padding-top:0.65rem; padding-bottom:0.65rem;">
+              <div><div class="menu-item-desc" style="color:var(--palm-brown); font-weight:500; font-style:italic;">Available in espresso, matcha, or chai · Iced or hot</div></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">SweetPalm Signature Latte</div>
+                <div class="menu-item-desc">Our signature syrup made with fresh vanilla bean, palm blossom, and warm spices topped with sweet cream.</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Seasonal Green Salad</div>
-                  <div class="menu-item-desc">Mixed greens, cherry tomatoes, cucumber, shaved carrot, and your choice of dressing. Fresh and local when possible.</div>
-                </div>
-                <span class="menu-badge badge-veg">Vegetarian</span>
+              <div class="menu-item-right">
+                <span class="menu-price">$7.00</span>
+                <span class="menu-badge badge-popular">Signature</span>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Fruit Cup</div>
-                  <div class="menu-item-desc">Fresh seasonal fruit — a light and refreshing side or snack any time of day.</div>
-                </div>
-                <span class="menu-badge badge-veg">GF Friendly</span>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Ultimate Vanilla Latte</div>
+                <div class="menu-item-desc">Silky house-made vanilla bean sauce, finished with vanilla cold foam.</div>
               </div>
-              <div class="menu-item">
-                <div>
-                  <div class="menu-item-name">Snack Box</div>
-                  <div class="menu-item-desc">Cheese, crackers, grapes, and nuts for a satisfying on-the-go bite between sights on King Street.</div>
-                </div>
+              <div class="menu-item-right"><span class="menu-price">$7.50</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Signature Salted Caramel Latte</div>
+                <div class="menu-item-desc">Salted caramel syrup + caramel drizzle, caramel sweet cream &amp; Maldon flake sea salt.</div>
               </div>
+              <div class="menu-item-right"><span class="menu-price">$7.50</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Pistachio Latte</div>
+                <div class="menu-item-desc">Italian pistachio cream topped with pistachio cold foam and crushed pistachio.</div>
+              </div>
+              <div class="menu-item-right"><span class="menu-price">$7.50</span></div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Signature Banana Pudding Latte</div>
+                <div class="menu-item-desc">Rich banana purée + premium vanilla syrup topped with sweet cream and wafer crumble.</div>
+              </div>
+              <div class="menu-item-right">
+                <span class="menu-price">$7.50</span>
+                <span class="menu-badge badge-popular">Fan Fave</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div>
+                <div class="menu-item-name">Cookie Butter Latte</div>
+                <div class="menu-item-desc">Cookie butter, Biscoff, sugar cookie cold foam.</div>
+              </div>
+              <div class="menu-item-right"><span class="menu-price">$7.50</span></div>
             </div>
           </div>
         </div>
@@ -642,9 +915,9 @@
       </div><!-- /row -->
 
       <div class="text-center mt-5">
-        <p class="text-muted mb-3" style="font-size:0.9rem;">Full menu with pricing and seasonal specials available online</p>
+        <p class="text-muted mb-3" style="font-size:0.9rem;">Full pricing, seasonal specials &amp; customizations available when ordering online</p>
         <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary" target="_blank" rel="noopener">
-          <i class="bi bi-bag-fill me-2"></i>See Full Menu &amp; Order
+          <i class="bi bi-bag-fill me-2"></i>See Full Menu &amp; Order Online
         </a>
       </div>
     </div>
@@ -666,64 +939,73 @@
         <div class="col-sm-6 col-lg-4">
           <div class="coffee-card">
             <div class="drink-icon">☕</div>
-            <h5>Espresso &amp; Cappuccino</h5>
-            <p>Bold, concentrated shots and velvety cappuccinos pulled fresh to order. The foundation of everything we do.</p>
+            <h5>Espresso &amp; Cortado</h5>
+            <div class="drink-price">$3.50 / $4.25</div>
+            <p>Bold, concentrated shots and precise cortados pulled fresh to order.</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="coffee-card">
             <div class="drink-icon">🥛</div>
-            <h5>Lattes &amp; Flat Whites</h5>
-            <p>Smooth espresso layered with steamed milk. Available hot or iced, with dairy or plant-based alternatives.</p>
+            <h5>Cappuccino &amp; Flat White</h5>
+            <div class="drink-price">$4.75</div>
+            <p>Velvety steamed milk layered over espresso. Available hot or iced.</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="coffee-card">
-            <div class="drink-icon">🌴</div>
-            <h5>Sweet Palm Signature Latte</h5>
-            <p>Our famous house-made syrup latte — the drink that started it all. Sweet, smooth, and unmistakably Sweet Palm.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="coffee-card">
-            <div class="drink-icon">🍌</div>
-            <h5>Banana Pudding Latte</h5>
-            <p>A dessert-inspired fan favorite. Espresso meets creamy banana pudding flavor for a uniquely indulgent sip.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="coffee-card">
-            <div class="drink-icon">🍵</div>
-            <h5>Matcha &amp; Chai</h5>
-            <p>Premium Japanese matcha latte with cold foam, and our spiced dirty chai blending chai and espresso.</p>
+            <div class="drink-icon">☕</div>
+            <h5>Latte &amp; Mocha</h5>
+            <div class="drink-price">$5.25 / $5.75</div>
+            <p>Smooth espresso with steamed milk — or our rich mocha with chocolate.</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="coffee-card">
             <div class="drink-icon">🧊</div>
             <h5>Cold Brew</h5>
-            <p>Slow-steeped 18 hours for a bold, smooth flavor. Perfect for warm Charleston afternoons on King Street.</p>
+            <div class="drink-price">$5.00</div>
+            <p>Slow-steeped 18+ hours for a bold, smooth flavor. Perfect for warm Charleston afternoons.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🍵</div>
+            <h5>Ceremonial Matcha Latte</h5>
+            <div class="drink-price">$7.25</div>
+            <p>Hand harvested from the volcanic soils of Kagoshima, Japan.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🫖</div>
+            <h5>Chai Latte &amp; Dirty Chai</h5>
+            <div class="drink-price">$5.25 / $6.25</div>
+            <p>Signature recipe brewed on site. Dirty chai adds a shot of espresso.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="coffee-card">
+            <div class="drink-icon">🌿</div>
+            <h5>Traditional Tea</h5>
+            <div class="drink-price">$3.50</div>
+            <p>Earl Grey, English Breakfast, Green Tea, Moroccan Mint, Chamomile.</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="coffee-card">
             <div class="drink-icon">🩷</div>
-            <h5>Pink Palm Energy Refresher</h5>
-            <p>Strawberry &amp; dragonfruit plant-based energy drink. Vibrant, fruity, and naturally energizing.</p>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4">
-          <div class="coffee-card">
-            <div class="drink-icon">💙</div>
-            <h5>Thunderbird Refresher</h5>
-            <p>Blue raspberry &amp; lime over green tea. A bold, icy refresher for the King Street explorer.</p>
+            <h5>Palm Energy Refreshers</h5>
+            <div class="drink-price">$6.00</div>
+            <p>Pink Palm (strawberry + dragonfruit), Southern Sunset (peach + cherry), Golden Wave (mango + pineapple), Berry Blue (sugar-free). 80mg natural caffeine.</p>
           </div>
         </div>
         <div class="col-sm-6 col-lg-4">
           <div class="coffee-card">
             <div class="drink-icon">🍹</div>
-            <h5>Lowcountry Mojito (Non-Alc.)</h5>
-            <p>Pineapple, lime, mint, and soda — a refreshing, alcohol-free nod to Lowcountry flavor.</p>
+            <h5>Fruit Refreshers</h5>
+            <div class="drink-price">$5.00 – $5.50</div>
+            <p>Thunderbird (blue raspberry + lime over green tea), Sea Island (mango + passion fruit + coconut water), Lowcountry Mojito (pineapple + lime + fresh mint soda).</p>
           </div>
         </div>
       </div>
@@ -736,32 +1018,24 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════ ABOUT ════════════════════════════════ -->
+  <!-- ABOUT -->
   <section id="about" class="about-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
     <div class="container">
       <div class="row gy-5 align-items-start">
-
         <div class="col-lg-6">
           <p class="section-label">A Downtown Charleston Food Destination</p>
           <h2 class="section-title mb-4">Your King Street Café</h2>
           <div class="divider-gold mb-4"></div>
-
           <p style="font-size:1.05rem; line-height:1.8; color:#4a3b30;" class="mb-4">
             Sweet Palm Coffee &amp; Café is Downtown Charleston's favorite spot for <strong>fresh café food and handcrafted coffee on King Street</strong>. Whether you're a College of Charleston student powering through a study session, a professional hunting for the perfect working lunch, or a visitor exploring the French Quarter and Historic District, Sweet Palm is your local food and coffee anchor.
           </p>
-          <p style="font-size:1.05rem; line-height:1.8; color:#4a3b30;" class="mb-4">
-            We believe a great café meal starts with real ingredients. Our <strong>chicken caesar wraps</strong>, <strong>breakfast burritos</strong>, and <strong>BLT wraps</strong> are made fresh to order — no shortcuts, no shortcuts, no heat lamps. Just good food that tastes like it was made with care, because it was. Every dish is designed to be satisfying whether you're eating in or grabbing it on the go up King Street.
-          </p>
-
           <div class="about-highlight mb-4">
             "We're not just a coffee shop — we're the café where Downtown Charleston comes to eat, work, and connect. Every wrap, burrito, and latte is made with Lowcountry pride."
           </div>
-
           <p style="font-size:1.05rem; line-height:1.8; color:#4a3b30;">
-            Located at <strong>471 King Street</strong>, we serve the heart of the Charleston peninsula — from Cannonborough and Radcliffeborough to the French Quarter and Historic District. Walk in from Upper King or Church Street and you'll feel it immediately: a warm, coastal-inspired space that's equal parts productive and relaxing.
+            Located at <strong>471 King Street</strong>, we serve the heart of the Charleston peninsula — from Cannonborough and Radcliffeborough to the French Quarter and Historic District.
           </p>
         </div>
-
         <div class="col-lg-6">
           <div class="ps-lg-4">
             <h4 class="mb-3" style="font-family:'Playfair Display',serif; color:var(--palm-brown);">Visit Us</h4>
@@ -770,7 +1044,6 @@
               <span class="info-pill"><i class="bi bi-telephone-fill"></i> <a href="tel:8439743594" style="color:#e8ddd0; text-decoration:none;">(843) 974-3594</a></span>
               <span class="info-pill"><i class="bi bi-clock-fill"></i> Open Daily</span>
             </div>
-
             <div class="d-flex flex-column gap-3">
               <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-hero-primary text-center" target="_blank" rel="noopener" style="border-radius:12px;">
                 <i class="bi bi-bag-fill me-2"></i>Order Food Online
@@ -782,12 +1055,8 @@
                 <i class="bi bi-globe2 me-2"></i>Visit Sweet Palm Coffee Website
               </a>
             </div>
-
             <hr class="my-4" style="border-color:#e0d4c8;" />
-
-            <h5 class="mb-3" style="font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--palm-brown);">
-              Why Locals Love Sweet Palm
-            </h5>
+            <h5 class="mb-3" style="font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--palm-brown);">Why Locals Love Sweet Palm</h5>
             <ul class="list-unstyled" style="font-size:0.95rem; line-height:2; color:var(--palm-gray);">
               <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Fresh food made to order — not pre-packaged</li>
               <li><i class="bi bi-check2-circle me-2" style="color:var(--palm-gold);"></i>Artisan espresso &amp; specialty drinks</li>
@@ -797,20 +1066,17 @@
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════════════════ NEIGHBORHOODS ════════════════════════ -->
+  <!-- NEIGHBORHOODS -->
   <section class="neighborhood-section py-5">
     <div class="container text-center">
       <p class="section-label mb-2" style="color:var(--palm-gold);">We Serve the Whole Peninsula</p>
-      <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:1.9rem;">
-        Downtown Charleston Neighborhoods We Love
-      </h2>
+      <h2 class="mb-4" style="font-family:'Playfair Display',serif; color:#FAF6F0; font-size:1.9rem;">Downtown Charleston Neighborhoods We Love</h2>
       <p class="mb-4" style="color:#c9bfb5; font-size:0.95rem; max-width:600px; margin:auto; line-height:1.75;">
-        Whether you're strolling King Street, coming from the French Quarter, or heading over from the College of Charleston, Sweet Palm is your café. We're walking distance from Charleston's most iconic neighborhoods.
+        Whether you're strolling King Street, coming from the French Quarter, or heading over from the College of Charleston, Sweet Palm is your café.
       </p>
       <div class="mt-3">
         <span class="neighborhood-tag">King Street</span>
@@ -827,15 +1093,13 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════ CTA ══════════════════════════════════ -->
+  <!-- CTA -->
   <section class="cta-section py-6" style="padding-top:5rem; padding-bottom:5rem;">
     <div class="container text-center">
       <p class="section-label mb-2" style="color:rgba(59,43,31,0.65);">Ready to Eat?</p>
-      <h2 class="mb-3" style="font-size:clamp(2rem,4vw,3rem);">
-        Fresh Food Waiting for You<br />on King Street
-      </h2>
+      <h2 class="mb-3" style="font-size:clamp(2rem,4vw,3rem);">Fresh Food Waiting for You<br />on King Street</h2>
       <p class="mb-5" style="font-size:1.05rem; max-width:500px; margin:auto;">
-        Order your chicken caesar wrap, breakfast burrito, BLT, or any of our café favorites for pickup at 471 King St, Downtown Charleston.
+        Order your breakfast burrito, caesar wrap, toastie, or any of our café favorites for pickup at 471 King St, Downtown Charleston.
       </p>
       <div class="d-flex flex-wrap justify-content-center gap-3">
         <a href="https://order.toasttab.com/online/sweetpalmcoffee" class="btn-cta-dark" target="_blank" rel="noopener">
@@ -848,7 +1112,7 @@
     </div>
   </section>
 
-  <!-- ════════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="site-footer pt-5 pb-4">
     <div class="container">
       <div class="row gy-4 mb-4">
@@ -882,23 +1146,39 @@
     </div>
   </footer>
 
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
 
-  <!-- Smooth scroll offset for sticky nav -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
           e.preventDefault();
-          const offset = 80;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          const top = target.getBoundingClientRect().top + window.scrollY - 80;
           window.scrollTo({ top, behavior: 'smooth' });
         }
       });
     });
-  </script>
 
+    // Lightbox
+    function openLightbox(wrap) {
+      const img = wrap.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
 </body>
 </html>
