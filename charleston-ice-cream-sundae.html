@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Ice Cream Sundaes in Downtown Charleston SC | Sweet Palm Coffee King Street</title>
+  <meta name="description" content="Sweet Palm Coffee at 471 King Street serves Charleston's most creative ice cream sundaes. Classic Chocolate, Salted Caramel, Banana Pudding, Tiramisu, Biscoff & more. Downtown Charleston's sweetest stop." />
+  <meta name="keywords" content="ice cream downtown Charleston, sundaes King Street Charleston, best ice cream Charleston SC, Sweet Palm Coffee ice cream, dessert King Street, Charleston ice cream shop, sundaes near me Charleston, downtown Charleston dessert, King Street dessert Charleston, ice cream Charleston SC 29403" />
+  <link rel="canonical" href="https://eatsweetpalm.com/charleston-ice-cream-sundaes" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Best Ice Cream Sundaes in Downtown Charleston | Sweet Palm Coffee" />
+  <meta property="og:description" content="Creative handcrafted sundaes at 471 King Street, Downtown Charleston. Visit or order online today." />
+  <meta property="og:url" content="https://eatsweetpalm.com/charleston-ice-cream-sundaes" />
+  <meta property="og:type" content="website" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:        #fdf6ec;
+      --warm-white:   #fff9f2;
+      --caramel:      #c97c2e;
+      --caramel-dark: #9e5e18;
+      --chocolate:    #3b1a08;
+      --blush:        #f7d4c8;
+      --berry:        #8b3a62;
+      --mint:         #d4ede4;
+      --text-dark:    #1e0e06;
+      --text-mid:     #5a3a28;
+      --radius:       18px;
+      --shadow:       0 8px 32px rgba(60,20,8,0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .display-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* ── STICKY CTA BANNER ── */
+    .sticky-cta {
+      position: sticky;
+      top: 0;
+      z-index: 1050;
+      background: var(--chocolate);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: .92rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+    }
+    .sticky-cta a {
+      color: var(--caramel);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid var(--caramel);
+      transition: opacity .2s;
+    }
+    .sticky-cta a:hover { opacity: .75; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--chocolate);
+      color: #fff;
+      padding: 72px 0 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,124,46,.28) 0%, transparent 70%),
+                  radial-gradient(ellipse at 20% 80%, rgba(139,58,98,.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--caramel);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.12;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--caramel);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,.75);
+      font-size: 1.05rem;
+      max-width: 540px;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .hero-address {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      margin-top: 18px;
+    }
+    .hero-address::before {
+      content: '📍';
+    }
+
+    .btn-cta-primary {
+      background: var(--caramel);
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-size: 1rem;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s, transform .15s;
+      box-shadow: 0 4px 18px rgba(201,124,46,.4);
+    }
+    .btn-cta-primary:hover {
+      background: var(--caramel-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-cta-secondary {
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-size: .95rem;
+      border: 1.5px solid rgba(255,255,255,.35);
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-cta-secondary:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,.07);
+      color: #fff;
+    }
+
+    /* ── HERO SUNDAE EMOJI DECORATION ── */
+    .hero-deco {
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 1;
+      user-select: none;
+      opacity: .9;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-eyebrow {
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--caramel);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      color: var(--chocolate);
+      line-height: 1.2;
+    }
+
+    /* ── CTA STRIP (top of content) ── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--caramel) 0%, #e8962a 100%);
+      color: #fff;
+      padding: 40px 0;
+    }
+    .cta-strip h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .cta-strip p {
+      opacity: .9;
+      font-size: .97rem;
+      margin-bottom: 0;
+    }
+    .btn-cta-white {
+      background: #fff;
+      color: var(--caramel-dark);
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 50px;
+      font-size: .97rem;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 14px rgba(0,0,0,.15);
+    }
+    .btn-cta-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0,0,0,.18);
+      color: var(--caramel-dark);
+    }
+
+    /* ── SUNDAE CARDS ── */
+    .sundae-grid {
+      padding: 72px 0;
+      background: var(--warm-white);
+    }
+    .sundae-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .sundae-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 48px rgba(60,20,8,.16);
+    }
+    .sundae-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 220px;
+      flex-shrink: 0;
+    }
+    .sundae-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .sundae-card:hover .sundae-img-wrap img {
+      transform: scale(1.06);
+    }
+    .sundae-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--chocolate);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 30px;
+    }
+    .sundae-badge.popular { background: var(--caramel); }
+    .sundae-badge.southern { background: var(--berry); }
+
+    .sundae-body {
+      padding: 22px 22px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .sundae-emoji {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .sundae-name {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--chocolate);
+      margin-bottom: 8px;
+    }
+    .sundae-desc {
+      font-size: .9rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .sundae-tags {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--cream);
+      color: var(--text-mid);
+    }
+
+    /* ── FLAVOR HIGHLIGHTS (visual breaks) ── */
+    .flavor-highlight {
+      background: var(--chocolate);
+      color: #fff;
+      padding: 60px 0;
+    }
+    .flavor-highlight h2 { color: #fff; }
+    .flavor-highlight p { color: rgba(255,255,255,.72); }
+    .highlight-pill {
+      display: inline-block;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: .88rem;
+      color: rgba(255,255,255,.85);
+      margin: 4px;
+      transition: background .2s;
+    }
+    .highlight-pill:hover {
+      background: rgba(201,124,46,.35);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ── WHY VISIT ── */
+    .why-visit {
+      padding: 72px 0;
+      background: var(--cream);
+    }
+    .why-card {
+      text-align: center;
+      padding: 32px 24px;
+    }
+    .why-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .why-card h4 {
+      font-size: 1.08rem;
+      color: var(--chocolate);
+      margin-bottom: 8px;
+    }
+    .why-card p {
+      font-size: .88rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── LOCAL SEO COPY SECTION ── */
+    .seo-section {
+      background: var(--blush);
+      padding: 60px 0;
+    }
+    .seo-section h2 { color: var(--chocolate); }
+    .seo-section p {
+      color: var(--text-mid);
+      font-size: .95rem;
+      line-height: 1.75;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--chocolate);
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .final-cta h2 {
+      color: #fff;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+    .final-cta p {
+      color: rgba(255,255,255,.7);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      font-size: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      background: #1a0a03;
+      color: rgba(255,255,255,.5);
+      text-align: center;
+      padding: 24px 16px;
+      font-size: .82rem;
+    }
+    .page-footer a {
+      color: var(--caramel);
+      text-decoration: none;
+    }
+
+    /* ── DIVIDER ── */
+    .wavy-divider {
+      line-height: 0;
+      overflow: hidden;
+      background: var(--warm-white);
+    }
+    .wavy-divider svg { display: block; }
+
+    /* ── RESPONSIVE TWEAKS ── */
+    @media (max-width: 768px) {
+      .hero { padding: 52px 0 40px; }
+      .cta-strip .d-flex { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY CTA BANNER -->
+  <div class="sticky-cta">
+    🍦 Downtown Charleston's favorite sundaes — <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" target="_blank" rel="noopener">Order Online at Sweet Palm</a> &nbsp;|&nbsp; 471 King St, Charleston SC
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-7">
+          <p class="hero-eyebrow">King Street · Downtown Charleston · 471 King St</p>
+          <h1>Charleston's Most <em>Irresistible</em> Ice Cream Sundaes</h1>
+          <p class="hero-sub">Sweet Palm Coffee is downtown Charleston's go-to spot for handcrafted ice cream sundaes — classic comfort flavors and creative specialty creations, all made with premium ingredients and served up fresh on King Street.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" target="_blank" rel="noopener" class="btn-cta-primary">🍨 Order Pickup Now</a>
+            <a href="https://www.sweetpalmcoffee.com/menu" target="_blank" rel="noopener" class="btn-cta-secondary">View Full Menu</a>
+          </div>
+          <p class="hero-address">471 King Street, Charleston SC 29403 &nbsp;·&nbsp; (843) 974-3594</p>
+        </div>
+        <div class="col-lg-5 text-center">
+          <div class="hero-deco">🍨</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP — top of content per request -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-4">
+        <div>
+          <h2>Ready for a Sundae on King Street?</h2>
+          <p>Skip the wait — order online for quick pickup at 471 King Street in downtown Charleston.</p>
+        </div>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" target="_blank" rel="noopener" class="btn-cta-white">Order Online Now</a>
+          <a href="https://www.google.com/maps/place/Sweet+Palm+Coffee+%26+Food/@32.7891617,-79.9413188,732m" target="_blank" rel="noopener" class="btn-cta-white">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUNDAE MENU GRID -->
+  <section class="sundae-grid">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">The Full Lineup</p>
+        <h2 class="section-title">8 Signature Sundaes — All Made Fresh on King Street</h2>
+        <p class="text-muted mt-2" style="max-width:560px;margin:auto;font-size:.95rem;">From Southern classics to creative twists, every sundae is a reason to visit Sweet Palm Coffee in downtown Charleston. Pair with a cold brew or latte for the ultimate treat.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- 1. Classic Chocolate -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            <div class="sundae-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&auto=format&fit=crop" alt="Classic Chocolate Sundae at Sweet Palm Coffee King Street Charleston" loading="lazy" />
+              <span class="sundae-badge popular">Fan Favorite</span>
+            </div>
+            <div class="sundae-body">
+              <div class="sundae-emoji">🍫</div>
+              <div class="sundae-name">Classic Chocolate Sundae</div>
+              <p class="sundae-desc">Rich, velvety chocolate sauce poured over creamy ice cream — pure, unapologetic indulgence. This is the sundae that never goes out of style. Whether you're a purist or just need a serious chocolate fix after a stroll down King Street, this is the one.</p>
+              <div class="sundae-tags">
+                <span class="tag">Chocolate</span>
+                <span class="tag">Classic</span>
+                <span class="tag">King Street</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Salted Caramel -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            <div class="sundae-img-wrap">
+              <img src="https://images.unsplash.com/photo-1567206563114-c179a7a3a8de?w=600&auto=format&fit=crop" alt="Salted Caramel Sundae downtown Charleston Sweet Palm Coffee" loading="lazy" />
+              <span class="sundae-badge">Sweet + Salty</span>
+            </div>
+            <div class="sundae-body">
+              <div class="sundae-emoji">🧂</div>
+              <div class="sundae-name">Salted Caramel Sundae</div>
+              <p class="sundae-desc">Buttery caramel ribboned through creamy ice cream, finished with a delicate pinch of sea salt that makes the sweetness sing. The perfect balance of flavors that keeps downtown Charleston dessert lovers coming back again and again.</p>
+              <div class="sundae-tags">
+                <span class="tag">Caramel</span>
+                <span class="tag">Sea Salt</span>
+                <span class="tag">Downtown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Wild Berry -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            <div class="sundae-img-wrap">
+              <img src="https://images.unsplash.com/photo-1488900128323-21503983a07e?w=600&auto=format&fit=crop" alt="Wild Berry Sundae Sweet Palm Coffee Charleston SC" loading="lazy" />
+              <span class="sundae-badge" style="background:var(--berry);">Fresh & Bright</span>
+            </div>
+            <div class="sundae-body">
+              <div class="sundae-emoji">🫐</div>
+              <div class="sundae-name">Wild Berry Sundae</div>
+              <p class="sundae-desc">Bold, bright berry flavors — think mixed berries, tart and sweet in every spoonful — layered over cool, creamy ice cream. Light enough to enjoy on a warm Charleston afternoon, flavorful enough to make you stay for seconds.</p>
+              <div class="sundae-tags">
+                <span class="tag">Berries</span>
+                <span class="tag">Refreshing</span>
+                <span class="tag">Charleston</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Banana Pudding -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            <div class="sundae-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&auto=format&fit=crop" alt="Banana Pudding Sundae Southern comfort Sweet Palm Coffee King Street" loading="lazy" />
+              <span class="sundae-badge southern">Southern Classic</span>
+            </div>
+            <div class="sundae-body">
+              <div class="sundae-emoji">🍌</div>
+              <div class="sundae-name">Banana Pudding Sundae</div>
+              <p class="sundae-desc">A love letter to the South. Creamy banana pudding vibes with layers of soft banana flavor, nostalgic comfort, and that unmistakable Southern sweetness. This sundae tastes exactly like grandma's kitchen in the best possible way — right here on King Street.</p>
+              <div class="sundae-tags">
+                <span class="tag">Southern</span>
+                <span class="tag">Nostalgic</span>
+                <span class="tag">Banana</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Strawberry -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            <div class="sundae-img-wrap">
+              <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?w=600&auto=format&fit=crop" alt="Strawberry Sundae Sweet Palm Coffee downtown Charleston ice cream" loading="lazy" />
+              <span class="sundae-badge popular" style="background:#c0434c;">Crowd Pleaser</span>
+            </div>
+            <div class="sundae-body">
+              <div class="sundae-emoji">🍓</div>
+              <div class="sundae-name">Strawberry Sundae</div>
+              <p class="sundae-desc">Juicy, sun-ripened strawberry flavor poured over a generous scoop of creamy ice cream. Fresh, simple, and absolutely satisfying — this classic deserves a permanent spot in your dessert rotation on every visit to downtown Charleston.</p>
+              <div class="sundae-tags">
+                <span class="tag">Strawberry</span>
+                <span class="tag">Fresh</span>
+                <span class="tag">Classic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Tiramisu -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            <div class="sundae-img-wrap">
+              <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&auto=format&fit=crop" alt="Tiramisu Sundae Sweet Palm Coffee Charleston coffee dessert" loading="lazy" />
+              <span class="sundae-badge" style="background:#4a3728;">Coffee Lover</span>
+            </div>
+            <div class="sundae-body">
+              <div class="sundae-emoji">☕</div>
+              <div class="sundae-name">Tiramisu Sundae</div>
+              <p class="sundae-desc">Coffee culture meets dessert heaven. This sophisticated sundae layers espresso-kissed flavors with creamy mascarpone-inspired richness — a nod to the Italian classic, reinvented as a sundae. The perfect companion to Sweet Palm's specialty coffee program.</p>
+              <div class="sundae-tags">
+                <span class="tag">Espresso</span>
+                <span class="tag">Coffee</span>
+                <span class="tag">Specialty</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Biscoff -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            
+            <div class="sundae-body">
+              <div class="sundae-emoji">🍪</div>
+              <div class="sundae-name">Biscoff Sundae</div>
+              <p class="sundae-desc">Buttery Belgian Biscoff cookie spread swirled into creamy ice cream with that signature caramelized, spiced cookie crunch. If you've never had a Biscoff sundae, consider this your King Street awakening. Dangerously good. You've been warned.</p>
+              <div class="sundae-tags">
+                <span class="tag">Biscoff</span>
+                <span class="tag">Caramelized</span>
+                <span class="tag">Unique</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Strawberry Matcha -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="sundae-card">
+            
+            <div class="sundae-body">
+              <div class="sundae-emoji">🍵</div>
+              <div class="sundae-name">Strawberry Matcha Sundae</div>
+              <p class="sundae-desc">The stunning fusion of earthy Japanese matcha and sweet strawberry makes this sundae as eye-catching as it is delicious. A vibrant, photogenic creation that's become a downtown Charleston social media staple — and the reason half of King Street is holding a green-hued dessert.</p>
+              <div class="sundae-tags">
+                <span class="tag">Matcha</span>
+                <span class="tag">Strawberry</span>
+                <span class="tag">Trending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+
+      <div class="text-center mt-5">
+        <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" target="_blank" rel="noopener" class="btn-cta-primary" style="font-size:1.1rem;padding:16px 42px;">Order a Sundae for Pickup →</a>
+        <p class="text-muted mt-3" style="font-size:.85rem;">471 King Street · Downtown Charleston SC 29403 · (843) 974-3594</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLAVOR PILL HIGHLIGHTS -->
+  <section class="flavor-highlight">
+    <div class="container text-center">
+      <p class="section-eyebrow" style="color:var(--caramel);">All 8 Flavors</p>
+      <h2 class="mb-3">Every Sundae. Every Visit.</h2>
+      <p style="color:rgba(255,255,255,.65);max-width:500px;margin:auto 0 28px;">Sweet Palm rotates seasonal specials alongside these signature flavors. Stop in or check the menu for the latest.</p>
+      <div>
+        <span class="highlight-pill">🍫 Classic Chocolate</span>
+        <span class="highlight-pill">🧂 Salted Caramel</span>
+        <span class="highlight-pill">🫐 Wild Berry</span>
+        <span class="highlight-pill">🍌 Banana Pudding</span>
+        <span class="highlight-pill">🍓 Strawberry</span>
+        <span class="highlight-pill">☕ Tiramisu</span>
+        <span class="highlight-pill">🍪 Biscoff</span>
+        <span class="highlight-pill">🍵 Strawberry Matcha</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY VISIT -->
+  <section class="why-visit">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">Why Sweet Palm?</p>
+        <h2 class="section-title">The Best Ice Cream Stop in Downtown Charleston</h2>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div class="why-card">
+            <span class="why-icon">📍</span>
+            <h4>Prime King Street Location</h4>
+            <p>Smack in the heart of downtown Charleston at 471 King St — easy to find, impossible to miss.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="why-card">
+            <span class="why-icon">🧑‍🍳</span>
+            <h4>Handcrafted Quality</h4>
+            <p>Premium ingredients, creative flavor combinations, and real care in every sundae we make.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="why-card">
+            <span class="why-icon">☕</span>
+            <h4>Coffee + Dessert Pairing</h4>
+            <p>Pair your sundae with a specialty latte, cold brew, or matcha for the ultimate Sweet Palm experience.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="why-card">
+            <span class="why-icon">📱</span>
+            <h4>Order Online for Pickup</h4>
+            <p>Skip the line — order ahead through Toast and pick up your sundae fresh and ready to enjoy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL SEO COPY -->
+  <section class="seo-section">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-6">
+          <p class="section-eyebrow">Find Us in Downtown Charleston</p>
+          <h2 class="section-title mb-3">The Ice Cream Destination on King Street</h2>
+          <p>If you're searching for <strong>ice cream in downtown Charleston SC</strong>, look no further than Sweet Palm Coffee at 471 King Street. Nestled in the heart of the historic district, Sweet Palm has become a local favorite for anyone craving a creative, high-quality dessert after exploring King Street shops, heading home from the Charleston City Market, or simply enjoying an afternoon in the Holy City.</p>
+          <p>Visitors from the French Quarter, Cannonborough-Elliotborough, Harleston Village, and across the Charleston peninsula regularly make Sweet Palm their dessert stop of choice. Whether you're a local or a tourist enjoying everything <strong>King Street Charleston</strong> has to offer, our sundaes are a must-try treat.</p>
+          <p>Sweet Palm Coffee isn't just one of the best <strong>coffee shops on King Street</strong> — it's now one of Charleston's go-to spots for <strong>handcrafted ice cream sundaes</strong>. Stop in any day of the week and treat yourself to something unforgettable.</p>
+          <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener" class="btn-cta-primary mt-2" style="background:var(--chocolate);">Visit SweetPalmCoffee.com</a>
+        </div>
+        <div class="col-lg-6">
+          <div style="background:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);">
+            <h4 style="font-family:'Playfair Display',serif;color:var(--chocolate);margin-bottom:20px;">📍 Visit Us</h4>
+            <p style="font-size:1rem;color:var(--text-mid);margin-bottom:6px;"><strong>Sweet Palm Coffee &amp; Food</strong></p>
+            <p style="font-size:.95rem;color:var(--text-mid);margin-bottom:4px;">471 King Street</p>
+            <p style="font-size:.95rem;color:var(--text-mid);margin-bottom:4px;">Charleston, SC 29403</p>
+            <p style="font-size:.95rem;color:var(--text-mid);margin-bottom:20px;">(843) 974-3594</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" target="_blank" rel="noopener" class="btn-cta-primary" style="padding:10px 22px;font-size:.9rem;">Order Online</a>
+              <a href="https://www.google.com/maps/place/Sweet+Palm+Coffee+%26+Food/@32.7891617,-79.9413188" target="_blank" rel="noopener" class="btn-cta-secondary" style="padding:10px 22px;font-size:.9rem;border-color:var(--chocolate);color:var(--chocolate);">Get Directions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Your Sundae is Waiting on King Street 🍨</h2>
+      <p>Don't just read about it — get over to Sweet Palm Coffee and taste Charleston's best handcrafted ice cream sundaes for yourself. Order online for pickup or walk right in.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="https://www.toasttab.com/local/order/sweetpalmcoffee" target="_blank" rel="noopener" class="btn-cta-primary" style="font-size:1.05rem;padding:15px 38px;">Order Pickup Now</a>
+        <a href="https://www.sweetpalmcoffee.com/menu" target="_blank" rel="noopener" class="btn-cta-secondary" style="font-size:1.05rem;padding:14px 32px;">See Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <p>Sweet Palm Coffee &amp; Food · 471 King Street, Charleston SC 29403 · (843) 974-3594</p>
+    <p>© 2026 <a href="https://eatsweetpalm.com">EatSweetPalm.com</a> — An independent fan site promoting <a href="https://www.sweetpalmcoffee.com" target="_blank" rel="noopener">Sweet Palm Coffee</a> on King Street, Downtown Charleston.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
